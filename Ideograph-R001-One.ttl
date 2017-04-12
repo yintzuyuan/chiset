@@ -116,6 +116,7 @@
 @prefix g2.gt-k: <http://www.chise.org/est/view/character/g2.gt-k=> .
 @prefix repi.gt-k: <http://www.chise.org/est/view/character/repi.gt-k=> .
 @prefix g.gt-k: <http://www.chise.org/est/view/character/g.gt-k=> .
+@prefix a.gt-k: <http://www.chise.org/est/view/character/a.gt-k=> .
 @prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
 @prefix rep.gt-pj-2: <http://www.chise.org/est/view/character/rep.gt-pj-2=> .
 @prefix rep.gt-pj-9: <http://www.chise.org/est/view/character/rep.gt-pj-9=> .
@@ -1636,14 +1637,14 @@ a.ucs:0x4E08
             a chisegg:glyph-image ;
             :glyph-image-of adobe-japan1-4:13463 ;
             .
-        repi.ucs_ks:0x4E08
+        repi.ks-x1001:0x6D5B
             a chisegg:glyph-image ;
-            :glyph-image-of [ :context domain:ks      ;
-                              :target     ucs:0x4E08  ] ;
-            :eq repi.ks-x1001:0x6D5B      ; # &R-K0-6D5B;
+            :glyph-image-of ks-x1001:0x6D5B ;
+            :eq repi.ucs_ks:0x4E08        ; # &R-K0-6D5B;
             .
-            repi.ks-x1001:0x6D5B
-                          :glyph-image-of       ks-x1001:0x6D5B  .
+            repi.ucs_ks:0x4E08
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x4E08  ] .
         repi.gt:00018
             a chisegg:glyph-image ;
             :glyph-image-of gt:00018 ;
@@ -2626,7 +2627,7 @@ a.ucs:0x2B740
                            :target  a.ucs:0x6B62         ] ;
     :subsume
         g2.mj:056880         ,
-        g.big5-cdp:0x8DEC    ;
+        a.gt-k:00378         ;
     .
     rep.mj:056880
                :abstract-glyph-of             mj:056880  .
@@ -2657,14 +2658,17 @@ a.ucs:0x2B740
             :glyph-image-of [ :context domain:iso     ;
                               :target     ucs:0x2B740 ] ;
             .
-    g.big5-cdp:0x8DEC
-        a chisegg:detailed-glyph ;
-        :detailed-glyph-of big5-cdp:0x8DEC ;
+    a.gt-k:00378
+        a chisegg:abstract-character ;
+        :abstract-character-of gt-k:00378 ;
+        :eq g.big5-cdp:0x8DEC         ; # &G-CDP-8DEC;
         :eq g.gt-k:00378              ; # &G-CDP-8DEC;
         :subsume
             g2.big5-cdp:0x8DEC   ,
             rep.gt-k:00378       ;
         .
+        g.big5-cdp:0x8DEC
+                   :detailed-glyph-of       big5-cdp:0x8DEC  .
         g.gt-k:00378
                    :detailed-glyph-of           gt-k:00378   .
         g2.big5-cdp:0x8DEC
@@ -2723,21 +2727,18 @@ rep.gt:00014
     ] ;
     :eq rep.gt-pj-9:14120         ; # &GT-00014;
     :subsume
-        repi.gt:00014        ;
+        g2.gt:00014          ;
     .
     rep.gt-pj-9:14120
                :abstract-glyph-of        gt-pj-9:14120   .
-    repi.gt:00014
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00014 ;
+    g2.gt:00014
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00014 ;
     isd:structure [ a idc:⿱ ;
         isd:above    g2.ucs_unicode:0x53C8 ; # &g2-AJ1-03746;
         isd:below    a.ucs:0x4E00   # 一
     ] ;
-        :eq g2.gt:00014               ; # &g2-GT-00014;
         .
-        g2.gt:00014
-              :abstract-glyph-form-of             gt:00014   .
 
 rep.gt:00022
     a chisegg:abstract-glyph ;
@@ -3641,14 +3642,14 @@ rep.mj:006315
             a chisegg:glyph-image ;
             :glyph-image-of daikanwa:00023 ;
             .
-        repi.ucs_ks:0x4E11
+        repi.ks-x1001:0x7564
             a chisegg:glyph-image ;
-            :glyph-image-of [ :context domain:ks      ;
-                              :target     ucs:0x4E11  ] ;
-            :eq repi.ks-x1001:0x7564      ; # &R-K0-7564;
+            :glyph-image-of ks-x1001:0x7564 ;
+            :eq repi.ucs_ks:0x4E11        ; # &R-K0-7564;
             .
-            repi.ks-x1001:0x7564
-                          :glyph-image-of       ks-x1001:0x7564  .
+            repi.ucs_ks:0x4E11
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x4E11  ] .
         repi.gt:00033
             a chisegg:glyph-image ;
             :glyph-image-of gt:00033 ;
@@ -3954,8 +3955,8 @@ rep.adobe-japan1-5:17236
                            :target  rep.mj:006315        ] ;
     :subsume
         g2.daikanwa:00028    ,
-        repi.gt:00034        ,
-        g2.ucs_jis:0x4E12    ;
+        g2.gt:00034          ,
+        g2.adobe-japan1-5:17236 ;
     .
     rep.ucs_jis:0x4E12
                :abstract-glyph-of [ :context domain:jis     ;
@@ -3974,29 +3975,26 @@ rep.adobe-japan1-5:17236
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of daikanwa:00028 ;
         .
-    repi.gt:00034
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00034 ;
-        :eq g2.gt:00034               ; # &g2-GT-00034;
-        .
-        g2.gt:00034
-              :abstract-glyph-form-of             gt:00034   .
-    g2.ucs_jis:0x4E12
+    g2.gt:00034
         a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of [ :context domain:jis     ;
-                                  :target     ucs:0x4E12  ] ;
+        :abstract-glyph-form-of gt:00034 ;
+        .
+    g2.adobe-japan1-5:17236
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of adobe-japan1-5:17236 ;
         :rep.decomposition   [ :context domain:cid     ;
                                :target  a.ucs:0x4E12         ,
                                         a.ucs:0xE0100        ] ;
-        :eq g2.adobe-japan1-5:17236   ; # &g2-AJ1-17236;
+        :eq g2.ucs_jis:0x4E12         ; # &g2-AJ1-17236;
         :eq g2.jis-x0212:0x3025       ; # &g2-AJ1-17236;
         :eq g2.jis-x0213-2:0x2124     ; # &g2-AJ1-17236;
         :subsume
             repi.jis-x0213-2:0x2124 ,
             repi.adobe-japan1-6:17236 ;
         .
-        g2.adobe-japan1-5:17236
-              :abstract-glyph-form-of adobe-japan1-5:17236   .
+        g2.ucs_jis:0x4E12
+              :abstract-glyph-form-of [ :context domain:jis     ;
+                                        :target     ucs:0x4E12  ] .
         g2.jis-x0212:0x3025
               :abstract-glyph-form-of      jis-x0212:0x3025  .
         g2.jis-x0213-2:0x2124
@@ -6969,7 +6967,7 @@ a.ucs:0x20022
     :eq rep.gt-pj-2:12352         ; # &I-GT-00070;
     :eq rep.daikanwa:00047        ; # &I-M-00047;
     :subsume
-        repi.gt:00070        ,
+        g2.gt:00070          ,
         g2.ucs_iso:0x20022   ;
     .
     rep.cns11643-5:0x232F
@@ -6980,22 +6978,19 @@ a.ucs:0x20022
                :abstract-glyph-of        gt-pj-2:12352   .
     rep.daikanwa:00047
                :abstract-glyph-of       daikanwa:00047   .
-    repi.gt:00070
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00070 ;
+    g2.gt:00070
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00070 ;
     isd:structure [ a idc:⿱ ;
         isd:above    a.ucs:0x4E00 ; # 一
         isd:below    g2.ucs_unicode:0x6B64   # &g2-AJ1-02065;
     ] ;
-        :eq g2.gt:00070               ; # &g2-GT-00070;
         :eq g2.daikanwa:00047         ; # &g2-GT-00070;
         :subsume
             repi.daikanwa:00047  ,
             repi.gt:00070        ,
             rep.hanziku-1:0xA7F6 ;
         .
-        g2.gt:00070
-              :abstract-glyph-form-of             gt:00070   .
         g2.daikanwa:00047
               :abstract-glyph-form-of       daikanwa:00047   .
         repi.daikanwa:00047
@@ -7345,7 +7340,7 @@ rep.ucs_iso:0x2B826
                                     chisebib:daikanwa ;
                            :target  rep.gt:14778         ] ;
     :subsume
-        repi.gt:00073        ,
+        g2.gt:00073          ,
         g2.ucs_iso:0x2B826   ;
     .
     a.ucs_iwds-1:0x2B826
@@ -7357,17 +7352,14 @@ rep.ucs_iso:0x2B826
                :abstract-glyph-of        gt-pj-2:12357   .
     rep.daikanwa:00052
                :abstract-glyph-of       daikanwa:00052   .
-    repi.gt:00073
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00073 ;
-        :eq g2.gt:00073               ; # &g2-GT-00073;
+    g2.gt:00073
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00073 ;
         :eq g2.daikanwa:00052         ; # &g2-GT-00073;
         :subsume
             repi.daikanwa:00052  ,
             repi.gt:00073        ;
         .
-        g2.gt:00073
-              :abstract-glyph-form-of             gt:00073   .
         g2.daikanwa:00052
               :abstract-glyph-form-of       daikanwa:00052   .
         repi.daikanwa:00052
@@ -7535,21 +7527,18 @@ rep.gt:00074
     ] ;
     :eq rep.gt-pj-9:15169         ; # &GT-00074;
     :subsume
-        repi.gt:00074        ;
+        g2.gt:00074          ;
     .
     rep.gt-pj-9:15169
                :abstract-glyph-of        gt-pj-9:15169   .
-    repi.gt:00074
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00074 ;
+    g2.gt:00074
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00074 ;
     isd:structure [ a idc:⿱ ;
-        isd:above    g2.ucs_jis:0x897F ; # &g2-AJ1-02658;
+        isd:above    g2.adobe-japan1-0:02658 ; # &g2-AJ1-02658;
         isd:below    a.ucs:0x4E00   # 一
     ] ;
-        :eq g2.gt:00074               ; # &g2-GT-00074;
         .
-        g2.gt:00074
-              :abstract-glyph-form-of             gt:00074   .
 
 a.ucs:0x2A7D7
     a chisegg:abstract-character ;
@@ -8149,7 +8138,7 @@ a.ucs:0x20030
     :eq rep.gt-pj-11:17225        ; # &I-GT-00081;
     :eq rep.daikanwa...ho:00002   ; # 𠀰
     :subsume
-        repi.gt:00081        ,
+        g2.gt:00081          ,
         g2.ucs_iso:0x20030   ;
     .
     rep.gt:00081
@@ -8158,21 +8147,18 @@ a.ucs:0x20030
                :abstract-glyph-of       gt-pj-11:17225   .
     rep.daikanwa...ho:00002
                :abstract-glyph-of  daikanwa...ho:00002   .
-    repi.gt:00081
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00081 ;
+    g2.gt:00081
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00081 ;
     isd:structure [ a idc:⿱ ;
         isd:above    a.ucs:0x4E0D ; # 不
-        isd:below    g2.ucs_jis:0x5C11   # &g2-AJ1-02455;
+        isd:below    g2.adobe-japan1-0:02455   # &g2-AJ1-02455;
     ] ;
-        :eq g2.gt:00081               ; # &g2-GT-00081;
         :eq g2.daikanwa...ho:00002    ; # &g2-GT-00081;
         :subsume
             repi.daikanwa...ho:00002 ,
             repi.gt:00081        ;
         .
-        g2.gt:00081
-              :abstract-glyph-form-of             gt:00081   .
         g2.daikanwa...ho:00002
               :abstract-glyph-form-of  daikanwa...ho:00002   .
         repi.daikanwa...ho:00002
@@ -8365,7 +8351,7 @@ a.ucs:0x2003C
     :eq rep.gt-pj-11:17240        ; # &I-GT-00088;
     :eq rep.daikanwa...ho:00003   ; # 𠀼
     :subsume
-        repi.gt:00088        ,
+        g2.gt:00088          ,
         g2.ucs_iso:0x2003C   ;
     .
     rep.gt:00088
@@ -8374,21 +8360,18 @@ a.ucs:0x2003C
                :abstract-glyph-of       gt-pj-11:17240   .
     rep.daikanwa...ho:00003
                :abstract-glyph-of  daikanwa...ho:00003   .
-    repi.gt:00088
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00088 ;
+    g2.gt:00088
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00088 ;
     isd:structure [ a idc:⿱ ;
         isd:above    a.ucs:0x268FB ; # 𦣻
-        isd:below    g2.ucs_jis:0x4E42   # &g2-AJ1-04098;
+        isd:below    g2.adobe-japan1-0:04098   # &g2-AJ1-04098;
     ] ;
-        :eq g2.gt:00088               ; # &g2-GT-00088;
         :eq g2.daikanwa...ho:00003    ; # &g2-GT-00088;
         :subsume
             repi.daikanwa...ho:00003 ,
             repi.gt:00088        ;
         .
-        g2.gt:00088
-              :abstract-glyph-form-of             gt:00088   .
         g2.daikanwa...ho:00003
               :abstract-glyph-form-of  daikanwa...ho:00003   .
         repi.daikanwa...ho:00003
@@ -8924,7 +8907,7 @@ rep.gt:00092
                            :target  a.ucs:0x865A         ,
                                     a.ucs:0x865B         ] ;
     :subsume
-        repi.gt:00092        ,
+        g2.gt:00092          ,
         repi.hng-khm:01170   ,
         repi.hng-khi:05540   ;
     .
@@ -8932,14 +8915,11 @@ rep.gt:00092
                :abstract-glyph-of           gt-k:08114   .
     rep.gt-pj-11:18556
                :abstract-glyph-of       gt-pj-11:18556   .
-    repi.gt:00092
-        a chisegg:glyph-image ;
-        :glyph-image-of gt:00092 ;
-        :eq g2.gt:00092               ; # &g2-GT-00092;
+    g2.gt:00092
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:00092 ;
         :eq g2.gt-k:08114             ; # &g2-GT-00092;
         .
-        g2.gt:00092
-              :abstract-glyph-form-of             gt:00092   .
         g2.gt-k:08114
               :abstract-glyph-form-of           gt-k:08114   .
     repi.hng-khm:01170
