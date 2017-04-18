@@ -71,6 +71,8 @@
     =daikanwa
     =ruimoku-v6
     =cbeta =jef-china3
+    =shinjigen@1ed
+    =shinjigen/+p@rev
     =+>ucs@iso =+>ucs@unicode
     =+>ucs@jis
     =+>ucs@cns
