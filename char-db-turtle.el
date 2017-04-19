@@ -71,8 +71,6 @@
     =daikanwa
     =ruimoku-v6
     =cbeta =jef-china3
-    =shinjigen@1ed
-    =shinjigen/+p@rev
     =+>ucs@iso =+>ucs@unicode
     =+>ucs@jis
     =+>ucs@cns
@@ -109,12 +107,10 @@
     ==cns11643-1 ==cns11643-2 ==cns11643-3
     ==cns11643-4 ==cns11643-5 ==cns11643-6 ==cns11643-7
     ==ucs@cns
-    ==gt-k
     ==koseki
+    ==daikanwa
+    ==gt-k
     ==ucs@JP/hanazono
-    ==shinjigen
-    ==shinjigen@rev
-    ==daikanwa/+p
     =>>jis-x0208 =>>jis-x0213-1 =>>jis-x0213-2
     =+>jis-x0208 =+>jis-x0213-1 =+>jis-x0213-2
     =+>hanyo-denshi/jt
@@ -137,7 +133,14 @@
     ===gt
     ===gt-k
     ===ucs@ks
+    =shinjigen
+    =shinjigen@1ed
+    =shinjigen/+p@rev
+    ==shinjigen
+    ==shinjigen@rev
+    ==daikanwa/+p
     ===daikanwa/+p
+    =>daikanwa/ho
     ===daikanwa/ho
     ))
 
