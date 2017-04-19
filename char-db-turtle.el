@@ -493,7 +493,7 @@
 
 (defun char-db-turtle-insert-source-list (value &optional readable)
   (let (lbs separator rest cell al cal key ret)
-    (setq lbs (concat "\n" (make-string (current-column) ?\ ))
+    (setq lbs (concat " ,\n" (make-string (current-column) ?\ ))
 	  separator nil)
     (while (consp value)
       (setq cell (car value))
