@@ -106,6 +106,7 @@
     ==gt
     ==cns11643-1 ==cns11643-2 ==cns11643-3
     ==cns11643-4 ==cns11643-5 ==cns11643-6 ==cns11643-7
+    ==jis-x0212
     ==ucs@cns
     ==koseki
     ==daikanwa
