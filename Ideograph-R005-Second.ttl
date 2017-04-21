@@ -93,6 +93,7 @@
 @prefix rep.gt-k: <http://www.chise.org/est/view/character/rep.gt-k=> .
 @prefix g2.gt-k: <http://www.chise.org/est/view/character/g2.gt-k=> .
 @prefix repi.gt-k: <http://www.chise.org/est/view/character/repi.gt-k=> .
+@prefix a.gt-k: <http://www.chise.org/est/view/character/a.gt-k=> .
 @prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
 @prefix rep.gt-pj-2: <http://www.chise.org/est/view/character/rep.gt-pj-2=> .
 @prefix rep.gt-pj-6: <http://www.chise.org/est/view/character/rep.gt-pj-6=> .
@@ -4579,14 +4580,15 @@ a.ucs:0x4E7F
     ideo:total-strokes    11 ;
     ideo:hanyu-dazidian  ( 1 57 4 ) ;
     isd:structure [ a idc:⿰ ;
-        isd:left     [
-            :structure [ a idc:⿱ ;
-                :above    a.ucs:0x722B ; # 爫
-                :below    a.ucs:0x7CF8   # 糸
-            ]
-        ] ;
+        isd:left     a.gt-k:07307 ; # &A-GT-K07307;
         isd:right    a.ucs:0x4E5A   # 乚
     ] ;
+    :sound               [ :context domain:ja...on...go ;
+                           :target  ( "di" ) ;
+                         ] ;
+    :sound               [ :context domain:ja...on...kan ;
+                           :target  ( "ti" ) ;
+                         ] ;
     :eq a.big5:0xD44B             ; # &I-B-D44B;
     .
     a.big5:0xD44B
@@ -4601,12 +4603,7 @@ rep.adobe-japan1-4:14306
     ideo:strokes          10 ;
     ideo:total-strokes    11 ;
     isd:structure [ a idc:⿰ ;
-        isd:left     [
-            :structure [ a idc:⿱ ;
-                :above    rep.jis-x0213-2:0x702A ; # &GT-25225;
-                :below    a.ucs:0x7CF8   # 糸
-            ]
-        ] ;
+        isd:left     rep.gt-k:07307 ; # &GT-K07307;
         isd:right    a.ucs:0x4E5A   # 乚
     ] ;
     :eq rep.ucs_jis:0x4E7F        ; # &AJ1-14306;
@@ -4644,10 +4641,10 @@ rep.adobe-japan1-4:14306
         :eq g2.jef-china3:0x41C5      ; # &g2-AJ1-14306;
         :subsume
             repi.daikanwa:00205  ,
-            repi.jis-x0212:0x303C ,
-            repi.adobe-japan1-6:14306 ,
             repi.jef-china3:0x41C5 ,
-            repi.gt:00276        ;
+            repi.gt:00276        ,
+            repi.jis-x0212:0x303C ,
+            repi.adobe-japan1-6:14306 ;
         .
         g2.ucs_jis:0x4E7F
               :abstract-glyph-form-of [ :context domain:jis     ;
@@ -4664,14 +4661,6 @@ rep.adobe-japan1-4:14306
             a chisegg:glyph-image ;
             :glyph-image-of daikanwa:00205 ;
             .
-        repi.jis-x0212:0x303C
-            a chisegg:glyph-image ;
-            :glyph-image-of jis-x0212:0x303C ;
-            .
-        repi.adobe-japan1-4:14306
-            a chisegg:glyph-image ;
-            :glyph-image-of adobe-japan1-4:14306 ;
-            .
         repi.jef-china3:0x41C5
             a chisegg:glyph-image ;
             :glyph-image-of jef-china3:0x41C5 ;
@@ -4679,6 +4668,14 @@ rep.adobe-japan1-4:14306
         repi.gt:00276
             a chisegg:glyph-image ;
             :glyph-image-of gt:00276 ;
+            .
+        repi.jis-x0212:0x303C
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0212:0x303C ;
+            .
+        repi.adobe-japan1-4:14306
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-4:14306 ;
             .
 
 rep.gt:00277
