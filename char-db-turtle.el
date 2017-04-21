@@ -67,6 +67,7 @@
     =ucs@unicode
     =ucs@JP/hanazono
     =gb12345
+    =ucs@cns
     =zinbun-oracle =>zinbun-oracle
     =daikanwa
     =ruimoku-v6
