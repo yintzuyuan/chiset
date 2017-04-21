@@ -205,6 +205,7 @@
 @prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
 @prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
 @prefix rep.ucs-itaiji-003: <http://www.chise.org/est/view/character/rep.ucs-itaiji-003=> .
+@prefix rep.ucs-itaiji-006: <http://www.chise.org/est/view/character/rep.ucs-itaiji-006=> .
 @prefix repi.ucs-bmp-cjk_gb: <http://www.chise.org/est/view/character/repi.ucs-bmp-cjk@gb=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
@@ -271,6 +272,7 @@
 @prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
 @prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
+@prefix ucs-itaiji-006: <http://rdf.chise.org/data/ccs/ucs-itaiji-006/code-point/> .
 @prefix ucs-bmp-cjk: <http://rdf.chise.org/data/ccs/ucs-bmp-cjk/code-point/> .
 
 a.ucs_component:0x5200
@@ -15995,6 +15997,9 @@ a.ucs:0x5276
         isd:left     a.ucs:0x5F56 ; # 彖
         isd:right    a.ucs:0x5202   # 刂
     ] ;
+    :sound               [ :context domain:ja...on ;
+                           :target  ( "seN" ) ;
+                         ] ;
     .
 
 rep.daikanwa:02136
@@ -16005,6 +16010,10 @@ rep.daikanwa:02136
     ideo:radical          18 ; # ⼑ 
     ideo:strokes          10 ;
     ideo:total-strokes    12 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     rep.ucs-itaiji-006:0x5F56 ; # &U-i006+5F56;
+        isd:right    a.ucs:0x5202   # 刂
+    ] ;
     :eq rep.cbeta:04951           ; # &I-CB04951;
     :subsume
         g2.daikanwa:02136    ;
@@ -17910,6 +17919,10 @@ rep.daikanwa:02185
     ideo:strokes          12 ;
     ideo:total-strokes    14 ;
     ideo:hanyu-dazidian  ( 1 355 11 ) ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     rep.mj:013508 ; # &MJ013508;
+        isd:right    a.ucs:0x5202   # 刂
+    ] ;
     :subsume
         g2.daikanwa:02185    ,
         rep.hanziku-1:0xEF43 ;
@@ -20071,10 +20084,13 @@ rep.cns11643-3:0x5036
     ideo:radical          18 ; # ⼑ 
     ideo:strokes          14 ;
     ideo:total-strokes    16 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     rep.gt:42188 ; # &GT-42188;
+        isd:right    a.ucs:0x5202   # 刂
+    ] ;
     :eq rep.ucs_cns:0x5290        ; # &C3-5036;
     :eq rep.daikanwa:02237        ; # &I-M-02237;
     :subsume
-        g2.daikanwa:02237    ,
         g2.cns11643-3:0x5036 ;
     .
     rep.ucs_cns:0x5290
@@ -20082,18 +20098,28 @@ rep.cns11643-3:0x5036
                                     :target     ucs:0x5290  ] .
     rep.daikanwa:02237
                :abstract-glyph-of       daikanwa:02237   .
-    g2.daikanwa:02237
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of daikanwa:02237 ;
-        .
     g2.cns11643-3:0x5036
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of cns11643-3:0x5036 ;
-        :eq g2.ucs_cns:0x5290         ; # &g2-CU+5290;
+        :eq g2.ucs_cns:0x5290         ; # &g2-M-02237;
+        :eq g2.daikanwa:02237         ; # &g2-M-02237;
+        :subsume
+            repi.daikanwa:02237  ,
+            repi.cns11643-3:0x5036 ;
         .
         g2.ucs_cns:0x5290
               :abstract-glyph-form-of [ :context domain:cns     ;
                                         :target     ucs:0x5290  ] .
+        g2.daikanwa:02237
+              :abstract-glyph-form-of       daikanwa:02237   .
+        repi.daikanwa:02237
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:02237 ;
+            .
+        repi.cns11643-3:0x5036
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-3:0x5036 ;
+            .
 
 rep.gb2312:0x5865
     a chisegg:abstract-glyph ;
