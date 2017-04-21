@@ -2102,22 +2102,36 @@ rep.ucs_iso:0x208D1
     ideo:radical          20 ; # ⼓ 
     ideo:strokes           4 ;
     ideo:total-strokes     6 ;
+    isd:structure [ a idc:⿻ ;
+        isd:underlying a.ucs:0x52F9 ; # 勹
+        isd:overlaying a.ucs:0x5143   # 元
+    ] ;
     :eq rep.daikanwa:02513        ; # &M-02513;
     :subsume
-        g2.daikanwa:02513    ,
         g2.ucs_iso:0x208D1   ;
     .
     rep.daikanwa:02513
                :abstract-glyph-of       daikanwa:02513   .
-    g2.daikanwa:02513
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of daikanwa:02513 ;
-        .
     g2.ucs_iso:0x208D1
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of [ :context domain:iso     ;
                                   :target     ucs:0x208D1 ] ;
+        :eq g2.daikanwa:02513         ; # &g2-M-02513;
+        :subsume
+            repi.daikanwa:02513  ,
+            repi.ucs_iso:0x208D1 ;
         .
+        g2.daikanwa:02513
+              :abstract-glyph-form-of       daikanwa:02513   .
+        repi.daikanwa:02513
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:02513 ;
+            .
+        repi.ucs_iso:0x208D1
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x208D1 ] ;
+            .
 
 rep.cns11643-5:0x2234
     a chisegg:abstract-glyph ;
@@ -2127,9 +2141,17 @@ rep.cns11643-5:0x2234
     ideo:radical          20 ; # ⼓ 
     ideo:strokes           4 ;
     ideo:total-strokes     6 ;
+    isd:structure [ a idc:⿹ ;
+        isd:surround a.ucs:0x52F9 ; # 勹
+        isd:filling  a.ucs:0x5143   # 元
+    ] ;
+    :eq rep.ucs_cns:0x208D1       ; # &C5-2234;
     :subsume
         g2.cns11643-5:0x2234 ;
     .
+    rep.ucs_cns:0x208D1
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x208D1 ] .
     g2.cns11643-5:0x2234
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of cns11643-5:0x2234 ;
