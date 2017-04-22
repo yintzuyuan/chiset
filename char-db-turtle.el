@@ -135,6 +135,7 @@
     ===gt
     ===gt-k
     ===ucs@ks
+    ===ucs@gb
     =shinjigen
     =shinjigen@1ed
     =shinjigen/+p@rev
