@@ -226,7 +226,7 @@
 
 (defun chise-turtle-encode-char (object)
   (let ((ccs-list est-coded-charset-priority-list)
-	ccs ret)
+	ccs ret ret2)
     (if (setq ret (encode-char object '=ucs))
 	(chise-turtle-format-ccs-code-point '=ucs ret)
       (while (and ccs-list
@@ -238,6 +238,20 @@
 	    ((and (setq ccs (car (split-char object)))
 		  (setq ret (encode-char object ccs)))
 	     (chise-turtle-format-ccs-code-point ccs ret)
+	     )
+	    ((setq ret (get-char-attribute object 'ideographic-combination))
+	     (format "ideocomb:%s"
+		     (mapconcat (lambda (cell)
+				  (cond ((characterp cell)
+					 (char-to-string cell)
+					 )
+					((setq ret2 (find-char cell))
+					 (char-to-string ret2)
+					 )
+					(t
+					 (format "%S" cell)
+					 )))
+				ret ""))
 	     )
 	    (t
 	     (format (if est-hide-cgi-mode
@@ -553,7 +567,7 @@
 	(setq separator (format " ,%s" lbs)))
       (if (characterp cell)
 	  (insert (format "%-20s" (chise-turtle-encode-char cell)))
-	(char-db-turtle-insert-char-ref cell 'ideographic-combination))
+	(char-db-turtle-insert-char-ref cell '<-formed))
       (setq value (cdr value)))
     nil))
 
@@ -563,6 +577,7 @@
 	 )
 	((or (eq feature-name-base 'ideographic-combination)
 	     (eq feature-name-base '=decomposition)
+	     (eq feature-name-base '<-formed)
 	     (string-match "^\\(->\\|<-\\)[^*]*$" (symbol-name feature-name-base)))
 	 (char-db-turtle-insert-relations value readable)
 	 )
@@ -1158,6 +1173,7 @@
 @prefix chisegg: <http://rdf.chise.org/rdf/type/character/ggg/> .
 @prefix domain: <http://rdf.chise.org/data/domain/> .
 @prefix script: <http://rdf.chise.org/data/script/> .
+@prefix ideocomb: <http://rdf.chise.org/data/character/ideo/combination/> .
 @prefix chisebib: <http://rdf.chise.org/data/bibliography/> .
 @prefix ruimoku: <http://www.chise.org/est/view/article@ruimoku/rep.id=/> .
 @prefix zob1959: <http://chise.zinbun.kyoto-u.ac.jp/koukotsu/rubbings/> .
