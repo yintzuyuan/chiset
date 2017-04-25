@@ -27,6 +27,7 @@
 @prefix g.ucs_cns: <http://www.chise.org/est/view/character/g.ucs@cns=> .
 @prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
+@prefix g2.ucs_gb: <http://www.chise.org/est/view/character/g2.ucs@gb=> .
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
 @prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
 @prefix g2.ucs_jis...1990: <http://www.chise.org/est/view/character/g2.ucs@jis...1990=> .
@@ -176,7 +177,6 @@
 @prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
 @prefix rep.ucs-itaiji-003: <http://www.chise.org/est/view/character/rep.ucs-itaiji-003=> .
 @prefix rep.ucs-itaiji-004: <http://www.chise.org/est/view/character/rep.ucs-itaiji-004=> .
-@prefix g2.ucs-bmp-cjk_gb: <http://www.chise.org/est/view/character/g2.ucs-bmp-cjk@gb=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
 @prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
@@ -229,7 +229,6 @@
 @prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
 @prefix ucs-itaiji-004: <http://rdf.chise.org/data/ccs/ucs-itaiji-004/code-point/> .
-@prefix ucs-bmp-cjk: <http://rdf.chise.org/data/ccs/ucs-bmp-cjk/code-point/> .
 
 a.ucs:0x5F73
     a chisegg:abstract-character ;
@@ -5668,7 +5667,7 @@ rep.shinjigen:2333
     ideo:total-strokes    10 ;
     isd:structure [ a idc:⿰ ;
         isd:left     a.ucs:0x5F73 ; # 彳
-        isd:right    g2.ucs-bmp-cjk_gb:0x37B7   # &g2-GU+37B7;
+        isd:right    g2.ucs_gb:0x37B7   # &g2-GU+37B7;
     ] ;
     :from.original       [ :sources chisebib:shinjigen ;
                            :target  a.ucs:0x5F80         ] ;
@@ -6361,6 +6360,10 @@ a.ucs:0x38ED
     ideo:radical          60 ; # ⼻ 
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x5F73 ; # 彳
+        isd:right    a.ucs:0x3687   # 㚇
+    ] ;
     .
 
 rep.cns11643-4:0x3748
@@ -6371,11 +6374,19 @@ rep.cns11643-4:0x3748
     ideo:radical          60 ; # ⼻ 
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
-    :eq rep.daikanwa:10184        ; # &C4-3748;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x5F73 ; # 彳
+        isd:right    rep.cns11643-4:0x2861   # &C4-2861;
+    ] ;
+    :eq rep.ucs_cns:0x38ED        ; # &C4-3748;
+    :eq rep.daikanwa:10184        ; # &I-M-10184;
     :subsume
         g2.daikanwa:10184    ,
         g2.cns11643-4:0x3748 ;
     .
+    rep.ucs_cns:0x38ED
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x38ED  ] .
     rep.daikanwa:10184
                :abstract-glyph-of       daikanwa:10184   .
     g2.daikanwa:10184
@@ -6400,6 +6411,10 @@ rep.ucs_unicode:0x38ED
     ideo:radical          60 ; # ⼻ 
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x5F73 ; # 彳
+        isd:right    rep.hanyo-denshi...ks:065500   # &HD-KS-065500;
+    ] ;
     :subsume
         g2.ucs_unicode:0x38ED ;
     .
