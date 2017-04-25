@@ -54,6 +54,7 @@
     =ucs-itaiji-004
     =ucs-itaiji-005
     =ucs-itaiji-006
+    =ucs-itaiji-009
     =ucs-itaiji-084
     =ucs-var-001
     =ucs-var-002
@@ -68,6 +69,7 @@
     =ucs@JP/hanazono
     =gb12345
     =ucs@cns
+    =ucs@gb
     =zinbun-oracle =>zinbun-oracle
     =daikanwa
     =ruimoku-v6
@@ -112,6 +114,7 @@
     ==koseki
     ==daikanwa
     ==gt-k
+    ==ucs@gb
     ==ucs@JP/hanazono
     =>>jis-x0208 =>>jis-x0213-1 =>>jis-x0213-2
     =+>jis-x0208 =+>jis-x0213-1 =+>jis-x0213-2
@@ -142,6 +145,7 @@
     ==shinjigen
     ==shinjigen@rev
     ==daikanwa/+p
+    ==shinjigen@1ed
     ===daikanwa/+p
     =>daikanwa/ho
     ===daikanwa/ho
