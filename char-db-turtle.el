@@ -140,6 +140,7 @@
     ===ucs@ks
     ===ucs@gb
     =shinjigen
+    =shinjigen@rev
     =shinjigen@1ed
     =shinjigen/+p@rev
     ==shinjigen
@@ -957,7 +958,7 @@
 			  line-separator))
 	  (setq col (current-column))
 	  (insert (format ":context domain:%-7s ;\n%s:target  %S"
-			  domain
+			  (chise-turtle-uri-encode-ccs-name domain)
 			  (make-string col ?\ )
 			  value))
 	  (setq attributes (delq key attributes))
