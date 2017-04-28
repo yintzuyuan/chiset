@@ -92,6 +92,7 @@
     =>>ucs@iso =>>ucs@unicode
     =>>ucs@jis =>>ucs@cns =>>ucs@ks
     =>>gt-k
+    =>>hanyo-denshi/ks
     ==mj
     ==ucs@iso
     ==ucs@unicode
