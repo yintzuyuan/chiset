@@ -1,0 +1,3842 @@
+# -*- coding: utf-8-mcs-er -*-
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://rdf.chise.org/rdf/property/character/main/> .
+@prefix ideo: <http://rdf.chise.org/rdf/property/character/ideo/> .
+@prefix isd: <http://rdf.chise.org/rdf/property/character/isd/> .
+@prefix idc: <http://rdf.chise.org/rdf/type/character/idc/> .
+@prefix chisegg: <http://rdf.chise.org/rdf/type/character/ggg/> .
+@prefix domain: <http://rdf.chise.org/data/domain/> .
+@prefix script: <http://rdf.chise.org/data/script/> .
+@prefix ideocomb: <http://rdf.chise.org/data/character/ideo/combination/> .
+@prefix chisebib: <http://rdf.chise.org/data/bibliography/> .
+@prefix ruimoku: <http://www.chise.org/est/view/article@ruimoku/rep.id=/> .
+@prefix zob1959: <http://chise.zinbun.kyoto-u.ac.jp/koukotsu/rubbings/> .
+
+@prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
+@prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
+@prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
+@prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
+@prefix a.ucs_unicode: <http://www.chise.org/est/view/character/a.ucs@unicode=> .
+@prefix o.ucs_ks: <http://www.chise.org/est/view/character/o.ucs@ks=> .
+@prefix o.ucs_cns: <http://www.chise.org/est/view/character/o.ucs@cns=> .
+@prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
+@prefix rep.ucs_unicode: <http://www.chise.org/est/view/character/rep.ucs@unicode=> .
+@prefix rep.ucs_cns: <http://www.chise.org/est/view/character/rep.ucs@cns=> .
+@prefix rep.ucs_jis: <http://www.chise.org/est/view/character/rep.ucs@jis=> .
+@prefix rep.ucs_ks: <http://www.chise.org/est/view/character/rep.ucs@ks=> .
+@prefix rep.ucs_big5: <http://www.chise.org/est/view/character/rep.ucs@big5=> .
+@prefix g.ucs_iso: <http://www.chise.org/est/view/character/g.ucs@iso=> .
+@prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
+@prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
+@prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
+@prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
+@prefix g2.ucs_JP...hanazono: <http://www.chise.org/est/view/character/g2.ucs@JP...hanazono=> .
+@prefix g2.ucs_ks: <http://www.chise.org/est/view/character/g2.ucs@ks=> .
+@prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
+@prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
+@prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
+@prefix rep.mj: <http://www.chise.org/est/view/character/rep.mj=> .
+@prefix g2.mj: <http://www.chise.org/est/view/character/g2.mj=> .
+@prefix rep.adobe-japan1-0: <http://www.chise.org/est/view/character/rep.adobe-japan1-0=> .
+@prefix rep.adobe-japan1-4: <http://www.chise.org/est/view/character/rep.adobe-japan1-4=> .
+@prefix rep.adobe-japan1-5: <http://www.chise.org/est/view/character/rep.adobe-japan1-5=> .
+@prefix g2.adobe-japan1-0: <http://www.chise.org/est/view/character/g2.adobe-japan1-0=> .
+@prefix g2.adobe-japan1-5: <http://www.chise.org/est/view/character/g2.adobe-japan1-5=> .
+@prefix rep.jis-x0208: <http://www.chise.org/est/view/character/rep.jis-x0208=> .
+@prefix rep.gb2312: <http://www.chise.org/est/view/character/rep.gb2312=> .
+@prefix g2.gb2312: <http://www.chise.org/est/view/character/g2.gb2312=> .
+@prefix rep.ks-x1001: <http://www.chise.org/est/view/character/rep.ks-x1001=> .
+@prefix g2.ks-x1001: <http://www.chise.org/est/view/character/g2.ks-x1001=> .
+@prefix repi.ks-x1001: <http://www.chise.org/est/view/character/repi.ks-x1001=> .
+@prefix rep.jis-x0212: <http://www.chise.org/est/view/character/rep.jis-x0212=> .
+@prefix g2.jis-x0212: <http://www.chise.org/est/view/character/g2.jis-x0212=> .
+@prefix repi.jis-x0212: <http://www.chise.org/est/view/character/repi.jis-x0212=> .
+@prefix g2.jis-x0208: <http://www.chise.org/est/view/character/g2.jis-x0208=> .
+@prefix repi.jis-x0208: <http://www.chise.org/est/view/character/repi.jis-x0208=> .
+@prefix rep.cns11643-1: <http://www.chise.org/est/view/character/rep.cns11643-1=> .
+@prefix g2.cns11643-1: <http://www.chise.org/est/view/character/g2.cns11643-1=> .
+@prefix repi.cns11643-1: <http://www.chise.org/est/view/character/repi.cns11643-1=> .
+@prefix rep.cns11643-3: <http://www.chise.org/est/view/character/rep.cns11643-3=> .
+@prefix g2.cns11643-3: <http://www.chise.org/est/view/character/g2.cns11643-3=> .
+@prefix repi.cns11643-3: <http://www.chise.org/est/view/character/repi.cns11643-3=> .
+@prefix rep.cns11643-4: <http://www.chise.org/est/view/character/rep.cns11643-4=> .
+@prefix g2.cns11643-4: <http://www.chise.org/est/view/character/g2.cns11643-4=> .
+@prefix repi.cns11643-4: <http://www.chise.org/est/view/character/repi.cns11643-4=> .
+@prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
+@prefix g2.cns11643-5: <http://www.chise.org/est/view/character/g2.cns11643-5=> .
+@prefix repi.cns11643-5: <http://www.chise.org/est/view/character/repi.cns11643-5=> .
+@prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
+@prefix g2.cns11643-6: <http://www.chise.org/est/view/character/g2.cns11643-6=> .
+@prefix repi.cns11643-6: <http://www.chise.org/est/view/character/repi.cns11643-6=> .
+@prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
+@prefix g2.cns11643-7: <http://www.chise.org/est/view/character/g2.cns11643-7=> .
+@prefix rep.jis-x0213-1: <http://www.chise.org/est/view/character/rep.jis-x0213-1=> .
+@prefix g2.jis-x0213-1: <http://www.chise.org/est/view/character/g2.jis-x0213-1=> .
+@prefix repi.jis-x0213-1: <http://www.chise.org/est/view/character/repi.jis-x0213-1=> .
+@prefix rep.jis-x0213-2: <http://www.chise.org/est/view/character/rep.jis-x0213-2=> .
+@prefix g2.jis-x0213-2: <http://www.chise.org/est/view/character/g2.jis-x0213-2=> .
+@prefix repi.jis-x0213-2: <http://www.chise.org/est/view/character/repi.jis-x0213-2=> .
+@prefix rep.gb12345: <http://www.chise.org/est/view/character/rep.gb12345=> .
+@prefix a.big5: <http://www.chise.org/est/view/character/rep.big5=> .
+@prefix repi.adobe-japan1-0: <http://www.chise.org/est/view/character/repi.adobe-japan1-0=> .
+@prefix repi.adobe-japan1-5: <http://www.chise.org/est/view/character/repi.adobe-japan1-5=> .
+@prefix repi.adobe-japan1-6: <http://www.chise.org/est/view/character/repi.adobe-japan1-6=> .
+@prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
+@prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
+@prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
+@prefix a.big5-cdp: <http://www.chise.org/est/view/character/a.big5-cdp=> .
+@prefix a.mj: <http://www.chise.org/est/view/character/a.mj=> .
+@prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
+@prefix rep.hanyo-denshi...jt: <http://www.chise.org/est/view/character/rep.hanyo-denshi...jt=> .
+@prefix rep.hanyo-denshi...ks: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ks=> .
+@prefix g2.hanyo-denshi...ja: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ja=> .
+@prefix g2.hanyo-denshi...jt: <http://www.chise.org/est/view/character/g2.hanyo-denshi...jt=> .
+@prefix g2.hanyo-denshi...ks: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ks=> .
+@prefix repi.hanyo-denshi...ks: <http://www.chise.org/est/view/character/repi.hanyo-denshi...ks=> .
+@prefix rep.hanyo-denshi...ks...mf: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ks...mf=> .
+@prefix repi.mj: <http://www.chise.org/est/view/character/repi.mj=> .
+@prefix rep.gt: <http://www.chise.org/est/view/character/rep.gt=> .
+@prefix g2.gt: <http://www.chise.org/est/view/character/g2.gt=> .
+@prefix repi.gt: <http://www.chise.org/est/view/character/repi.gt=> .
+@prefix rep.gt-k: <http://www.chise.org/est/view/character/rep.gt-k=> .
+@prefix g2.gt-k: <http://www.chise.org/est/view/character/g2.gt-k=> .
+@prefix repi.gt-k: <http://www.chise.org/est/view/character/repi.gt-k=> .
+@prefix a.gt-k: <http://www.chise.org/est/view/character/a.gt-k=> .
+@prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
+@prefix rep.gt-pj-4: <http://www.chise.org/est/view/character/rep.gt-pj-4=> .
+@prefix rep.gt-pj-9: <http://www.chise.org/est/view/character/rep.gt-pj-9=> .
+@prefix rep.gt-pj-k1: <http://www.chise.org/est/view/character/rep.gt-pj-k1=> .
+@prefix g2.gt-pj-k1: <http://www.chise.org/est/view/character/g2.gt-pj-k1=> .
+@prefix rep.gt-pj-k2: <http://www.chise.org/est/view/character/rep.gt-pj-k2=> .
+@prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
+@prefix rep.daikanwa...._.p: <http://www.chise.org/est/view/character/rep.daikanwa...+p=> .
+@prefix g2.daikanwa: <http://www.chise.org/est/view/character/g2.daikanwa=> .
+@prefix g2.daikanwa...._.p: <http://www.chise.org/est/view/character/g2.daikanwa...+p=> .
+@prefix repi.daikanwa: <http://www.chise.org/est/view/character/repi.daikanwa=> .
+@prefix repi.daikanwa...._.p: <http://www.chise.org/est/view/character/repi.daikanwa...+p=> .
+@prefix a.daikanwa: <http://www.chise.org/est/view/character/a.daikanwa=> .
+@prefix rep.shinjigen: <http://www.chise.org/est/view/character/rep.shinjigen=> .
+@prefix g2.shinjigen: <http://www.chise.org/est/view/character/g2.shinjigen=> .
+@prefix rep.hanziku-5: <http://www.chise.org/est/view/character/rep.hanziku-5=> .
+@prefix repi.hng-kar: <http://www.chise.org/est/view/character/repi.hng-kar=> .
+@prefix rep.cbeta: <http://www.chise.org/est/view/character/rep.cbeta=> .
+@prefix g2.cbeta: <http://www.chise.org/est/view/character/g2.cbeta=> .
+@prefix repi.cbeta: <http://www.chise.org/est/view/character/repi.cbeta=> .
+@prefix rep.jef-china3: <http://www.chise.org/est/view/character/rep.jef-china3=> .
+@prefix rep.ruimoku-v6: <http://www.chise.org/est/view/character/rep.ruimoku-v6=> .
+@prefix g2.ruimoku-v6: <http://www.chise.org/est/view/character/g2.ruimoku-v6=> .
+@prefix a.iwds-1: <http://www.chise.org/est/view/character/a.iwds-1=> .
+@prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
+@prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
+@prefix a.ucs-itaiji-001: <http://www.chise.org/est/view/character/a.ucs-itaiji-001=> .
+@prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
+@prefix a.ucs-itaiji-002: <http://www.chise.org/est/view/character/a.ucs-itaiji-002=> .
+@prefix rep.ucs-itaiji-005: <http://www.chise.org/est/view/character/rep.ucs-itaiji-005=> .
+@prefix a.ucs-itaiji-005: <http://www.chise.org/est/view/character/a.ucs-itaiji-005=> .
+@prefix rep.ucs-itaiji-006: <http://www.chise.org/est/view/character/rep.ucs-itaiji-006=> .
+@prefix a.ucs-itaiji-006: <http://www.chise.org/est/view/character/a.ucs-itaiji-006=> .
+@prefix a.ucs-bmp-itaiji-006: <http://www.chise.org/est/view/character/a.ucs-bmp-itaiji-006=> .
+
+@prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
+@prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
+@prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
+@prefix adobe-japan1-4: <http://rdf.chise.org/data/ccs/adobe-japan1-4/code-point/> .
+@prefix adobe-japan1-5: <http://rdf.chise.org/data/ccs/adobe-japan1-5/code-point/> .
+@prefix jis-x0208: <http://rdf.chise.org/data/ccs/jis-x0208/code-point/> .
+@prefix gb2312: <http://rdf.chise.org/data/ccs/gb2312/code-point/> .
+@prefix ks-x1001: <http://rdf.chise.org/data/ccs/ks-x1001/code-point/> .
+@prefix jis-x0212: <http://rdf.chise.org/data/ccs/jis-x0212/code-point/> .
+@prefix cns11643-1: <http://rdf.chise.org/data/ccs/cns11643-1/code-point/> .
+@prefix cns11643-3: <http://rdf.chise.org/data/ccs/cns11643-3/code-point/> .
+@prefix cns11643-4: <http://rdf.chise.org/data/ccs/cns11643-4/code-point/> .
+@prefix cns11643-5: <http://rdf.chise.org/data/ccs/cns11643-5/code-point/> .
+@prefix cns11643-6: <http://rdf.chise.org/data/ccs/cns11643-6/code-point/> .
+@prefix cns11643-7: <http://rdf.chise.org/data/ccs/cns11643-7/code-point/> .
+@prefix jis-x0213-1: <http://rdf.chise.org/data/ccs/jis-x0213-1/code-point/> .
+@prefix jis-x0213-2: <http://rdf.chise.org/data/ccs/jis-x0213-2/code-point/> .
+@prefix gb12345: <http://rdf.chise.org/data/ccs/gb12345/code-point/> .
+@prefix big5: <http://rdf.chise.org/data/ccs/big5/code-point/> .
+@prefix adobe-japan1-6: <http://rdf.chise.org/data/ccs/adobe-japan1-6/code-point/> .
+@prefix big5-cdp: <http://rdf.chise.org/data/ccs/big5-cdp/code-point/> .
+@prefix hanyo-denshi...ja: <http://rdf.chise.org/data/ccs/hanyo-denshi...ja/code-point/> .
+@prefix hanyo-denshi...jt: <http://rdf.chise.org/data/ccs/hanyo-denshi...jt/code-point/> .
+@prefix hanyo-denshi...ks: <http://rdf.chise.org/data/ccs/hanyo-denshi...ks/code-point/> .
+@prefix hanyo-denshi...ks...mf: <http://rdf.chise.org/data/ccs/hanyo-denshi...ks...mf/code-point/> .
+@prefix gt: <http://rdf.chise.org/data/ccs/gt/code-point/> .
+@prefix gt-k: <http://rdf.chise.org/data/ccs/gt-k/code-point/> .
+@prefix gt-pj-1: <http://rdf.chise.org/data/ccs/gt-pj-1/code-point/> .
+@prefix gt-pj-4: <http://rdf.chise.org/data/ccs/gt-pj-4/code-point/> .
+@prefix gt-pj-9: <http://rdf.chise.org/data/ccs/gt-pj-9/code-point/> .
+@prefix gt-pj-k1: <http://rdf.chise.org/data/ccs/gt-pj-k1/code-point/> .
+@prefix gt-pj-k2: <http://rdf.chise.org/data/ccs/gt-pj-k2/code-point/> .
+@prefix daikanwa: <http://rdf.chise.org/data/ccs/daikanwa/code-point/> .
+@prefix daikanwa...._.p: <http://rdf.chise.org/data/ccs/daikanwa...+p/code-point/> .
+@prefix shinjigen: <http://rdf.chise.org/data/ccs/shinjigen/code-point/> .
+@prefix hanziku-5: <http://rdf.chise.org/data/ccs/hanziku-5/code-point/> .
+@prefix hng-kar: <http://rdf.chise.org/data/ccs/hng-kar/code-point/> .
+@prefix cbeta: <http://rdf.chise.org/data/ccs/cbeta/code-point/> .
+@prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
+@prefix ruimoku-v6: <http://rdf.chise.org/data/ccs/ruimoku-v6/code-point/> .
+@prefix iwds-1: <http://rdf.chise.org/data/ccs/iwds-1/code-point/> .
+@prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
+@prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
+@prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
+@prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
+@prefix ucs-itaiji-006: <http://rdf.chise.org/data/ccs/ucs-itaiji-006/code-point/> .
+@prefix ucs-bmp-itaiji-006: <http://rdf.chise.org/data/ccs/ucs-bmp-itaiji-006/code-point/> .
+
+a.ucs:0x722A
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722A ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     4 ;
+    :eq rep.adobe-japan1-0:03066  ; # &I-AJ1-03066;
+    :eq rep.jis-x0208:0x445E      ; # &I-J90-445E;
+    :eq rep.gb2312:0x5726         ; # &I-G0-5726;
+    :eq rep.ks-x1001:0x7050       ; # &I-K0-7050;
+    :eq rep.cns11643-1:0x4557     ; # &I-C1-4557;
+    :eq rep.jis-x0213-1:0x445E    ; # &I-JX1-445E;
+    :eq a.big5:0xA4F6             ; # &I-B-A4F6;
+    :eq rep.gt:25224              ; # &I-GT-25224;
+    :eq rep.gt-k:00466            ; # &I-GT-K00466;
+    :eq rep.gt-pj-1:17502         ; # &I-GT-25224;
+    :eq rep.daikanwa:19653        ; # &I-M-19653;
+    :eq rep.shinjigen:4696        ; # 爪
+    .
+    rep.adobe-japan1-0:03066
+               :abstract-glyph-of adobe-japan1-0:03066   .
+    rep.jis-x0208:0x445E
+               :abstract-glyph-of      jis-x0208:0x445E  .
+    rep.gb2312:0x5726
+               :abstract-glyph-of         gb2312:0x5726  .
+    rep.ks-x1001:0x7050
+               :abstract-glyph-of       ks-x1001:0x7050  .
+    rep.cns11643-1:0x4557
+               :abstract-glyph-of     cns11643-1:0x4557  .
+    rep.jis-x0213-1:0x445E
+               :abstract-glyph-of    jis-x0213-1:0x445E  .
+    a.big5:0xA4F6
+           :abstract-character-of           big5:0xA4F6  .
+    rep.gt:25224
+               :abstract-glyph-of             gt:25224   .
+    rep.gt-k:00466
+               :abstract-glyph-of           gt-k:00466   .
+    rep.gt-pj-1:17502
+               :abstract-glyph-of        gt-pj-1:17502   .
+    rep.daikanwa:19653
+               :abstract-glyph-of       daikanwa:19653   .
+    rep.shinjigen:4696
+               :abstract-glyph-of      shinjigen:4696    .
+
+a.ucs:0x244EF
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244EF ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     4 ;
+    :subsume
+        rep.daikanwa:19654   ,
+        rep.ucs_iso:0x244EF  ,
+        rep.cns11643-5:0x214B ;
+    .
+    rep.daikanwa:19654
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19654 ;
+        .
+    rep.ucs_iso:0x244EF
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x244EF ] ;
+        .
+    rep.cns11643-5:0x214B
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of cns11643-5:0x214B ;
+        .
+
+a.ucs:0x722B
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722B ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     4 ;
+    :form-of             [ :context domain:component...connect-below ;
+                           :target  a.ucs:0x722A         ] ;
+    .
+
+rep.jis-x0213-2:0x702A
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of jis-x0213-2:0x702A ;
+    :denotation-of
+        a.ucs:0x722B         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     4 ;
+    :eq rep.ucs_cns:0x722B        ; # &GT-25225;
+    :eq rep.ucs_jis:0x722B        ; # &GT-25225;
+    :eq rep.jis-x0212:0x4A48      ; # &GT-25225;
+    :eq rep.cns11643-4:0x2151     ; # &I-C4-2151;
+    :eq rep.gt:25225              ; # &I-GT-25225;
+    :eq rep.gt-k:00567            ; # &I-GT-K00567;
+    :eq rep.gt-pj-4:25136         ; # &I-GT-25225;
+    :eq rep.daikanwa:19655        ; # &I-M-19655;
+    :subsume
+        g2.ucs_jis:0x722B    ,
+        g2.cns11643-4:0x2151 ;
+    .
+    rep.ucs_cns:0x722B
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x722B  ] .
+    rep.ucs_jis:0x722B
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0x722B  ] .
+    rep.jis-x0212:0x4A48
+               :abstract-glyph-of      jis-x0212:0x4A48  .
+    rep.cns11643-4:0x2151
+               :abstract-glyph-of     cns11643-4:0x2151  .
+    rep.gt:25225
+               :abstract-glyph-of             gt:25225   .
+    rep.gt-k:00567
+               :abstract-glyph-of           gt-k:00567   .
+    rep.gt-pj-4:25136
+               :abstract-glyph-of        gt-pj-4:25136   .
+    rep.daikanwa:19655
+               :abstract-glyph-of       daikanwa:19655   .
+    g2.ucs_jis:0x722B
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:jis     ;
+                                  :target     ucs:0x722B  ] ;
+        :eq g2.jis-x0212:0x4A48       ; # &g2-GT-25225;
+        :eq g2.jis-x0213-2:0x702A     ; # &g2-GT-25225;
+        :eq g2.gt:25225               ; # &g2-GT-25225;
+        :eq g2.gt-k:00567             ; # &g2-GT-25225;
+        :eq g2.daikanwa:19655         ; # &g2-GT-25225;
+        :subsume
+            repi.daikanwa:19655  ,
+            repi.jis-x0213-2:0x702A ,
+            repi.gt:25225        ;
+        .
+        g2.jis-x0212:0x4A48
+              :abstract-glyph-form-of      jis-x0212:0x4A48  .
+        g2.jis-x0213-2:0x702A
+              :abstract-glyph-form-of    jis-x0213-2:0x702A  .
+        g2.gt:25225
+              :abstract-glyph-form-of             gt:25225   .
+        g2.gt-k:00567
+              :abstract-glyph-form-of           gt-k:00567   .
+        g2.daikanwa:19655
+              :abstract-glyph-form-of       daikanwa:19655   .
+        repi.daikanwa:19655
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19655 ;
+            .
+        repi.jis-x0212:0x4A48
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0212:0x4A48 ;
+            :eq repi.jis-x0213-2:0x702A   ; # &R-JX2-702A;
+            .
+            repi.jis-x0213-2:0x702A
+                          :glyph-image-of    jis-x0213-2:0x702A  .
+        repi.gt:25225
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25225 ;
+            :eq repi.gt-k:00567           ; # &R-GT-25225;
+            .
+            repi.gt-k:00567
+                          :glyph-image-of           gt-k:00567   .
+    g2.cns11643-4:0x2151
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-4:0x2151 ;
+        :eq g2.ucs_cns:0x722B         ; # &g2-CU+722B;
+        .
+        g2.ucs_cns:0x722B
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x722B  ] .
+
+a.ucs:0x2EA5
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2EA5 ;
+    :denotation-of
+        a.ucs:0x722B         ;
+    :name                 "CJK RADICAL PAW TWO" ;
+    :general-category     "(symbol other)" ; # Informative Category
+    :bidi-category        "ON" ;
+    :mirrored             "nil" ;
+    :from.identical      [ :context domain:component...connect-below ;
+                           :target  a.ucs:0x722A         ] ;
+    .
+
+a.ucs:0xFA49
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0xFA49 ;
+    :denotation-of
+        a.ucs:0x722B         ;
+    :name                 "CJK COMPATIBILITY IDEOGRAPH-FA49" ;
+    :to.canonical-ucs	a.ucs:0x722B ; # 爫
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     4 ;
+    :eq rep.ucs_unicode:0x722B    ; # 爫
+    :eq rep.ucs_jis:0xFA49        ; # 爫
+    :eq rep.jis-x0213-2:0x7029    ; # &I-JX2-7029;
+    :eq rep.big5-cdp:0x8B58       ; # &I-CDP-8B58;
+    :from.simplified     [ :context domain:component ;
+                           :target  rep.jis-x0213-2:0x702A ] ;
+    :to.canonical        a.ucs:0x722B         ;
+    .
+    rep.ucs_unicode:0x722B
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x722B  ] .
+    rep.ucs_jis:0xFA49
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0xFA49  ] .
+    rep.jis-x0213-2:0x7029
+               :abstract-glyph-of    jis-x0213-2:0x7029  .
+    rep.big5-cdp:0x8B58
+               :abstract-glyph-of       big5-cdp:0x8B58  .
+
+a.ucs:0x2EA4
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2EA4 ;
+    :denotation-of
+        a.ucs:0xFA49         ;
+    :name                 "CJK RADICAL PAW ONE" ;
+    :general-category     "(symbol other)" ; # Informative Category
+    :bidi-category        "ON" ;
+    :mirrored             "nil" ;
+    :from.identical      [ :context domain:component...connect-below ;
+                           :target  a.ucs:0xFA49         ] ;
+    .
+
+a.iwds-1:0082
+    a chisegg:abstract-character ;
+    :abstract-character-of iwds-1:0082 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     3 ;
+    :eq a.big5-cdp:0x8DC1         ; # &IWDS1-082;
+    :form-of             [ :context domain:component ;
+                           :target  a.ucs:0x722A         ] ;
+    .
+    a.big5-cdp:0x8DC1
+           :abstract-character-of       big5-cdp:0x8DC1  .
+
+rep.big5-cdp:0x89E3
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of big5-cdp:0x89E3 ;
+    :denotation-of
+        a.iwds-1:0082        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     3 ;
+    :eq rep.gt-k:00278            ; # &I-GT-K00278;
+    :eq rep.gt-pj-k1:13683        ; # &CDP-89E3;
+    .
+    rep.gt-k:00278
+               :abstract-glyph-of           gt-k:00278   .
+    rep.gt-pj-k1:13683
+               :abstract-glyph-of       gt-pj-k1:13683   .
+
+rep.big5-cdp:0x8DC1
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of big5-cdp:0x8DC1 ;
+    :denotation-of
+        a.iwds-1:0082        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     3 ;
+    .
+
+a.ucs:0x244F1
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F1 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           1 ;
+    ideo:total-strokes     5 ;
+    :eq rep.cns11643-6:0x2330     ; # &I-C6-2330;
+    :eq rep.daikanwa:19656        ; # &I-M-19656;
+    .
+    rep.cns11643-6:0x2330
+               :abstract-glyph-of     cns11643-6:0x2330  .
+    rep.daikanwa:19656
+               :abstract-glyph-of       daikanwa:19656   .
+
+a.ucs:0x244F2
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F2 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    .
+
+rep.cns11643-6:0x284D
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-6:0x284D ;
+    :denotation-of
+        a.ucs:0x244F2        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    :eq rep.daikanwa:19657        ; # &C6-284D;
+    :subsume
+        g2.daikanwa:19657    ,
+        g2.cns11643-6:0x284D ;
+    .
+    rep.daikanwa:19657
+               :abstract-glyph-of       daikanwa:19657   .
+    g2.daikanwa:19657
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:19657 ;
+        .
+    g2.cns11643-6:0x284D
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-6:0x284D ;
+        :eq g2.ucs_cns:0x244F2        ; # &g2-CU+244F2;
+        .
+        g2.ucs_cns:0x244F2
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x244F2 ] .
+
+rep.ucs_iso:0x244F2
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244F2 ] ;
+    :denotation-of
+        a.ucs:0x244F2        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    :subsume
+        g2.ucs_iso:0x244F2   ;
+    .
+    g2.ucs_iso:0x244F2
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x244F2 ] ;
+        .
+
+a.ucs:0x244F3
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F3 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    .
+
+rep.daikanwa:19658
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19658 ;
+    :denotation-of
+        a.ucs:0x244F3        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    .
+
+rep.ucs_iso:0x244F3
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244F3 ] ;
+    :denotation-of
+        a.ucs:0x244F3        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    :eq rep.cns11643-6:0x284E     ; # &C6-284E;
+    .
+    rep.cns11643-6:0x284E
+               :abstract-glyph-of     cns11643-6:0x284E  .
+
+a.ucs:0x244F5
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F5 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    :eq rep.daikanwa:19659        ; # &I-M-19659;
+    .
+    rep.daikanwa:19659
+               :abstract-glyph-of       daikanwa:19659   .
+
+a.ucs:0x244F4
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F4 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    .
+
+rep.daikanwa:19660
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19660 ;
+    :denotation-of
+        a.ucs:0x244F4        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    .
+
+rep.ucs_iso:0x244F4
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244F4 ] ;
+    :denotation-of
+        a.ucs:0x244F4        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    :eq rep.cns11643-5:0x2458     ; # &C5-2458;
+    .
+    rep.cns11643-5:0x2458
+               :abstract-glyph-of     cns11643-5:0x2458  .
+
+a.gt-k:03307
+    a chisegg:abstract-character ;
+    :abstract-character-of gt-k:03307 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x5E7A   # 幺
+    ] ;
+    :eq a.big5-cdp:0x8CC5         ; # &A-GT-K03307;
+    .
+    a.big5-cdp:0x8CC5
+           :abstract-character-of       big5-cdp:0x8CC5  .
+
+rep.gt-k:03307
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt-k:03307 ;
+    :denotation-of
+        a.gt-k:03307         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x5E7A   # 幺
+    ] ;
+    :eq rep.gt-pj-k1:12401        ; # &GT-K03307;
+    .
+    rep.gt-pj-k1:12401
+               :abstract-glyph-of       gt-pj-k1:12401   .
+
+rep.big5-cdp:0x8CC5
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of big5-cdp:0x8CC5 ;
+    :denotation-of
+        a.gt-k:03307         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     7 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x5E7A   # 幺
+    ] ;
+    .
+
+a.ucs:0x244F6
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F6 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+rep.daikanwa:19661
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19661 ;
+    :denotation-of
+        a.ucs:0x244F6        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+rep.ucs_iso:0x244F6
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244F6 ] ;
+    :denotation-of
+        a.ucs:0x244F6        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+rep.cns11643-6:0x2C62
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-6:0x2C62 ;
+    :denotation-of
+        a.ucs:0x244F6        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+a.ucs:0x722C
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722C ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq rep.adobe-japan1-0:05601  ; # &I-AJ1-05601;
+    :eq rep.jis-x0208:0x6028      ; # &I-J90-6028;
+    :eq rep.gb2312:0x4540         ; # &I-G0-4540;
+    :eq rep.ks-x1001:0x7770       ; # &I-K0-7770;
+    :eq rep.cns11643-1:0x4E67     ; # &I-C1-4E67;
+    :eq rep.jis-x0213-1:0x6028    ; # &I-JX1-6028;
+    :eq a.big5:0xAAA6             ; # &I-B-AAA6;
+    :eq rep.gt:25241              ; # &I-GT-25241;
+    :eq rep.gt-pj-1:24616         ; # &I-GT-25241;
+    :eq rep.daikanwa:19662        ; # &I-M-19662;
+    :eq rep.shinjigen:4700        ; # 爬
+    .
+    rep.adobe-japan1-0:05601
+               :abstract-glyph-of adobe-japan1-0:05601   .
+    rep.jis-x0208:0x6028
+               :abstract-glyph-of      jis-x0208:0x6028  .
+    rep.gb2312:0x4540
+               :abstract-glyph-of         gb2312:0x4540  .
+    rep.ks-x1001:0x7770
+               :abstract-glyph-of       ks-x1001:0x7770  .
+    rep.cns11643-1:0x4E67
+               :abstract-glyph-of     cns11643-1:0x4E67  .
+    rep.jis-x0213-1:0x6028
+               :abstract-glyph-of    jis-x0213-1:0x6028  .
+    a.big5:0xAAA6
+           :abstract-character-of           big5:0xAAA6  .
+    rep.gt:25241
+               :abstract-glyph-of             gt:25241   .
+    rep.gt-pj-1:24616
+               :abstract-glyph-of        gt-pj-1:24616   .
+    rep.daikanwa:19662
+               :abstract-glyph-of       daikanwa:19662   .
+    rep.shinjigen:4700
+               :abstract-glyph-of      shinjigen:4700    .
+
+bucs:0x722D
+    a chisegg:super-abstract-character ;
+    :super-abstract-character-of [ :context domain:bucs    ;
+                                   :target     ucs:0x722D  ] ;
+    ideo:radical          87 ; # ⽖ 
+    .
+
+a.ucs_component:0x722D
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:component ;
+                             :target     ucs:0x722D  ] ;
+    :denotation-of
+        bucs:0x722D          ;
+    ideo:radical          87 ; # ⽖ 
+    :eq a.iwds-1:0314             ; # &IWDS1-314;
+    .
+    a.iwds-1:0314
+           :abstract-character-of         iwds-1:0314    .
+
+a.ucs:0x722D
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722D ;
+    :denotation-of
+        a.ucs_component:0x722D ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq a.big5:0xAAA7             ; # &I-B-AAA7;
+    .
+    a.big5:0xAAA7
+           :abstract-character-of           big5:0xAAA7  .
+
+rep.adobe-japan1-0:05600
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of adobe-japan1-0:05600 ;
+    :denotation-of
+        a.ucs:0x722D         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq rep.ucs_jis:0x722D        ; # &AJ1-05600;
+    :eq rep.ucs_ks:0x722D         ; # &AJ1-05600;
+    :eq rep.jis-x0208:0x6027      ; # &I-J90-6027;
+    :eq rep.ks-x1001:0x6E33       ; # &I-K0-6E33;
+    :eq rep.jis-x0213-1:0x6027    ; # &I-JX1-6027;
+    :eq rep.gt:25238              ; # &I-GT-25238;
+    :eq rep.gt-k:03900            ; # &I-GT-K03900;
+    :eq rep.gt-pj-1:24615         ; # &I-GT-25238;
+    :eq rep.daikanwa:19663        ; # &I-M-19663;
+    :eq rep.shinjigen:4699        ; # &AJ1-05600;
+    :subsume
+        g2.adobe-japan1-0:05600 ,
+        repi.hng-kar:10580   ;
+    .
+    rep.ucs_jis:0x722D
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0x722D  ] .
+    rep.ucs_ks:0x722D
+               :abstract-glyph-of [ :context domain:ks      ;
+                                    :target     ucs:0x722D  ] .
+    rep.jis-x0208:0x6027
+               :abstract-glyph-of      jis-x0208:0x6027  .
+    rep.ks-x1001:0x6E33
+               :abstract-glyph-of       ks-x1001:0x6E33  .
+    rep.jis-x0213-1:0x6027
+               :abstract-glyph-of    jis-x0213-1:0x6027  .
+    rep.gt:25238
+               :abstract-glyph-of             gt:25238   .
+    rep.gt-k:03900
+               :abstract-glyph-of           gt-k:03900   .
+    rep.gt-pj-1:24615
+               :abstract-glyph-of        gt-pj-1:24615   .
+    rep.daikanwa:19663
+               :abstract-glyph-of       daikanwa:19663   .
+    rep.shinjigen:4699
+               :abstract-glyph-of      shinjigen:4699    .
+    g2.adobe-japan1-0:05600
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of adobe-japan1-0:05600 ;
+        :eq g2.ucs_jis:0x722D         ; # &g2-AJ1-05600;
+        :eq g2.ucs_ks:0x722D          ; # &g2-AJ1-05600;
+        :eq g2.ks-x1001:0x6E33        ; # &g2-AJ1-05600;
+        :eq g2.jis-x0208:0x6027       ; # &g2-AJ1-05600;
+        :eq g2.jis-x0213-1:0x6027     ; # &g2-AJ1-05600;
+        :eq g2.gt:25238               ; # &g2-AJ1-05600;
+        :eq g2.gt-k:03900             ; # &g2-AJ1-05600;
+        :eq g2.daikanwa:19663         ; # &g2-AJ1-05600;
+        :eq g2.shinjigen:4699         ; # &g2-AJ1-05600;
+        :subsume
+            repi.daikanwa:19663  ,
+            repi.jis-x0208:0x6027 ,
+            repi.adobe-japan1-6:05600 ,
+            repi.gt:25238        ,
+            repi.ks-x1001:0x6E33 ;
+        .
+        g2.ucs_jis:0x722D
+              :abstract-glyph-form-of [ :context domain:jis     ;
+                                        :target     ucs:0x722D  ] .
+        g2.ucs_ks:0x722D
+              :abstract-glyph-form-of [ :context domain:ks      ;
+                                        :target     ucs:0x722D  ] .
+        g2.ks-x1001:0x6E33
+              :abstract-glyph-form-of       ks-x1001:0x6E33  .
+        g2.jis-x0208:0x6027
+              :abstract-glyph-form-of      jis-x0208:0x6027  .
+        g2.jis-x0213-1:0x6027
+              :abstract-glyph-form-of    jis-x0213-1:0x6027  .
+        g2.gt:25238
+              :abstract-glyph-form-of             gt:25238   .
+        g2.gt-k:03900
+              :abstract-glyph-form-of           gt-k:03900   .
+        g2.daikanwa:19663
+              :abstract-glyph-form-of       daikanwa:19663   .
+        g2.shinjigen:4699
+              :abstract-glyph-form-of      shinjigen:4699    .
+        repi.daikanwa:19663
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19663 ;
+            .
+        repi.jis-x0208:0x6027
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0208:0x6027 ;
+            :eq repi.jis-x0213-1:0x6027   ; # &R-J0-6027;
+            .
+            repi.jis-x0213-1:0x6027
+                          :glyph-image-of    jis-x0213-1:0x6027  .
+        repi.adobe-japan1-0:05600
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-0:05600 ;
+            .
+        repi.gt:25238
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25238 ;
+            :eq repi.gt-k:03900           ; # &R-GT-25238;
+            .
+            repi.gt-k:03900
+                          :glyph-image-of           gt-k:03900   .
+        repi.ks-x1001:0x6E33
+            a chisegg:glyph-image ;
+            :glyph-image-of ks-x1001:0x6E33 ;
+            :eq repi.ucs_ks:0x722D        ; # &R-K0-6E33;
+            .
+            repi.ucs_ks:0x722D
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x722D  ] .
+    repi.hng-kar:10580
+        a chisegg:glyph-image ;
+        :glyph-image-of hng-kar:10580 ;
+        .
+
+rep.cns11643-1:0x4E68
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-1:0x4E68 ;
+    :denotation-of
+        a.ucs:0x722D         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq rep.ucs_unicode:0x722D    ; # &C1-4E68;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :eq rep.gb12345:0x5579        ; # &C1-4E68;
+    :subsume
+        g2.ucs_unicode:0x722D ;
+    .
+    rep.ucs_unicode:0x722D
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x722D  ] .
+    rep.gb12345:0x5579
+               :abstract-glyph-of        gb12345:0x5579  .
+    g2.ucs_unicode:0x722D
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x722D  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.cns11643-1:0x4E68      ; # &g2-UU+722D;
+        :eq g2.gb12345:0x5579         ; # &g2-UU+722D;
+        :subsume
+            repi.cns11643-1:0x4E68 ,
+            repi.ucs_unicode:0x722D ;
+        .
+        g2.cns11643-1:0x4E68
+              :abstract-glyph-form-of     cns11643-1:0x4E68  .
+        g2.gb12345:0x5579
+              :abstract-glyph-form-of        gb12345:0x5579  .
+        repi.cns11643-1:0x4E68
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-1:0x4E68 ;
+            .
+        repi.ucs_unicode:0x722D
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x722D  ] ;
+            .
+
+a.ucs:0x3E12
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x3E12 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs_component:0x58EC   # &IWDS1-001;
+    ] ;
+    .
+
+rep.daikanwa:19664
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19664 ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x2123C   # 𡈼
+    ] ;
+    .
+
+rep.big5-cdp:0x8AC0
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of big5-cdp:0x8AC0 ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x2123C   # 𡈼
+    ] ;
+    .
+
+rep.hanziku-5:0xF7E7
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of hanziku-5:0xF7E7 ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    rep.adobe-japan1-0:02583   # &AJ1-02583;
+    ] ;
+    .
+
+rep.ucs_unicode:0x3E12
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:unicode ;
+                         :target     ucs:0x3E12  ] ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    rep.adobe-japan1-0:02583   # &AJ1-02583;
+    ] ;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :subsume
+        g2.ucs_unicode:0x3E12 ;
+    .
+    g2.ucs_unicode:0x3E12
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x3E12  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        .
+
+rep.cns11643-4:0x272C
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-4:0x272C ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    rep.cns11643-1:0x4531   # &C1-4531;
+    ] ;
+    :subsume
+        g2.cns11643-4:0x272C ;
+    .
+    g2.cns11643-4:0x272C
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-4:0x272C ;
+        :eq g2.ucs_cns:0x3E12         ; # &g2-CU+3E12;
+        .
+        g2.ucs_cns:0x3E12
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x3E12  ] .
+
+a.ucs:0x244F7
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F7 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :subsume
+        rep.daikanwa:19665   ,
+        rep.cns11643-6:0x2C61 ,
+        rep.ucs_iso:0x244F7  ;
+    .
+    rep.daikanwa:19665
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19665 ;
+        .
+    rep.cns11643-6:0x2C61
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of cns11643-6:0x2C61 ;
+        .
+    rep.ucs_iso:0x244F7
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x244F7 ] ;
+        .
+
+a.ucs:0x244F8
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244F8 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+rep.daikanwa:19666
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19666 ;
+    :denotation-of
+        a.ucs:0x244F8        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    .
+
+rep.ucs_iso:0x244F8
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244F8 ] ;
+    :denotation-of
+        a.ucs:0x244F8        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq rep.cns11643-6:0x2C63     ; # &C6-2C63;
+    .
+    rep.cns11643-6:0x2C63
+               :abstract-glyph-of     cns11643-6:0x2C63  .
+
+a.ucs:0x3E13
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x3E13 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    :eq rep.cns11643-3:0x297A     ; # &I-C3-297A;
+    .
+    rep.cns11643-3:0x297A
+               :abstract-glyph-of     cns11643-3:0x297A  .
+
+a.ucs:0x244FD
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244FD ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x21940   # 𡥀
+    ] ;
+    .
+
+rep.daikanwa:19667
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19667 ;
+    :denotation-of
+        a.ucs:0x244FD        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x21940   # 𡥀
+    ] ;
+    :from.ancient        [ :sources chisebib:zhengzitong ,
+                                    chisebib:daikanwa ;
+                           :target  rep.mj:010060        ] ;
+    :to.mistakable       [ :sources chisebib:zihui-biansi-2char ,
+                                    chisebib:daikanwa ;
+                           :target  rep.daikanwa:19681   ] ;
+    :subsume
+        g2.daikanwa:19667    ,
+        rep.hanziku-5:0xF8A7 ;
+    .
+    g2.daikanwa:19667
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:19667 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    g2.ucs_jis:0x722B ; # &g2-GT-25225;
+        isd:below    g2.ucs_iso:0x21940   # &g2-IU-00021940;
+    ] ;
+        .
+    rep.hanziku-5:0xF8A7
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of hanziku-5:0xF8A7 ;
+        .
+
+rep.ucs_iso:0x244FD
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x244FD ] ;
+    :denotation-of
+        a.ucs:0x244FD        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x21940   # 𡥀
+    ] ;
+    :eq rep.cns11643-6:0x324E     ; # &C6-324E;
+    :subsume
+        g2.ucs_iso:0x244FD   ,
+        rep.ucs-var-001:0x244FD ;
+    .
+    rep.cns11643-6:0x324E
+               :abstract-glyph-of     cns11643-6:0x324E  .
+    g2.ucs_iso:0x244FD
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x244FD ] ;
+        :eq g2.cns11643-6:0x324E      ; # &g2-IU-000244FD;
+        :subsume
+            repi.cns11643-6:0x324E ,
+            repi.ucs_iso:0x244FD ;
+        .
+        g2.cns11643-6:0x324E
+              :abstract-glyph-form-of     cns11643-6:0x324E  .
+        repi.cns11643-6:0x324E
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x324E ;
+            .
+        repi.ucs_iso:0x244FD
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x244FD ] ;
+            .
+    rep.ucs-var-001:0x244FD
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of ucs-var-001:0x244FD ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    g2.cns11643-6:0x2269   # &g2-M-06937;
+    ] ;
+        .
+
+a.ucs:0x244FE
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x244FE ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :subsume
+        rep.daikanwa:19668   ,
+        rep.ucs_iso:0x244FE  ,
+        rep.cns11643-5:0x2A2B ;
+    .
+    rep.daikanwa:19668
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19668 ;
+        .
+    rep.ucs_iso:0x244FE
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x244FE ] ;
+        .
+    rep.cns11643-5:0x2A2B
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of cns11643-5:0x2A2B ;
+        .
+
+a.ucs:0x24502
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24502 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.daikanwa:19669
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19669 ;
+    :denotation-of
+        a.ucs:0x24502        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.ucs_iso:0x24502
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24502 ] ;
+    :denotation-of
+        a.ucs:0x24502        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-5:0x2A2A     ; # &C5-2A2A;
+    .
+    rep.cns11643-5:0x2A2A
+               :abstract-glyph-of     cns11643-5:0x2A2A  .
+
+a.ucs:0x722E
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722E ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-3:0x2D69     ; # &I-C3-2D69;
+    :eq rep.daikanwa:19670        ; # &I-M-19670;
+    :eq rep.cbeta:01787           ; # &I-CB01787;
+    .
+    rep.cns11643-3:0x2D69
+               :abstract-glyph-of     cns11643-3:0x2D69  .
+    rep.daikanwa:19670
+               :abstract-glyph-of       daikanwa:19670   .
+    rep.cbeta:01787
+               :abstract-glyph-of          cbeta:01787   .
+
+a.ucs:0x722F
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x722F ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+a.ucs_iwds-1:0x722F
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:iwds-1  ;
+                             :target     ucs:0x722F  ] ;
+    :denotation-of
+        a.ucs:0x722F         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x5189   # 冉
+    ] ;
+    :eq a.ucs_unicode:0x722F      ; # &A-IWDSU+722F;
+    .
+    a.ucs_unicode:0x722F
+           :abstract-character-of [ :context domain:unicode ;
+                                    :target     ucs:0x722F  ] .
+
+rep.jis-x0212:0x4A49
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of jis-x0212:0x4A49 ;
+    :denotation-of
+        a.ucs_iwds-1:0x722F  ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    rep.mj:007307   # &MJ007307;
+    ] ;
+    :eq rep.ucs_jis:0x722F        ; # &JSP-4A49;
+    :eq rep.daikanwa:19671        ; # &I-M-19671;
+    :subsume
+        g2.ucs_jis:0x722F    ;
+    .
+    rep.ucs_jis:0x722F
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0x722F  ] .
+    rep.daikanwa:19671
+               :abstract-glyph-of       daikanwa:19671   .
+    g2.ucs_jis:0x722F
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:jis     ;
+                                  :target     ucs:0x722F  ] ;
+        :eq g2.jis-x0212:0x4A49       ; # &g2-JSP-4A49;
+        :eq g2.daikanwa:19671         ; # &g2-JSP-4A49;
+        :subsume
+            repi.daikanwa:19671  ,
+            repi.jis-x0212:0x4A49 ;
+        .
+        g2.jis-x0212:0x4A49
+              :abstract-glyph-form-of      jis-x0212:0x4A49  .
+        g2.daikanwa:19671
+              :abstract-glyph-form-of       daikanwa:19671   .
+        repi.daikanwa:19671
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19671 ;
+            .
+        repi.jis-x0212:0x4A49
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0212:0x4A49 ;
+            .
+
+rep.ucs-var-001:0x722F
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-var-001:0x722F ;
+    :denotation-of
+        a.ucs_iwds-1:0x722F  ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    rep.mj:007308   # &MJ007308;
+    ] ;
+    .
+
+rep.cns11643-4:0x2A2A
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-4:0x2A2A ;
+    :denotation-of
+        a.ucs_iwds-1:0x722F  ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    rep.mj:007308   # &MJ007308;
+    ] ;
+    :eq rep.ucs_unicode:0x722F    ; # &C4-2A2A;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :eq rep.big5-cdp:0x8CA8       ; # &I-CDP-8CA8;
+    :subsume
+        g2.ucs_unicode:0x722F ;
+    .
+    rep.ucs_unicode:0x722F
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x722F  ] .
+    rep.big5-cdp:0x8CA8
+               :abstract-glyph-of       big5-cdp:0x8CA8  .
+    g2.ucs_unicode:0x722F
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x722F  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.cns11643-4:0x2A2A      ; # &g2-CDP-8CA8;
+        :eq g2.big5-cdp:0x8CA8        ; # &g2-CDP-8CA8;
+        :subsume
+            repi.big5-cdp:0x8CA8 ,
+            repi.cns11643-4:0x2A2A ,
+            repi.ucs_unicode:0x722F ;
+        .
+        g2.cns11643-4:0x2A2A
+              :abstract-glyph-form-of     cns11643-4:0x2A2A  .
+        g2.big5-cdp:0x8CA8
+              :abstract-glyph-form-of       big5-cdp:0x8CA8  .
+        repi.big5-cdp:0x8CA8
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8CA8 ;
+            .
+        repi.cns11643-4:0x2A2A
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-4:0x2A2A ;
+            .
+        repi.ucs_unicode:0x722F
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x722F  ] ;
+            .
+
+a.mj:058016
+    a chisegg:abstract-character ;
+    :abstract-character-of mj:058016 ;
+    :denotation-of
+        a.ucs:0x722F         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.mj:057001   # &A-MJ057001;
+    ] ;
+    .
+
+rep.ucs-itaiji-001:0x722F
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-001:0x722F ;
+    :denotation-of
+        a.mj:058016          ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.mj:058016
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:058016 ;
+    :denotation-of
+        a.mj:058016          ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    rep.mj:057001   # &MJ057001;
+    ] ;
+    :eq rep.hanyo-denshi...ks:221650 ; # &MJ058016;
+    :subsume
+        g2.mj:058016         ;
+    .
+    rep.hanyo-denshi...ks:221650
+               :abstract-glyph-of hanyo-denshi...ks:221650  .
+    g2.mj:058016
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:058016 ;
+        :eq g2.hanyo-denshi...ks:221650 ; # &g2-MJ058016;
+        :subsume
+            repi.hanyo-denshi...ks:221650 ,
+            repi.mj:058016       ;
+        .
+        g2.hanyo-denshi...ks:221650
+              :abstract-glyph-form-of hanyo-denshi...ks:221650  .
+        repi.hanyo-denshi...ks:221650
+            a chisegg:glyph-image ;
+            :glyph-image-of hanyo-denshi...ks:221650 ;
+            :eq rep.hanyo-denshi...ks...mf:022165 ; # &R-HD-KS-221650;
+            .
+            rep.hanyo-denshi...ks...mf:022165
+                       :abstract-glyph-of hanyo-denshi...ks...mf:022165  .
+        repi.mj:058016
+            a chisegg:glyph-image ;
+            :glyph-image-of mj:058016 ;
+            .
+
+a.ucs:0x7230
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7230 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq a.big5:0xACB8             ; # &I-B-ACB8;
+    .
+    a.big5:0xACB8
+           :abstract-character-of           big5:0xACB8  .
+
+rep.mj:016740
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:016740 ;
+    :denotation-of
+        a.ucs:0x7230         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.ucs_jis:0x7230        ; # &MJ016740;
+    :eq rep.ucs_ks:0x7230         ; # &MJ016740;
+    :eq rep.adobe-japan1-0:05602  ; # &I-AJ1-05602;
+    :eq rep.jis-x0208:0x6029      ; # &I-J90-6029;
+    :eq rep.ks-x1001:0x6A3A       ; # &I-K0-6A3A;
+    :eq rep.jis-x0213-1:0x6029    ; # &I-JX1-6029;
+    :eq rep.hanyo-denshi...ja:0x6029 ; # &I-HD-JA-6029;
+    :eq rep.gt:25242              ; # &I-GT-25242;
+    :eq rep.gt-k:05358            ; # &I-GT-K05358;
+    :eq rep.gt-pj-1:24617         ; # &I-GT-25242;
+    :eq rep.daikanwa:19672        ; # &I-M-19672;
+    :eq rep.shinjigen:4701        ; # &MJ016740;
+    :subsume
+        g2.mj:016740         ;
+    .
+    rep.ucs_jis:0x7230
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0x7230  ] .
+    rep.ucs_ks:0x7230
+               :abstract-glyph-of [ :context domain:ks      ;
+                                    :target     ucs:0x7230  ] .
+    rep.adobe-japan1-0:05602
+               :abstract-glyph-of adobe-japan1-0:05602   .
+    rep.jis-x0208:0x6029
+               :abstract-glyph-of      jis-x0208:0x6029  .
+    rep.ks-x1001:0x6A3A
+               :abstract-glyph-of       ks-x1001:0x6A3A  .
+    rep.jis-x0213-1:0x6029
+               :abstract-glyph-of    jis-x0213-1:0x6029  .
+    rep.hanyo-denshi...ja:0x6029
+               :abstract-glyph-of hanyo-denshi...ja:0x6029  .
+    rep.gt:25242
+               :abstract-glyph-of             gt:25242   .
+    rep.gt-k:05358
+               :abstract-glyph-of           gt-k:05358   .
+    rep.gt-pj-1:24617
+               :abstract-glyph-of        gt-pj-1:24617   .
+    rep.daikanwa:19672
+               :abstract-glyph-of       daikanwa:19672   .
+    rep.shinjigen:4701
+               :abstract-glyph-of      shinjigen:4701    .
+    g2.mj:016740
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:016740 ;
+        :rep.decomposition   [ :context domain:hanyo-denshi ;
+                               :target  a.ucs:0x7230         ,
+                                        a.ucs:0xE0101        ] ;
+        :eq g2.ucs_jis:0x7230         ; # &g2-MJ016740;
+        :eq g2.ucs_ks:0x7230          ; # &g2-MJ016740;
+        :eq g2.adobe-japan1-0:05602   ; # &g2-MJ016740;
+        :eq g2.ks-x1001:0x6A3A        ; # &g2-MJ016740;
+        :eq g2.jis-x0208:0x6029       ; # &g2-MJ016740;
+        :eq g2.jis-x0213-1:0x6029     ; # &g2-MJ016740;
+        :eq g2.hanyo-denshi...ja:0x6029 ; # &g2-MJ016740;
+        :eq g2.gt:25242               ; # &g2-MJ016740;
+        :eq g2.gt-k:05358             ; # &g2-MJ016740;
+        :eq g2.daikanwa:19672         ; # &g2-MJ016740;
+        :eq g2.shinjigen:4701         ; # &g2-MJ016740;
+        :subsume
+            repi.daikanwa:19672  ,
+            repi.jis-x0208:0x6029 ,
+            repi.adobe-japan1-6:05602 ,
+            repi.mj:016740       ,
+            repi.gt:25242        ,
+            repi.ks-x1001:0x6A3A ;
+        .
+        g2.ucs_jis:0x7230
+              :abstract-glyph-form-of [ :context domain:jis     ;
+                                        :target     ucs:0x7230  ] .
+        g2.ucs_ks:0x7230
+              :abstract-glyph-form-of [ :context domain:ks      ;
+                                        :target     ucs:0x7230  ] .
+        g2.adobe-japan1-0:05602
+              :abstract-glyph-form-of adobe-japan1-0:05602   .
+        g2.ks-x1001:0x6A3A
+              :abstract-glyph-form-of       ks-x1001:0x6A3A  .
+        g2.jis-x0208:0x6029
+              :abstract-glyph-form-of      jis-x0208:0x6029  .
+        g2.jis-x0213-1:0x6029
+              :abstract-glyph-form-of    jis-x0213-1:0x6029  .
+        g2.hanyo-denshi...ja:0x6029
+              :abstract-glyph-form-of hanyo-denshi...ja:0x6029  .
+        g2.gt:25242
+              :abstract-glyph-form-of             gt:25242   .
+        g2.gt-k:05358
+              :abstract-glyph-form-of           gt-k:05358   .
+        g2.daikanwa:19672
+              :abstract-glyph-form-of       daikanwa:19672   .
+        g2.shinjigen:4701
+              :abstract-glyph-form-of      shinjigen:4701    .
+        repi.daikanwa:19672
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19672 ;
+            .
+        repi.jis-x0208:0x6029
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0208:0x6029 ;
+            :eq repi.jis-x0213-1:0x6029   ; # &R-J0-6029;
+            .
+            repi.jis-x0213-1:0x6029
+                          :glyph-image-of    jis-x0213-1:0x6029  .
+        repi.adobe-japan1-0:05602
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-0:05602 ;
+            .
+        repi.mj:016740
+            a chisegg:glyph-image ;
+            :glyph-image-of mj:016740 ;
+            .
+        repi.gt:25242
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25242 ;
+            :eq repi.gt-k:05358           ; # &R-GT-25242;
+            .
+            repi.gt-k:05358
+                          :glyph-image-of           gt-k:05358   .
+        repi.ks-x1001:0x6A3A
+            a chisegg:glyph-image ;
+            :glyph-image-of ks-x1001:0x6A3A ;
+            :eq repi.ucs_ks:0x7230        ; # &R-K0-6A3A;
+            .
+            repi.ucs_ks:0x7230
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x7230  ] .
+
+rep.mj:016741
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:016741 ;
+    :denotation-of
+        a.ucs:0x7230         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.ucs_unicode:0x7230    ; # &MJ016741;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :eq rep.gb2312:0x6B3C         ; # &I-G0-6B3C;
+    :eq rep.cns11643-1:0x523B     ; # &I-C1-523B;
+    :eq rep.hanyo-denshi...ks:221640 ; # &MJ016741;
+    :subsume
+        g2.mj:016741         ;
+    .
+    rep.ucs_unicode:0x7230
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x7230  ] .
+    rep.gb2312:0x6B3C
+               :abstract-glyph-of         gb2312:0x6B3C  .
+    rep.cns11643-1:0x523B
+               :abstract-glyph-of     cns11643-1:0x523B  .
+    rep.hanyo-denshi...ks:221640
+               :abstract-glyph-of hanyo-denshi...ks:221640  .
+    g2.mj:016741
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:016741 ;
+        :rep.decomposition   [ :context domain:hanyo-denshi ;
+                               :target  a.ucs:0x7230         ,
+                                        a.ucs:0xE0102        ] ;
+        :eq g2.ucs_unicode:0x7230     ; # &g2-MJ016741;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.gb2312:0x6B3C          ; # &g2-MJ016741;
+        :eq g2.cns11643-1:0x523B      ; # &g2-MJ016741;
+        :eq g2.hanyo-denshi...ks:221640 ; # &g2-MJ016741;
+        :subsume
+            repi.hanyo-denshi...ks:221640 ,
+            repi.mj:016741       ,
+            repi.cns11643-1:0x523B ,
+            repi.ucs_unicode:0x7230 ;
+        .
+        g2.ucs_unicode:0x7230
+              :abstract-glyph-form-of [ :context domain:unicode ;
+                                        :target     ucs:0x7230  ] .
+        g2.gb2312:0x6B3C
+              :abstract-glyph-form-of         gb2312:0x6B3C  .
+        g2.cns11643-1:0x523B
+              :abstract-glyph-form-of     cns11643-1:0x523B  .
+        g2.hanyo-denshi...ks:221640
+              :abstract-glyph-form-of hanyo-denshi...ks:221640  .
+        repi.hanyo-denshi...ks:221640
+            a chisegg:glyph-image ;
+            :glyph-image-of hanyo-denshi...ks:221640 ;
+            :eq rep.hanyo-denshi...ks...mf:022164 ; # &R-HD-KS-221640;
+            .
+            rep.hanyo-denshi...ks...mf:022164
+                       :abstract-glyph-of hanyo-denshi...ks...mf:022164  .
+        repi.mj:016741
+            a chisegg:glyph-image ;
+            :glyph-image-of mj:016741 ;
+            .
+        repi.cns11643-1:0x523B
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-1:0x523B ;
+            .
+        repi.ucs_unicode:0x7230
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x7230  ] ;
+            .
+
+a.ucs:0x24500
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24500 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.daikanwa:19673
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19673 ;
+    :denotation-of
+        a.ucs:0x24500        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.ucs_iso:0x24500
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24500 ] ;
+    :denotation-of
+        a.ucs:0x24500        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-5:0x2A29     ; # &C5-2A29;
+    :subsume
+        g2.ucs_iso:0x24500   ,
+        g2.cns11643-5:0x2A29 ;
+    .
+    rep.cns11643-5:0x2A29
+               :abstract-glyph-of     cns11643-5:0x2A29  .
+    g2.ucs_iso:0x24500
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24500 ] ;
+        .
+    g2.cns11643-5:0x2A29
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-5:0x2A29 ;
+        :eq g2.ucs_cns:0x24500        ; # &g2-CU+24500;
+        .
+        g2.ucs_cns:0x24500
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24500 ] .
+
+a.ucs:0x24501
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24501 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.daikanwa:19674
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19674 ;
+    :denotation-of
+        a.ucs:0x24501        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.ucs_iso:0x24501
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24501 ] ;
+    :denotation-of
+        a.ucs:0x24501        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-6:0x324F     ; # &C6-324F;
+    :subsume
+        g2.ucs_iso:0x24501   ,
+        g2.cns11643-6:0x324F ;
+    .
+    rep.cns11643-6:0x324F
+               :abstract-glyph-of     cns11643-6:0x324F  .
+    g2.ucs_iso:0x24501
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24501 ] ;
+        .
+    g2.cns11643-6:0x324F
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-6:0x324F ;
+        :eq g2.ucs_cns:0x24501        ; # &g2-CU+24501;
+        .
+        g2.ucs_cns:0x24501
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24501 ] .
+
+a.ucs:0x2450A
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2450A ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.daikanwa:19675
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19675 ;
+    :denotation-of
+        a.ucs:0x2450A        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.ucs_iso:0x2450A
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x2450A ] ;
+    :denotation-of
+        a.ucs:0x2450A        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-6:0x3250     ; # &C6-3250;
+    .
+    rep.cns11643-6:0x3250
+               :abstract-glyph-of     cns11643-6:0x3250  .
+
+a.daikanwa:19676
+    a chisegg:abstract-character ;
+    :abstract-character-of daikanwa:19676 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+rep.daikanwa:19676
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19676 ;
+    :denotation-of
+        a.daikanwa:19676     ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    .
+
+a.ucs:0x24507
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24507 ;
+    :denotation-of
+        a.daikanwa:19676     ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-6:0x324D     ; # &I-C6-324D;
+    :from.unknown        rep.daikanwa:19676   ;
+    .
+    rep.cns11643-6:0x324D
+               :abstract-glyph-of     cns11643-6:0x324D  .
+
+a.ucs:0x24508
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24508 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.daikanwa:19677        ; # &I-M-19677;
+    .
+    rep.daikanwa:19677
+               :abstract-glyph-of       daikanwa:19677   .
+
+a.ucs:0x24509
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24509 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.daikanwa:19678        ; # &I-M-19678;
+    .
+    rep.daikanwa:19678
+               :abstract-glyph-of       daikanwa:19678   .
+
+a.ucs:0x2450B
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2450B ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :subsume
+        rep.daikanwa:19679   ,
+        rep.ucs_iso:0x2450B  ;
+    .
+    rep.daikanwa:19679
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19679 ;
+        .
+    rep.ucs_iso:0x2450B
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x2450B ] ;
+        .
+
+a.ucs:0x24503
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24503 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    :eq rep.cns11643-6:0x3251     ; # &I-C6-3251;
+    .
+    rep.cns11643-6:0x3251
+               :abstract-glyph-of     cns11643-6:0x3251  .
+
+a.gt-k:06065
+    a chisegg:abstract-character ;
+    :abstract-character-of gt-k:06065 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x65E7   # 旧
+    ] ;
+    :eq a.ucs-itaiji-005:0x8200   ; # &A-GT-K06065;
+    .
+    a.ucs-itaiji-005:0x8200
+           :abstract-character-of ucs-itaiji-005:0x8200  .
+
+rep.ucs-itaiji-005:0x8200
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-005:0x8200 ;
+    :denotation-of
+        a.gt-k:06065         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x65E7   # 旧
+    ] ;
+    :eq rep.gt-k:05976            ; # &GT-K05976;
+    :eq rep.gt-pj-k2:16190        ; # &GT-K05976;
+    :form-of             [ :context domain:component ;
+                           :target  a.ucs:0x8200         ] ;
+    .
+    rep.gt-k:05976
+               :abstract-glyph-of           gt-k:05976   .
+    rep.gt-pj-k2:16190
+               :abstract-glyph-of       gt-pj-k2:16190   .
+
+rep.ucs-var-001:0x8200
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-var-001:0x8200 ;
+    :denotation-of
+        a.gt-k:06065         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x65E7   # 旧
+    ] ;
+    :eq rep.gt-k:06065            ; # &GT-K06065;
+    :eq rep.gt-pj-k2:15996        ; # &GT-K06065;
+    :form-of             [ :context domain:component ;
+                           :target  a.ucs:0x8200         ] ;
+    .
+    rep.gt-k:06065
+               :abstract-glyph-of           gt-k:06065   .
+    rep.gt-pj-k2:15996
+               :abstract-glyph-of       gt-pj-k2:15996   .
+
+a.ucs:0x2450C
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2450C ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿳ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:middle   a.ucs:0x5DE5 ; # 工
+        isd:below    a.ucs:0x5F50   # 彐
+    ] ;
+    .
+
+rep.daikanwa:19680
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19680 ;
+    :denotation-of
+        a.ucs:0x2450C        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿳ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:middle   rep.adobe-japan1-0:01979 ; # &AJ1-01979;
+        isd:below    rep.adobe-japan1-4:15391   # &AJ1-15391;
+    ] ;
+    :subsume
+        g2.daikanwa:19680    ;
+    .
+    g2.daikanwa:19680
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:19680 ;
+        .
+
+rep.ucs_iso:0x2450C
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x2450C ] ;
+    :denotation-of
+        a.ucs:0x2450C        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿳ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:middle   rep.adobe-japan1-0:01979 ; # &AJ1-01979;
+        isd:below    rep.adobe-japan1-4:15391   # &AJ1-15391;
+    ] ;
+    :eq rep.cns11643-5:0x2E51     ; # &C5-2E51;
+    :eq rep.big5-cdp:0x8D6E       ; # &I-CDP-8D6E;
+    :subsume
+        g2.ucs_iso:0x2450C   ;
+    .
+    rep.cns11643-5:0x2E51
+               :abstract-glyph-of     cns11643-5:0x2E51  .
+    rep.big5-cdp:0x8D6E
+               :abstract-glyph-of       big5-cdp:0x8D6E  .
+    g2.ucs_iso:0x2450C
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x2450C ] ;
+        :eq g2.cns11643-5:0x2E51      ; # &g2-CDP-8D6E;
+        :eq g2.big5-cdp:0x8D6E        ; # &g2-CDP-8D6E;
+        :subsume
+            repi.cns11643-5:0x2E51 ,
+            repi.ucs_iso:0x2450C ,
+            repi.big5-cdp:0x8D6E ;
+        .
+        g2.cns11643-5:0x2E51
+              :abstract-glyph-form-of     cns11643-5:0x2E51  .
+        g2.big5-cdp:0x8D6E
+              :abstract-glyph-form-of       big5-cdp:0x8D6E  .
+        repi.cns11643-5:0x2E51
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-5:0x2E51 ;
+            .
+        repi.ucs_iso:0x2450C
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x2450C ] ;
+            .
+        repi.big5-cdp:0x8D6E
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8D6E ;
+            .
+
+a.ucs:0x2450D
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2450D ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    .
+
+rep.daikanwa:19681
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19681 ;
+    :denotation-of
+        a.ucs:0x2450D        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    .
+
+rep.ucs_iso:0x2450D
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x2450D ] ;
+    :denotation-of
+        a.ucs:0x2450D        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    .
+
+a.ucs:0x7231
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7231 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    :eq rep.gb2312:0x302E         ; # &I-G0-302E;
+    .
+    rep.gb2312:0x302E
+               :abstract-glyph-of         gb2312:0x302E  .
+
+a.ucs:0x2450E
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2450E ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    :eq rep.cns11643-5:0x2E50     ; # &I-C5-2E50;
+    .
+    rep.cns11643-5:0x2E50
+               :abstract-glyph-of     cns11643-5:0x2E50  .
+
+a.gt-k:07307
+    a chisegg:abstract-character ;
+    :abstract-character-of gt-k:07307 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x7CF8   # 糸
+    ] ;
+    .
+
+rep.ruimoku-v6:0xE030
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ruimoku-v6:0xE030 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x8863   # 衣
+    ] ;
+    :subsume
+        g2.ruimoku-v6:0xE030 ;
+    .
+    g2.ruimoku-v6:0xE030
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of ruimoku-v6:0xE030 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    g2.ucs_unicode:0x8863   # &g2-AJ1-01189;
+    ] ;
+        .
+
+rep.gt-k:07307
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt-k:07307 ;
+    :denotation-of
+        a.gt-k:07307         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x7CF8   # 糸
+    ] ;
+    :eq rep.gt-pj-k1:25667        ; # &GT-K07307;
+    :subsume
+        g2.gt-k:07307        ;
+    .
+    rep.gt-pj-k1:25667
+               :abstract-glyph-of       gt-pj-k1:25667   .
+    g2.gt-k:07307
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:07307 ;
+        :eq g2.gt-pj-k1:25667         ; # &g2-GT-K07307;
+        .
+        g2.gt-pj-k1:25667
+              :abstract-glyph-form-of       gt-pj-k1:25667   .
+
+a.ucs:0x24510
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24510 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    :subsume
+        rep.daikanwa:19682   ,
+        rep.ucs_iso:0x24510  ;
+    .
+    rep.daikanwa:19682
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19682 ;
+        :from.ancient        [ :sources chisebib:shuowen ,
+                                        chisebib:daikanwa ;
+                               :target  rep.gt:25281         ] ;
+        .
+    rep.ucs_iso:0x24510
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x24510 ] ;
+        :eq rep.cns11643-6:0x4157     ; # &C6-4157;
+        .
+        rep.cns11643-6:0x4157
+                   :abstract-glyph-of     cns11643-6:0x4157  .
+
+a.ucs:0x24511
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24511 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    :eq rep.cns11643-6:0x4156     ; # &I-C6-4156;
+    :eq rep.daikanwa:19683        ; # &I-M-19683;
+    .
+    rep.cns11643-6:0x4156
+               :abstract-glyph-of     cns11643-6:0x4156  .
+    rep.daikanwa:19683
+               :abstract-glyph-of       daikanwa:19683   .
+
+a.ucs:0x24512
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24512 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    .
+
+rep.daikanwa:19684
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19684 ;
+    :denotation-of
+        a.ucs:0x24512        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    .
+
+rep.ucs_iso:0x24512
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24512 ] ;
+    :denotation-of
+        a.ucs:0x24512        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    :eq rep.cns11643-6:0x4158     ; # &C6-4158;
+    .
+    rep.cns11643-6:0x4158
+               :abstract-glyph-of     cns11643-6:0x4158  .
+
+rep.ucs-itaiji-006:0x8200
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-006:0x8200 ;
+    :denotation-of
+        a.ucs-bmp-itaiji-006:0x8200 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           7 ;
+    ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    rep.ucs-itaiji-001:0x65E7   # &U-i001+65E7;
+    ] ;
+    :form-of             rep.ucs-itaiji-005:0x8200 ;
+    .
+
+a.ucs-bmp-itaiji-006:0x8200
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs-bmp-itaiji-006:0x8200 ;
+    ideo:radical          87 ; # ⽖ 
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs-itaiji-001:0x65E7   # &A-U-i001+65E7;
+    ] ;
+    :eq a.ucs-itaiji-006:0x8200   ; # &A-U-i006+8200;
+    .
+    a.ucs-itaiji-006:0x8200
+           :abstract-character-of ucs-itaiji-006:0x8200  .
+
+a.ucs_component:0x7232
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:component ;
+                             :target     ucs:0x7232  ] ;
+    ideo:radical           [ :context domain:simplified ;
+                             :target           86 ; # ⽕
+                           ] ;
+    ideo:radical           [ :context domain:traditional ;
+                             :target           87 ; # ⽖
+                           ] ;
+    :eq rep.ucs_big5:0x70BA       ; # &IWDS1-315;
+    :eq a.big5:0xACB0             ; # &IWDS1-315;
+    :eq a.iwds-1:0315             ; # &IWDS1-315;
+    .
+    rep.ucs_big5:0x70BA
+               :abstract-glyph-of [ :context domain:big5    ;
+                                    :target     ucs:0x70BA  ] .
+    a.big5:0xACB0
+           :abstract-character-of           big5:0xACB0  .
+    a.iwds-1:0315
+           :abstract-character-of         iwds-1:0315    .
+
+a.ucs:0x7232
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7232 ;
+    :denotation-of
+        a.ucs_component:0x7232 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    .
+
+rep.adobe-japan1-0:05603
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of adobe-japan1-0:05603 ;
+    :denotation-of
+        a.ucs:0x7232         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.ucs_jis:0x7232        ; # &AJ1-05603;
+    :eq rep.jis-x0208:0x602A      ; # &I-J90-602A;
+    :eq rep.ks-x1001:0x6A53       ; # &I-K0-6A53;
+    :eq rep.jis-x0213-1:0x602A    ; # &I-JX1-602A;
+    :eq rep.big5-cdp:0x89D1       ; # &I-CDP-89D1;
+    :eq rep.gt:25270              ; # &I-GT-25270;
+    :eq rep.gt-k:09209            ; # &I-GT-K09209;
+    :eq rep.gt-pj-1:24618         ; # &I-GT-25270;
+    :eq rep.daikanwa:19686        ; # &I-M-19686;
+    :eq rep.shinjigen:4703        ; # &AJ1-05603;
+    :subsume
+        g2.adobe-japan1-0:05603 ;
+    .
+    rep.ucs_jis:0x7232
+               :abstract-glyph-of [ :context domain:jis     ;
+                                    :target     ucs:0x7232  ] .
+    rep.jis-x0208:0x602A
+               :abstract-glyph-of      jis-x0208:0x602A  .
+    rep.ks-x1001:0x6A53
+               :abstract-glyph-of       ks-x1001:0x6A53  .
+    rep.jis-x0213-1:0x602A
+               :abstract-glyph-of    jis-x0213-1:0x602A  .
+    rep.big5-cdp:0x89D1
+               :abstract-glyph-of       big5-cdp:0x89D1  .
+    rep.gt:25270
+               :abstract-glyph-of             gt:25270   .
+    rep.gt-k:09209
+               :abstract-glyph-of           gt-k:09209   .
+    rep.gt-pj-1:24618
+               :abstract-glyph-of        gt-pj-1:24618   .
+    rep.daikanwa:19686
+               :abstract-glyph-of       daikanwa:19686   .
+    rep.shinjigen:4703
+               :abstract-glyph-of      shinjigen:4703    .
+    g2.adobe-japan1-0:05603
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of adobe-japan1-0:05603 ;
+        :eq g2.ucs_jis:0x7232         ; # &g2-AJ1-05603;
+        :eq g2.ucs_ks:0x7232          ; # &g2-AJ1-05603;
+        :eq g2.ks-x1001:0x6A53        ; # &g2-AJ1-05603;
+        :eq g2.jis-x0208:0x602A       ; # &g2-AJ1-05603;
+        :eq g2.jis-x0213-1:0x602A     ; # &g2-AJ1-05603;
+        :eq g2.big5-cdp:0x89D1        ; # &g2-AJ1-05603;
+        :eq g2.gt:25270               ; # &g2-AJ1-05603;
+        :eq g2.gt-k:09209             ; # &g2-AJ1-05603;
+        :eq g2.daikanwa:19686         ; # &g2-AJ1-05603;
+        :eq g2.shinjigen:4703         ; # &g2-AJ1-05603;
+        :subsume
+            repi.daikanwa:19686  ,
+            repi.jis-x0208:0x602A ,
+            repi.adobe-japan1-6:05603 ,
+            repi.big5-cdp:0x89D1 ,
+            repi.gt:25270        ,
+            repi.ks-x1001:0x6A53 ;
+        .
+        g2.ucs_jis:0x7232
+              :abstract-glyph-form-of [ :context domain:jis     ;
+                                        :target     ucs:0x7232  ] .
+        g2.ucs_ks:0x7232
+              :abstract-glyph-form-of [ :context domain:ks      ;
+                                        :target     ucs:0x7232  ] .
+        g2.ks-x1001:0x6A53
+              :abstract-glyph-form-of       ks-x1001:0x6A53  .
+        g2.jis-x0208:0x602A
+              :abstract-glyph-form-of      jis-x0208:0x602A  .
+        g2.jis-x0213-1:0x602A
+              :abstract-glyph-form-of    jis-x0213-1:0x602A  .
+        g2.big5-cdp:0x89D1
+              :abstract-glyph-form-of       big5-cdp:0x89D1  .
+        g2.gt:25270
+              :abstract-glyph-form-of             gt:25270   .
+        g2.gt-k:09209
+              :abstract-glyph-form-of           gt-k:09209   .
+        g2.daikanwa:19686
+              :abstract-glyph-form-of       daikanwa:19686   .
+        g2.shinjigen:4703
+              :abstract-glyph-form-of      shinjigen:4703    .
+        repi.daikanwa:19686
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19686 ;
+            .
+        repi.jis-x0208:0x602A
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0208:0x602A ;
+            :eq repi.jis-x0213-1:0x602A   ; # &R-J0-602A;
+            .
+            repi.jis-x0213-1:0x602A
+                          :glyph-image-of    jis-x0213-1:0x602A  .
+        repi.adobe-japan1-0:05603
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-0:05603 ;
+            .
+        repi.big5-cdp:0x89D1
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x89D1 ;
+            .
+        repi.gt:25270
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25270 ;
+            :eq repi.gt-k:09209           ; # &R-GT-25270;
+            .
+            repi.gt-k:09209
+                          :glyph-image-of           gt-k:09209   .
+        repi.ks-x1001:0x6A53
+            a chisegg:glyph-image ;
+            :glyph-image-of ks-x1001:0x6A53 ;
+            :eq repi.ucs_ks:0x7232        ; # &R-K0-6A53;
+            .
+            repi.ucs_ks:0x7232
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x7232  ] .
+
+repi.hng-kar:10540
+    a chisegg:glyph-image ;
+    :glyph-image-of hng-kar:10540 ;
+    :denotation-of
+        a.ucs:0x7232         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    .
+
+rep.gt:25271
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:25271 ;
+    :denotation-of
+        a.ucs:0x7232         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.ucs_unicode:0x7232    ; # &GT-25271;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :eq rep.cns11643-3:0x3D22     ; # &GT-25271;
+    :eq rep.gb12345:0x4E2A        ; # &GT-25271;
+    :eq rep.gt-k:09877            ; # &I-GT-K09877;
+    :eq rep.gt-pj-9:26163         ; # &I-GT-25271;
+    :subsume
+        g2.ucs_unicode:0x7232 ;
+    .
+    rep.ucs_unicode:0x7232
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x7232  ] .
+    rep.cns11643-3:0x3D22
+               :abstract-glyph-of     cns11643-3:0x3D22  .
+    rep.gb12345:0x4E2A
+               :abstract-glyph-of        gb12345:0x4E2A  .
+    rep.gt-k:09877
+               :abstract-glyph-of           gt-k:09877   .
+    rep.gt-pj-9:26163
+               :abstract-glyph-of        gt-pj-9:26163   .
+    g2.ucs_unicode:0x7232
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x7232  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.cns11643-3:0x3D22      ; # &g2-GT-25271;
+        :eq g2.gb12345:0x4E2A         ; # &g2-GT-25271;
+        :eq g2.gt:25271               ; # &g2-GT-25271;
+        :eq g2.gt-k:09877             ; # &g2-GT-25271;
+        :subsume
+            repi.cns11643-3:0x3D22 ,
+            repi.gt:25271        ,
+            repi.ucs_unicode:0x7232 ;
+        .
+        g2.cns11643-3:0x3D22
+              :abstract-glyph-form-of     cns11643-3:0x3D22  .
+        g2.gb12345:0x4E2A
+              :abstract-glyph-form-of        gb12345:0x4E2A  .
+        g2.gt:25271
+              :abstract-glyph-form-of             gt:25271   .
+        g2.gt-k:09877
+              :abstract-glyph-form-of           gt-k:09877   .
+        repi.cns11643-3:0x3D22
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-3:0x3D22 ;
+            .
+        repi.gt:25271
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25271 ;
+            :eq repi.gt-k:09877           ; # &R-GT-25271;
+            .
+            repi.gt-k:09877
+                          :glyph-image-of           gt-k:09877   .
+        repi.ucs_unicode:0x7232
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x7232  ] ;
+            .
+
+a.ucs:0x24514
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24514 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    .
+
+rep.gt:25281
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:25281 ;
+    :denotation-of
+        a.ucs:0x24514        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.gt-k:09318            ; # &I-GT-K09318;
+    :eq rep.gt-pj-4:25163         ; # &GT-25281;
+    :eq rep.daikanwa:19687        ; # &I-M-19687;
+    :from.same           [ :sources chisebib:shuowen ,
+                                    chisebib:daikanwa ;
+                           :target  rep.adobe-japan1-0:04101 ] ;
+    .
+    rep.gt-k:09318
+               :abstract-glyph-of           gt-k:09318   .
+    rep.gt-pj-4:25163
+               :abstract-glyph-of        gt-pj-4:25163   .
+    rep.daikanwa:19687
+               :abstract-glyph-of       daikanwa:19687   .
+
+rep.gt:25282
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:25282 ;
+    :denotation-of
+        a.ucs:0x24514        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.gt-k:09799            ; # &I-GT-K09799;
+    :eq rep.gt-pj-9:19304         ; # &GT-25282;
+    .
+    rep.gt-k:09799
+               :abstract-glyph-of           gt-k:09799   .
+    rep.gt-pj-9:19304
+               :abstract-glyph-of        gt-pj-9:19304   .
+
+rep.gt:25283
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:25283 ;
+    :denotation-of
+        a.ucs:0x24514        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.gt-k:09319            ; # &I-GT-K09319;
+    :eq rep.gt-pj-9:26164         ; # &GT-25283;
+    .
+    rep.gt-k:09319
+               :abstract-glyph-of           gt-k:09319   .
+    rep.gt-pj-9:26164
+               :abstract-glyph-of        gt-pj-9:26164   .
+
+g.ucs_iso:0x24514
+    a chisegg:detailed-glyph ;
+    :detailed-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24514 ] ;
+    :denotation-of
+        a.ucs:0x24514        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :subsume
+        rep.ucs_iso:0x24514  ,
+        rep.cns11643-4:0x386A ;
+    .
+    rep.ucs_iso:0x24514
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x24514 ] ;
+        :eq rep.gt-k:09372            ; # &GT-K09372;
+        :eq rep.gt-pj-k2:13883        ; # &GT-K09372;
+        .
+        rep.gt-k:09372
+                   :abstract-glyph-of           gt-k:09372   .
+        rep.gt-pj-k2:13883
+                   :abstract-glyph-of       gt-pj-k2:13883   .
+    rep.cns11643-4:0x386A
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of cns11643-4:0x386A ;
+        :eq rep.ucs_cns:0x24514       ; # &C4-386A;
+        :eq rep.big5-cdp:0x8C7D       ; # &I-CDP-8C7D;
+        .
+        rep.ucs_cns:0x24514
+                   :abstract-glyph-of [ :context domain:cns     ;
+                                        :target     ucs:0x24514 ] .
+        rep.big5-cdp:0x8C7D
+                   :abstract-glyph-of       big5-cdp:0x8C7D  .
+
+a.ucs:0x24515
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24515 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    .
+
+rep.daikanwa:19688
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19688 ;
+    :denotation-of
+        a.ucs:0x24515        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    .
+
+rep.ucs_iso:0x24515
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24515 ] ;
+    :denotation-of
+        a.ucs:0x24515        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    12 ;
+    :eq rep.cns11643-6:0x4B22     ; # &C6-4B22;
+    .
+    rep.cns11643-6:0x4B22
+               :abstract-glyph-of     cns11643-6:0x4B22  .
+
+a.ucs:0x24517
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24517 ;
+    ideo:radical           [ :context domain:ucs     ;
+                             :target           87 ; # ⽖
+                           ] ;
+    ideo:strokes           [ :context domain:ucs     ;
+                             :target  9 ] ;
+    ideo:radical           [ :context domain:cns     ;
+                             :target           31 ; # ⼞
+                           ] ;
+    ideo:strokes           [ :context domain:cns     ;
+                             :target  9 ] ;
+    ideo:total-strokes    12 ;
+    :subsume
+        rep.daikanwa:04811   ,
+        rep.ucs_iso:0x24517  ;
+    .
+    rep.daikanwa:04811
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:04811 ;
+        ideo:radical          31 ; # ⼞ 
+        ideo:strokes           9 ;
+        .
+    rep.ucs_iso:0x24517
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x24517 ] ;
+        ideo:hanyu-dazidian  ( 3 2033 18 ) ;
+        :eq rep.cns11643-6:0x4743     ; # &C6-4743;
+        :eq rep.hanziku-5:0xF8B3      ; # &I-HZK05-F8B3;
+        .
+        rep.cns11643-6:0x4743
+                   :abstract-glyph-of     cns11643-6:0x4743  .
+        rep.hanziku-5:0xF8B3
+                   :abstract-glyph-of      hanziku-5:0xF8B3  .
+
+a.ucs:0x2451C
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2451C ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    13 ;
+    :eq rep.cns11643-6:0x5468     ; # &I-C6-5468;
+    .
+    rep.cns11643-6:0x5468
+               :abstract-glyph-of     cns11643-6:0x5468  .
+
+a.ucs:0x24520
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24520 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    13 ;
+    :eq rep.cns11643-6:0x5469     ; # &I-C6-5469;
+    .
+    rep.cns11643-6:0x5469
+               :abstract-glyph-of     cns11643-6:0x5469  .
+
+a.ucs:0x24522
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24522 ;
+    ideo:radical          87 ; # ⽖ 
+    .
+
+rep.daikanwa:19695
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19695 ;
+    :denotation-of
+        a.ucs:0x24522        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.cns11643-6:0x5E53
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-6:0x5E53 ;
+    :denotation-of
+        a.ucs:0x24522        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.ucs_iso:0x24522
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24522 ] ;
+    :denotation-of
+        a.ucs:0x24522        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    13 ;
+    .
+
+a.ucs:0x24523
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24523 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.daikanwa:19696
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19696 ;
+    :denotation-of
+        a.ucs:0x24523        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.ucs_iso:0x24523
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24523 ] ;
+    :denotation-of
+        a.ucs:0x24523        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :eq rep.cns11643-5:0x4723     ; # &C5-4723;
+    .
+    rep.cns11643-5:0x4723
+               :abstract-glyph-of     cns11643-5:0x4723  .
+
+a.ucs:0x24524
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24524 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :eq rep.cns11643-6:0x5E56     ; # &I-C6-5E56;
+    :eq rep.daikanwa:19697        ; # &I-M-19697;
+    .
+    rep.cns11643-6:0x5E56
+               :abstract-glyph-of     cns11643-6:0x5E56  .
+    rep.daikanwa:19697
+               :abstract-glyph-of       daikanwa:19697   .
+
+a.ucs:0x24526
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24526 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.daikanwa:19698
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19698 ;
+    :denotation-of
+        a.ucs:0x24526        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.ucs_iso:0x24526
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24526 ] ;
+    :denotation-of
+        a.ucs:0x24526        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :eq rep.cns11643-6:0x5E54     ; # &C6-5E54;
+    .
+    rep.cns11643-6:0x5E54
+               :abstract-glyph-of     cns11643-6:0x5E54  .
+
+a.ucs:0x3E15
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x3E15 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :subsume
+        rep.daikanwa:19699   ,
+        rep.cns11643-3:0x4774 ,
+        rep.ucs_unicode:0x3E15 ;
+    .
+    rep.daikanwa:19699
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of daikanwa:19699 ;
+        .
+    rep.cns11643-3:0x4774
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of cns11643-3:0x4774 ;
+        .
+    rep.ucs_unicode:0x3E15
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of [ :context domain:unicode ;
+                             :target     ucs:0x3E15  ] ;
+        .
+
+a.ucs:0x24525
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24525 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.daikanwa:19700
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19700 ;
+    :denotation-of
+        a.ucs:0x24525        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    .
+
+rep.ucs_iso:0x24525
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24525 ] ;
+    :denotation-of
+        a.ucs:0x24525        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :eq rep.cns11643-6:0x5E55     ; # &C6-5E55;
+    :subsume
+        g2.ucs_iso:0x24525   ,
+        g2.cns11643-6:0x5E55 ;
+    .
+    rep.cns11643-6:0x5E55
+               :abstract-glyph-of     cns11643-6:0x5E55  .
+    g2.ucs_iso:0x24525
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24525 ] ;
+        .
+    g2.cns11643-6:0x5E55
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-6:0x5E55 ;
+        :eq g2.ucs_cns:0x24525        ; # &g2-CU+24525;
+        .
+        g2.ucs_cns:0x24525
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24525 ] .
+
+a.ucs:0x7233
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7233 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    14 ;
+    :eq rep.gb12345:0x7D68        ; # 爳
+    .
+    rep.gb12345:0x7D68
+               :abstract-glyph-of        gb12345:0x7D68  .
+
+a.ucs:0x24529
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24529 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    .
+
+rep.ucs_iso:0x24529
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24529 ] ;
+    :denotation-of
+        a.ucs:0x24529        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.daikanwa:19703        ; # &M-19703;
+    :subsume
+        g2.daikanwa:19703    ,
+        g2.ucs_iso:0x24529   ;
+    .
+    rep.daikanwa:19703
+               :abstract-glyph-of       daikanwa:19703   .
+    g2.daikanwa:19703
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:19703 ;
+        .
+    g2.ucs_iso:0x24529
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24529 ] ;
+        .
+
+rep.cns11643-7:0x2477
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-7:0x2477 ;
+    :denotation-of
+        a.ucs:0x24529        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.cbeta:02461           ; # &I-CB02461;
+    :subsume
+        g2.cns11643-7:0x2477 ,
+        g2.cbeta:02461       ;
+    .
+    rep.cbeta:02461
+               :abstract-glyph-of          cbeta:02461   .
+    g2.cns11643-7:0x2477
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-7:0x2477 ;
+        :eq g2.ucs_cns:0x24529        ; # &g2-CU+24529;
+        .
+        g2.ucs_cns:0x24529
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24529 ] .
+    g2.cbeta:02461
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cbeta:02461 ;
+        .
+
+a.ucs:0x7234
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7234 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x570B ; # 國
+        isd:right    a.ucs:0x722A   # 爪
+    ] ;
+    :eq rep.adobe-japan1-5:18044  ; # &I-AJ1-18044;
+    :eq rep.jis-x0212:0x4A4A      ; # &I-JSP-4A4A;
+    :eq rep.cns11643-4:0x4A6C     ; # &I-C4-4A6C;
+    :eq rep.jis-x0213-2:0x702B    ; # &I-JX2-702B;
+    :eq rep.daikanwa:19704        ; # &I-M-19704;
+    :eq rep.cbeta:01441           ; # &I-CB01441;
+    :subsume
+        g2.ucs_unicode:0x7234 ,
+        g2.ucs_JP...hanazono:0x7234 ;
+    .
+    rep.adobe-japan1-5:18044
+               :abstract-glyph-of adobe-japan1-5:18044   .
+    rep.jis-x0212:0x4A4A
+               :abstract-glyph-of      jis-x0212:0x4A4A  .
+    rep.cns11643-4:0x4A6C
+               :abstract-glyph-of     cns11643-4:0x4A6C  .
+    rep.jis-x0213-2:0x702B
+               :abstract-glyph-of    jis-x0213-2:0x702B  .
+    rep.daikanwa:19704
+               :abstract-glyph-of       daikanwa:19704   .
+    rep.cbeta:01441
+               :abstract-glyph-of          cbeta:01441   .
+    g2.ucs_unicode:0x7234
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x7234  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.adobe-japan1-5:18044   ; # &g2-AJ1-18044;
+        :eq g2.jis-x0212:0x4A4A       ; # &g2-AJ1-18044;
+        :eq g2.cns11643-4:0x4A6C      ; # &g2-AJ1-18044;
+        :eq g2.jis-x0213-2:0x702B     ; # &g2-AJ1-18044;
+        :eq g2.daikanwa:19704         ; # &g2-AJ1-18044;
+        :subsume
+            repi.daikanwa:19704  ,
+            repi.jis-x0213-2:0x702B ,
+            repi.adobe-japan1-6:18044 ,
+            repi.cns11643-4:0x4A6C ,
+            repi.ucs_unicode:0x7234 ;
+        .
+        g2.adobe-japan1-5:18044
+              :abstract-glyph-form-of adobe-japan1-5:18044   .
+        g2.jis-x0212:0x4A4A
+              :abstract-glyph-form-of      jis-x0212:0x4A4A  .
+        g2.cns11643-4:0x4A6C
+              :abstract-glyph-form-of     cns11643-4:0x4A6C  .
+        g2.jis-x0213-2:0x702B
+              :abstract-glyph-form-of    jis-x0213-2:0x702B  .
+        g2.daikanwa:19704
+              :abstract-glyph-form-of       daikanwa:19704   .
+        repi.daikanwa:19704
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:19704 ;
+            .
+        repi.jis-x0212:0x4A4A
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0212:0x4A4A ;
+            :eq repi.jis-x0213-2:0x702B   ; # &R-JX2-702B;
+            .
+            repi.jis-x0213-2:0x702B
+                          :glyph-image-of    jis-x0213-2:0x702B  .
+        repi.adobe-japan1-5:18044
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-5:18044 ;
+            .
+        repi.cns11643-4:0x4A6C
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-4:0x4A6C ;
+            .
+        repi.ucs_unicode:0x7234
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x7234  ] ;
+            .
+    g2.ucs_JP...hanazono:0x7234
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                  :target     ucs:0x7234  ] ;
+        :eq g2.cbeta:01441            ; # &g2-CB01441;
+        :subsume
+            repi.cbeta:01441     ;
+        .
+        g2.cbeta:01441
+              :abstract-glyph-form-of          cbeta:01441   .
+        repi.cbeta:01441
+            a chisegg:glyph-image ;
+            :glyph-image-of cbeta:01441 ;
+            .
+
+rep.daikanwa:19705
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19705 ;
+    :to.ucs		  a.ucs:0x2452A ; # 𤔪
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    .
+
+a.ucs:0x2452A
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2452A ;
+
+    :morohashi-daikanwa	  (19705 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.cns11643-7:0x2479     ; # &I-C7-2479;
+    .
+    rep.cns11643-7:0x2479
+               :abstract-glyph-of     cns11643-7:0x2479  .
+
+rep.daikanwa:49273
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:49273 ;
+    :to.ucs		  a.ucs:0x2452C ; # 𤔬
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    .
+
+a.ucs:0x2452C
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2452C ;
+
+    :morohashi-daikanwa	  (49273 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.cns11643-7:0x2478     ; # &I-C7-2478;
+    .
+    rep.cns11643-7:0x2478
+               :abstract-glyph-of     cns11643-7:0x2478  .
+
+a.ucs:0x24527
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24527 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.cns11643-7:0x247A     ; # &I-C7-247A;
+    .
+    rep.cns11643-7:0x247A
+               :abstract-glyph-of     cns11643-7:0x247A  .
+
+a.ucs:0x24528
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24528 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    :eq rep.cns11643-5:0x4E2F     ; # &I-C5-4E2F;
+    .
+    rep.cns11643-5:0x4E2F
+               :abstract-glyph-of     cns11643-5:0x4E2F  .
+
+a.ucs:0x2452B
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2452B ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x66FC   # 曼
+    ] ;
+    .
+
+rep.ucs_iso:0x2452B
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x2452B ] ;
+    :denotation-of
+        a.ucs:0x2452B        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          11 ;
+    ideo:total-strokes    15 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    rep.mj:013498   # &MJ013498;
+    ] ;
+    :subsume
+        g2.ucs_iso:0x2452B   ;
+    .
+    g2.ucs_iso:0x2452B
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x2452B ] ;
+        .
+
+a.ucs:0x2452E
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2452E ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    :eq rep.daikanwa:19706        ; # &I-M-19706;
+    .
+    rep.daikanwa:19706
+               :abstract-glyph-of       daikanwa:19706   .
+
+rep.cns11643-7:0x2F69
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-7:0x2F69 ;
+    :to.ucs		  a.ucs:0x2452E ; # 𤔮
+
+    :morohashi-daikanwa	  (19706 0 6) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    .
+
+rep.daikanwa:19707
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19707 ;
+    :to.ucs		  a.ucs:0x24530 ; # 𤔰
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    .
+
+a.ucs:0x24530
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24530 ;
+
+    :morohashi-daikanwa	  (19707 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    :eq rep.cns11643-7:0x2F6A     ; # &I-C7-2F6A;
+    .
+    rep.cns11643-7:0x2F6A
+               :abstract-glyph-of     cns11643-7:0x2F6A  .
+
+rep.daikanwa:19708
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19708 ;
+    :to.ucs		  a.ucs:0x24531 ; # 𤔱
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    .
+
+a.ucs:0x24531
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24531 ;
+
+    :morohashi-daikanwa	  (19708 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    :eq rep.cns11643-5:0x553F     ; # &I-C5-553F;
+    .
+    rep.cns11643-5:0x553F
+               :abstract-glyph-of     cns11643-5:0x553F  .
+
+a.ucs-itaiji-002:0x657B
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs-itaiji-002:0x657B ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    isd:structure [ a idc:⿳ ;
+        isd:above    [
+            :structure [ a idc:⿱ ;
+                :above    a.ucs:0x722B ; # 爫
+                :below    [
+                    :structure [ a idc:⿰ ;
+                        :left     a.ucs:0x4E28 ; # 丨
+                        :right    a.ucs:0x5183   # 冃
+                    ]
+                ]
+            ]
+        ] ;
+        isd:middle   a.ucs:0x7F52 ; # 罒
+        isd:below    a.ucs:0x53C8   # 又
+    ] ;
+    :from.unknown        a.ucs:0x2452B        ,
+                         a.ucs:0x657B         ;
+    .
+
+rep.ucs-itaiji-002:0x657B
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-002:0x657B ;
+    :denotation-of
+        a.ucs-itaiji-002:0x657B ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    16 ;
+    isd:structure [ a idc:⿳ ;
+        isd:above    [
+            :structure [ a idc:⿱ ;
+                :above    a.ucs:0x722B ; # 爫
+                :below    [
+                    :structure [ a idc:⿰ ;
+                        :left     a.ucs:0x4E28 ; # 丨
+                        :right    a.ucs:0x5183   # 冃
+                    ]
+                ]
+            ]
+        ] ;
+        isd:middle   a.ucs:0x7F52 ; # 罒
+        isd:below    a.ucs:0x53C8   # 又
+    ] ;
+    .
+
+a.ucs:0x24532
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24532 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          13 ;
+    ideo:total-strokes    17 ;
+    .
+
+rep.gt:25311
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:25311 ;
+    :denotation-of
+        a.ucs:0x24532        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          13 ;
+    ideo:total-strokes    17 ;
+    :eq rep.gt-pj-4:25186         ; # &GT-25311;
+    :eq rep.daikanwa:19709        ; # &I-M-19709;
+    .
+    rep.gt-pj-4:25186
+               :abstract-glyph-of        gt-pj-4:25186   .
+    rep.daikanwa:19709
+               :abstract-glyph-of       daikanwa:19709   .
+
+rep.ucs_iso:0x24532
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24532 ] ;
+    :denotation-of
+        a.ucs:0x24532        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          13 ;
+    ideo:total-strokes    17 ;
+    :eq rep.cns11643-4:0x5665     ; # &I-C4-5665;
+    :eq rep.gt:25312              ; # &GT-25312;
+    :eq rep.gt-pj-9:26175         ; # &GT-25312;
+    :subsume
+        g2.ucs_iso:0x24532   ,
+        g2.cns11643-4:0x5665 ;
+    .
+    rep.cns11643-4:0x5665
+               :abstract-glyph-of     cns11643-4:0x5665  .
+    rep.gt:25312
+               :abstract-glyph-of             gt:25312   .
+    rep.gt-pj-9:26175
+               :abstract-glyph-of        gt-pj-9:26175   .
+    g2.ucs_iso:0x24532
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24532 ] ;
+        :eq g2.gt:25312               ; # &g2-GT-25312;
+        :subsume
+            repi.gt:25312        ,
+            repi.ucs_iso:0x24532 ;
+        .
+        g2.gt:25312
+              :abstract-glyph-form-of             gt:25312   .
+        repi.gt:25312
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25312 ;
+            .
+        repi.ucs_iso:0x24532
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x24532 ] ;
+            .
+    g2.cns11643-4:0x5665
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-4:0x5665 ;
+        :eq g2.ucs_cns:0x24532        ; # &g2-CU+24532;
+        .
+        g2.ucs_cns:0x24532
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24532 ] .
+
+a.ucs:0x7235
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x7235 ;
+    ideo:radical          87 ; # ⽖ 
+    :eq a.big5:0xC0EF             ; # &I-B-C0EF;
+    .
+    a.big5:0xC0EF
+           :abstract-character-of           big5:0xC0EF  .
+
+rep.mj:016747
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:016747 ;
+    :denotation-of
+        a.ucs:0x7235         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          13 ;
+    ideo:total-strokes    17 ;
+    :eq rep.ucs_unicode:0x7235    ; # &MJ016747;
+    :eq rep.adobe-japan1-0:02315  ; # &I-AJ1-02315;
+    :eq rep.jis-x0208:0x3C5F      ; # &I-J90-3C5F;
+    :eq rep.gb2312:0x3E74         ; # &I-G0-3E74;
+    :eq rep.cns11643-1:0x743A     ; # &I-C1-743A;
+    :eq rep.jis-x0213-1:0x3C5F    ; # &I-JX1-3C5F;
+    :eq rep.hanyo-denshi...ja:0x3C5F ; # &I-HD-JA-3C5F;
+    :eq rep.gt:25313              ; # &I-GT-25313;
+    :eq rep.gt-pj-1:15455         ; # &I-GT-25313;
+    :eq rep.daikanwa...._.p:19710 ; # &MJ016747;
+    :subsume
+        g2.mj:016747         ;
+    .
+    rep.ucs_unicode:0x7235
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x7235  ] .
+    rep.adobe-japan1-0:02315
+               :abstract-glyph-of adobe-japan1-0:02315   .
+    rep.jis-x0208:0x3C5F
+               :abstract-glyph-of      jis-x0208:0x3C5F  .
+    rep.gb2312:0x3E74
+               :abstract-glyph-of         gb2312:0x3E74  .
+    rep.cns11643-1:0x743A
+               :abstract-glyph-of     cns11643-1:0x743A  .
+    rep.jis-x0213-1:0x3C5F
+               :abstract-glyph-of    jis-x0213-1:0x3C5F  .
+    rep.hanyo-denshi...ja:0x3C5F
+               :abstract-glyph-of hanyo-denshi...ja:0x3C5F  .
+    rep.gt:25313
+               :abstract-glyph-of             gt:25313   .
+    rep.gt-pj-1:15455
+               :abstract-glyph-of        gt-pj-1:15455   .
+    rep.daikanwa...._.p:19710
+               :abstract-glyph-of daikanwa...._.p:19710   .
+    g2.mj:016747
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:016747 ;
+        :rep.decomposition   [ :context domain:hanyo-denshi ;
+                               :target  a.ucs:0x7235         ,
+                                        a.ucs:0xE0103        ] ;
+        :eq g2.ucs_unicode:0x7235     ; # &g2-MJ016747;
+        :eq g2.adobe-japan1-0:02315   ; # &g2-MJ016747;
+        :eq g2.gb2312:0x3E74          ; # &g2-MJ016747;
+        :eq g2.jis-x0208:0x3C5F       ; # &g2-MJ016747;
+        :eq g2.cns11643-1:0x743A      ; # &g2-MJ016747;
+        :eq g2.jis-x0213-1:0x3C5F     ; # &g2-MJ016747;
+        :eq g2.hanyo-denshi...ja:0x3C5F ; # &g2-MJ016747;
+        :eq g2.gt:25313               ; # &g2-MJ016747;
+        :eq g2.daikanwa...._.p:19710  ; # &g2-MJ016747;
+        :subsume
+            repi.daikanwa...._.p:19710 ,
+            repi.jis-x0208:0x3C5F ,
+            repi.adobe-japan1-6:02315 ,
+            repi.mj:016747       ,
+            repi.ucs_unicode:0x7235 ,
+            repi.cns11643-1:0x743A ,
+            repi.gt:25313        ;
+        .
+        g2.ucs_unicode:0x7235
+              :abstract-glyph-form-of [ :context domain:unicode ;
+                                        :target     ucs:0x7235  ] .
+        g2.adobe-japan1-0:02315
+              :abstract-glyph-form-of adobe-japan1-0:02315   .
+        g2.gb2312:0x3E74
+              :abstract-glyph-form-of         gb2312:0x3E74  .
+        g2.jis-x0208:0x3C5F
+              :abstract-glyph-form-of      jis-x0208:0x3C5F  .
+        g2.cns11643-1:0x743A
+              :abstract-glyph-form-of     cns11643-1:0x743A  .
+        g2.jis-x0213-1:0x3C5F
+              :abstract-glyph-form-of    jis-x0213-1:0x3C5F  .
+        g2.hanyo-denshi...ja:0x3C5F
+              :abstract-glyph-form-of hanyo-denshi...ja:0x3C5F  .
+        g2.gt:25313
+              :abstract-glyph-form-of             gt:25313   .
+        g2.daikanwa...._.p:19710
+              :abstract-glyph-form-of daikanwa...._.p:19710   .
+        repi.daikanwa...._.p:19710
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa...._.p:19710 ;
+            .
+        repi.jis-x0208:0x3C5F
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0208:0x3C5F ;
+            :eq repi.jis-x0213-1:0x3C5F   ; # &R-J0-3C5F;
+            .
+            repi.jis-x0213-1:0x3C5F
+                          :glyph-image-of    jis-x0213-1:0x3C5F  .
+        repi.adobe-japan1-0:02315
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-0:02315 ;
+            .
+        repi.mj:016747
+            a chisegg:glyph-image ;
+            :glyph-image-of mj:016747 ;
+            .
+        repi.ucs_unicode:0x7235
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x7235  ] ;
+            .
+        repi.cns11643-1:0x743A
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-1:0x743A ;
+            .
+        repi.gt:25313
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:25313 ;
+            .
+
+o.ucs_cns:0x2F921
+    a chisegg:unified-glyph ;
+    :unified-glyph-of [ :context domain:cns     ;
+                        :target     ucs:0x2F921 ] ;
+    :denotation-of
+        a.ucs:0x7235         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    :eq o.ucs_ks:0x7235           ; # &o-CU+2F921;
+    :eq a.daikanwa:19711          ; # &o-CU+2F921;
+    .
+    o.ucs_ks:0x7235
+                :unified-glyph-of [ :context domain:ks      ;
+                                    :target     ucs:0x7235  ] .
+    a.daikanwa:19711
+           :abstract-character-of       daikanwa:19711   .
+
+rep.mj:016748
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:016748 ;
+    :denotation-of
+        o.ucs_cns:0x2F921    ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    :eq rep.ucs_ks:0x7235         ; # &MJ016748;
+    :eq rep.ks-x1001:0x6D49       ; # &I-K0-6D49;
+    :eq rep.hanyo-denshi...jt:0xB55C ; # &I-HD-JT-B55C;
+    :eq rep.daikanwa:19711        ; # &I-M-19711;
+    :subsume
+        g2.daikanwa:19711    ,
+        g2.mj:016748         ,
+        g2.ks-x1001:0x6D49   ,
+        g2.hanyo-denshi...jt:0xB55C ;
+    .
+    rep.ucs_ks:0x7235
+               :abstract-glyph-of [ :context domain:ks      ;
+                                    :target     ucs:0x7235  ] .
+    rep.ks-x1001:0x6D49
+               :abstract-glyph-of       ks-x1001:0x6D49  .
+    rep.hanyo-denshi...jt:0xB55C
+               :abstract-glyph-of hanyo-denshi...jt:0xB55C  .
+    rep.daikanwa:19711
+               :abstract-glyph-of       daikanwa:19711   .
+    g2.daikanwa:19711
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:19711 ;
+        .
+    g2.mj:016748
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:016748 ;
+        .
+    g2.ks-x1001:0x6D49
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of ks-x1001:0x6D49 ;
+        :eq g2.ucs_ks:0x7235          ; # &g2-K0-6D49;
+        .
+        g2.ucs_ks:0x7235
+              :abstract-glyph-form-of [ :context domain:ks      ;
+                                        :target     ucs:0x7235  ] .
+    g2.hanyo-denshi...jt:0xB55C
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of hanyo-denshi...jt:0xB55C ;
+        :rep.decomposition   [ :context domain:hanyo-denshi ;
+                               :target  a.ucs:0x7235         ,
+                                        a.ucs:0xE0104        ] ;
+        .
+
+rep.jef-china3:0x58AE
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of jef-china3:0x58AE ;
+    :denotation-of
+        o.ucs_cns:0x2F921    ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    .
+
+a.ucs:0x2F921
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2F921 ;
+    :denotation-of
+        o.ucs_cns:0x2F921    ;
+    :to.canonical-ucs	a.ucs:0x7235 ; # 爵
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          13 ;
+    ideo:total-strokes    17 ;
+    :eq rep.cns11643-3:0x5545     ; # &I-C3-5545;
+    .
+    rep.cns11643-3:0x5545
+               :abstract-glyph-of     cns11643-3:0x5545  .
+
+a.ucs:0x24539
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24539 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    .
+
+rep.daikanwa:19712
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19712 ;
+    :denotation-of
+        a.ucs:0x24539        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    .
+
+rep.ucs_iso:0x24539
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24539 ] ;
+    :denotation-of
+        a.ucs:0x24539        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    .
+
+rep.cns11643-7:0x4056
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-7:0x4056 ;
+    :denotation-of
+        a.ucs:0x24539        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          14 ;
+    ideo:total-strokes    18 ;
+    .
+
+a.ucs:0x24540
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24540 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          15 ;
+    ideo:total-strokes    19 ;
+    .
+
+rep.daikanwa:19713
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19713 ;
+    :denotation-of
+        a.ucs:0x24540        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          15 ;
+    ideo:total-strokes    19 ;
+    .
+
+rep.ucs_iso:0x24540
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24540 ] ;
+    :denotation-of
+        a.ucs:0x24540        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          15 ;
+    ideo:total-strokes    19 ;
+    :eq rep.cns11643-5:0x6838     ; # &C5-6838;
+    :subsume
+        g2.ucs_iso:0x24540   ,
+        g2.cns11643-5:0x6838 ;
+    .
+    rep.cns11643-5:0x6838
+               :abstract-glyph-of     cns11643-5:0x6838  .
+    g2.ucs_iso:0x24540
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24540 ] ;
+        .
+    g2.cns11643-5:0x6838
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-5:0x6838 ;
+        :eq g2.ucs_cns:0x24540        ; # &g2-CU+24540;
+        .
+        g2.ucs_cns:0x24540
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24540 ] .
+
+a.ucs:0x24545
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24545 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          16 ;
+    ideo:total-strokes    20 ;
+    .
+
+rep.daikanwa:19715
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19715 ;
+    :denotation-of
+        a.ucs:0x24545        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          16 ;
+    ideo:total-strokes    20 ;
+    .
+
+rep.ucs_iso:0x24545
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24545 ] ;
+    :denotation-of
+        a.ucs:0x24545        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          16 ;
+    ideo:total-strokes    20 ;
+    :eq rep.cns11643-7:0x4E3D     ; # &C7-4E3D;
+    :subsume
+        g2.cns11643-7:0x4E3D ,
+        g2.ucs_iso:0x24545   ;
+    .
+    rep.cns11643-7:0x4E3D
+               :abstract-glyph-of     cns11643-7:0x4E3D  .
+    g2.cns11643-7:0x4E3D
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-7:0x4E3D ;
+        :eq g2.ucs_cns:0x24545        ; # &g2-CU+24545;
+        .
+        g2.ucs_cns:0x24545
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24545 ] .
+    g2.ucs_iso:0x24545
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24545 ] ;
+        .
+
+a.ucs:0x206A1
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x206A1 ;
+    ideo:radical           [ :context domain:ucs     ;
+                             :target           17 ; # ⼐
+                           ] ;
+    ideo:strokes           [ :context domain:ucs     ;
+                             :target  18 ] ;
+    ideo:radical           [ :context domain:cns     ;
+                             :target           87 ; # ⽖
+                           ] ;
+    ideo:strokes           [ :context domain:cns     ;
+                             :target  16 ] ;
+    ideo:total-strokes    20 ;
+    .
+
+rep.daikanwa:49274
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:49274 ;
+    :denotation-of
+        a.ucs:0x206A1        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          16 ;
+    ideo:total-strokes    20 ;
+    .
+
+rep.ucs_iso:0x206A1
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x206A1 ] ;
+    :denotation-of
+        a.ucs:0x206A1        ;
+    ideo:radical           [ :context domain:ucs     ;
+                             :target           17 ; # ⼐
+                           ] ;
+    ideo:strokes           [ :context domain:ucs     ;
+                             :target  18 ] ;
+    ideo:radical           [ :context domain:cns     ;
+                             :target           87 ; # ⽖
+                           ] ;
+    ideo:strokes           [ :context domain:cns     ;
+                             :target  16 ] ;
+    ideo:total-strokes    20 ;
+    :eq rep.cns11643-7:0x4E3E     ; # &C7-4E3E;
+    .
+    rep.cns11643-7:0x4E3E
+               :abstract-glyph-of     cns11643-7:0x4E3E  .
+
+a.ucs:0x24548
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24548 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          17 ;
+    ideo:total-strokes    21 ;
+    .
+
+rep.daikanwa:49275
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:49275 ;
+    :denotation-of
+        a.ucs:0x24548        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          17 ;
+    ideo:total-strokes    21 ;
+    .
+
+rep.ucs_iso:0x24548
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24548 ] ;
+    :denotation-of
+        a.ucs:0x24548        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          17 ;
+    ideo:total-strokes    21 ;
+    :eq rep.cns11643-7:0x5368     ; # &C7-5368;
+    .
+    rep.cns11643-7:0x5368
+               :abstract-glyph-of     cns11643-7:0x5368  .
+
+a.ucs:0x24549
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24549 ;
+    ideo:radical          87 ; # ⽖ 
+    .
+
+rep.daikanwa:19718
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19718 ;
+    :denotation-of
+        a.ucs:0x24549        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          18 ;
+    ideo:total-strokes    22 ;
+    .
+
+rep.ucs_iso:0x24549
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24549 ] ;
+    :denotation-of
+        a.ucs:0x24549        ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          19 ;
+    ideo:total-strokes    23 ;
+    :eq rep.cns11643-7:0x5B71     ; # &C7-5B71;
+    :subsume
+        g2.ucs_iso:0x24549   ,
+        g2.cns11643-7:0x5B71 ;
+    .
+    rep.cns11643-7:0x5B71
+               :abstract-glyph-of     cns11643-7:0x5B71  .
+    g2.ucs_iso:0x24549
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24549 ] ;
+        .
+    g2.cns11643-7:0x5B71
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-7:0x5B71 ;
+        :eq g2.ucs_cns:0x24549        ; # &g2-CU+24549;
+        .
+        g2.ucs_cns:0x24549
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x24549 ] .
+
+rep.daikanwa:19719
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19719 ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          19 ;
+    ideo:total-strokes    23 ;
+    .
+
+rep.daikanwa:49276
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:49276 ;
+    :to.ucs		  a.ucs:0x2454B ; # 𤕋
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          20 ;
+    ideo:total-strokes    24 ;
+    .
+
+a.ucs:0x2454B
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2454B ;
+
+    :morohashi-daikanwa	  (49276 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          20 ;
+    ideo:total-strokes    24 ;
+    :eq rep.cns11643-7:0x5E79     ; # &I-C7-5E79;
+    .
+    rep.cns11643-7:0x5E79
+               :abstract-glyph-of     cns11643-7:0x5E79  .
+
+rep.daikanwa:19720
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of daikanwa:19720 ;
+    :to.ucs		  a.ucs:0x2454D ; # 𤕍
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          21 ;
+    ideo:total-strokes    25 ;
+    .
+
+a.ucs:0x2454D
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2454D ;
+
+    :morohashi-daikanwa	  (19720 0 2) ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes          21 ;
+    ideo:total-strokes    25 ;
+    :eq rep.cns11643-7:0x6122     ; # &I-C7-6122;
+    .
+    rep.cns11643-7:0x6122
+               :abstract-glyph-of     cns11643-7:0x6122  .
+
