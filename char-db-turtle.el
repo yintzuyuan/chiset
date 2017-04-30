@@ -78,6 +78,7 @@
     =+>ucs@jis
     =+>ucs@cns
     =+>ucs@ks
+    =+>ucs@jis/1990
     =>mj
     =>jis-x0208 =>jis-x0213-1
     =>jis-x0208@1997
