@@ -166,8 +166,10 @@
 @prefix g2.cbeta: <http://www.chise.org/est/view/character/g2.cbeta=> .
 @prefix repi.cbeta: <http://www.chise.org/est/view/character/repi.cbeta=> .
 @prefix rep.jef-china3: <http://www.chise.org/est/view/character/rep.jef-china3=> .
+@prefix rep.big5-cdp-var-001: <http://www.chise.org/est/view/character/rep.big5-cdp-var-001=> .
 @prefix rep.big5-cdp-var-005: <http://www.chise.org/est/view/character/rep.big5-cdp-var-005=> .
 @prefix a.iwds-1: <http://www.chise.org/est/view/character/a.iwds-1=> .
+@prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
 @prefix rep.ucs-var-002: <http://www.chise.org/est/view/character/rep.ucs-var-002=> .
 @prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
 @prefix rep.ucs-itaiji-004: <http://www.chise.org/est/view/character/rep.ucs-itaiji-004=> .
@@ -224,8 +226,10 @@
 @prefix hng-kar: <http://rdf.chise.org/data/ccs/hng-kar/code-point/> .
 @prefix cbeta: <http://rdf.chise.org/data/ccs/cbeta/code-point/> .
 @prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
+@prefix big5-cdp-var-001: <http://rdf.chise.org/data/ccs/big5-cdp-var-001/code-point/> .
 @prefix big5-cdp-var-005: <http://rdf.chise.org/data/ccs/big5-cdp-var-005/code-point/> .
 @prefix iwds-1: <http://rdf.chise.org/data/ccs/iwds-1/code-point/> .
+@prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
 @prefix ucs-var-002: <http://rdf.chise.org/data/ccs/ucs-var-002/code-point/> .
 @prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
 @prefix ucs-itaiji-004: <http://rdf.chise.org/data/ccs/ucs-itaiji-004/code-point/> .
@@ -4898,6 +4902,10 @@ a.ucs:0x34BC
     ideo:radical          13 ; # ⼌ 
     ideo:strokes           9 ;
     ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs_component:0x5EFF ; # &IWDS1-303;
+        isd:below    a.big5-cdp:0x8C62   # &A-CDP-8C62;
+    ] ;
     :sound               [ :context domain:ja...on...go...p1 ;
                            :target  ( "maN" ) ;
                          ] ;
@@ -5053,6 +5061,20 @@ rep.adobe-japan1-5:17303
             :glyph-image-of big5-cdp:0x8C61 ;
             .
 
+rep.ucs-var-001:0x34BC
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-var-001:0x34BC ;
+    :denotation-of
+        a.ucs:0x34BC         ;
+    ideo:radical          13 ; # ⼌ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x5EFF ; # 廿
+        isd:below    rep.big5-cdp-var-001:0x8C62   # &CDP-v001-8C62;
+    ] ;
+    .
+
 rep.mj:057021
     a chisegg:abstract-glyph ;
     :abstract-glyph-of mj:057021 ;
@@ -5062,8 +5084,8 @@ rep.mj:057021
     ideo:strokes           9 ;
     ideo:total-strokes    11 ;
     isd:structure [ a idc:⿱ ;
-        isd:above    a.ucs:0x2EBE ; # ⺾
-        isd:below    rep.mj:007269   # &MJ007269;
+        isd:above    rep.big5-cdp:0x8B5C ; # &CDP-8B5C;
+        isd:below    rep.big5-cdp-var-001:0x8C62   # &CDP-v001-8C62;
     ] ;
     :eq rep.hanyo-denshi...ks:018450 ; # &MJ057021;
     :form-of             [ :sources chisebib:koseki ;
@@ -5077,19 +5099,19 @@ rep.mj:057021
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of mj:057021 ;
         :eq g2.hanyo-denshi...ks:018450 ; # &g2-MJ057021;
-        :eq rep.hanyo-denshi...ks...mf:001845 ; # &g2-MJ057021;
         :subsume
             repi.hanyo-denshi...ks:018450 ,
             repi.mj:057021       ;
         .
         g2.hanyo-denshi...ks:018450
               :abstract-glyph-form-of hanyo-denshi...ks:018450  .
-        rep.hanyo-denshi...ks...mf:001845
-                   :abstract-glyph-of hanyo-denshi...ks...mf:001845  .
         repi.hanyo-denshi...ks:018450
             a chisegg:glyph-image ;
             :glyph-image-of hanyo-denshi...ks:018450 ;
+            :eq rep.hanyo-denshi...ks...mf:001845 ; # &R-HD-KS-018450;
             .
+            rep.hanyo-denshi...ks...mf:001845
+                       :abstract-glyph-of hanyo-denshi...ks...mf:001845  .
         repi.mj:057021
             a chisegg:glyph-image ;
             :glyph-image-of mj:057021 ;
