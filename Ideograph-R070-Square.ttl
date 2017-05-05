@@ -2230,22 +2230,39 @@ rep.ucs_iso:0x230EA
     ideo:radical          70 ; # ⽅ 
     ideo:strokes           6 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿵ ;
+        isd:surround rep.big5-cdp:0x86FC ; # &CDP-86FC;
+        isd:filling  a.ucs:0x65B9   # 方
+    ] ;
     :eq rep.daikanwa:13649        ; # &M-13649;
+    :from.same           [ :sources chisebib:pianhai-leibian ,
+                                    chisebib:daikanwa ;
+                           :target  a.ucs:0x6EC2         ] ;
     :subsume
-        g2.daikanwa:13649    ,
         g2.ucs_iso:0x230EA   ;
     .
     rep.daikanwa:13649
                :abstract-glyph-of       daikanwa:13649   .
-    g2.daikanwa:13649
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of daikanwa:13649 ;
-        .
     g2.ucs_iso:0x230EA
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of [ :context domain:iso     ;
                                   :target     ucs:0x230EA ] ;
+        :eq g2.daikanwa:13649         ; # &g2-M-13649;
+        :subsume
+            repi.daikanwa:13649  ,
+            repi.ucs_iso:0x230EA ;
         .
+        g2.daikanwa:13649
+              :abstract-glyph-form-of       daikanwa:13649   .
+        repi.daikanwa:13649
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:13649 ;
+            .
+        repi.ucs_iso:0x230EA
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x230EA ] ;
+            .
 
 rep.cns11643-6:0x3835
     a chisegg:abstract-glyph ;
@@ -2255,9 +2272,17 @@ rep.cns11643-6:0x3835
     ideo:radical          70 ; # ⽅ 
     ideo:strokes           6 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.big5-cdp:0x86FC ; # &CDP-86FC;
+        isd:below    a.ucs:0x65B9   # 方
+    ] ;
+    :eq rep.ucs_cns:0x230EA       ; # &C6-3835;
     :subsume
         g2.cns11643-6:0x3835 ;
     .
+    rep.ucs_cns:0x230EA
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x230EA ] .
     g2.cns11643-6:0x3835
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of cns11643-6:0x3835 ;
