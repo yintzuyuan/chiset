@@ -77,6 +77,7 @@
 @prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
 @prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix a.big5-cdp: <http://www.chise.org/est/view/character/a.big5-cdp=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix rep.hanyo-denshi...jt: <http://www.chise.org/est/view/character/rep.hanyo-denshi...jt=> .
 @prefix g2.hanyo-denshi...ja: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ja=> .
@@ -1959,12 +1960,26 @@ a.ucs:0x204E5
               :abstract-glyph-form-of [ :context domain:cns     ;
                                         :target     ucs:0x204E5 ] .
 
-rep.big5-cdp:0x8C62
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of big5-cdp:0x8C62 ;
+a.big5-cdp:0x8C62
+    a chisegg:abstract-character ;
+    :abstract-character-of big5-cdp:0x8C62 ;
     ideo:radical          11 ; # ⼊ 
     ideo:strokes           5 ;
     ideo:total-strokes     7 ;
+    .
+
+rep.big5-cdp:0x8C62
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of big5-cdp:0x8C62 ;
+    :denotation-of
+        a.big5-cdp:0x8C62    ;
+    ideo:radical          11 ; # ⼊ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     7 ;
+    isd:structure [ a idc:⿻ ;
+        isd:underlying a.ucs:0x5DFE ; # 巾
+        isd:overlaying a.ucs:0x204DC   # 𠓜
+    ] ;
     :form-of             [ :context domain:component...connect-above ;
                            :target  a.ucs:0x34B3         ] ;
     :subsume
@@ -2162,12 +2177,15 @@ a.jis-x0208:0x5141
     ideo:total-strokes     9 ;
     :eq bucs:0x516A               ; # &J97-5141;
     :eq a.jis-x0213-1:0x5141      ; # &J97-5141;
+    :eq a.iwds-1:0384             ; # &J97-5141;
     .
     bucs:0x516A
         :super-abstract-character-of [ :context domain:bucs    ;
                                        :target     ucs:0x516A  ] .
     a.jis-x0213-1:0x5141
            :abstract-character-of    jis-x0213-1:0x5141  .
+    a.iwds-1:0384
+           :abstract-character-of         iwds-1:0384    .
 
 a.ucs:0x516A
     a chisegg:abstract-character ;
