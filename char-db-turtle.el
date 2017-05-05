@@ -58,6 +58,7 @@
     =ucs-itaiji-084
     =ucs-var-001
     =ucs-var-002
+    =ucs-var-003
     =ucs-var-004
     =cns11643-1 =cns11643-2 =cns11643-3
     =cns11643-4 =cns11643-5 =cns11643-6 =cns11643-7
