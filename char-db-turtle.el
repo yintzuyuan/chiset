@@ -54,6 +54,7 @@
     =ucs-itaiji-004
     =ucs-itaiji-005
     =ucs-itaiji-006
+    =ucs-itaiji-007
     =ucs-itaiji-009
     =ucs-itaiji-084
     =ucs-var-001
@@ -1119,7 +1120,7 @@
 		    ))
 	       )
 	      ((eq name 'ideographic-structure)
-	       (insert (isd-turtle-format-char nil nil value nil
+	       (insert (isd-turtle-format-char nil nil value (/ column 4)
 					       'isd 'without-head-char))
 	       (insert " ;")
 	       )
