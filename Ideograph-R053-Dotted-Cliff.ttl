@@ -29,6 +29,7 @@
 @prefix rep.ucs_jis...1990: <http://www.chise.org/est/view/character/rep.ucs@jis...1990=> .
 @prefix rep.ucs_jis...2000: <http://www.chise.org/est/view/character/rep.ucs@jis...2000=> .
 @prefix rep.ucs_jis...2004: <http://www.chise.org/est/view/character/rep.ucs@jis...2004=> .
+@prefix rep.ucs_JP...hanazono: <http://www.chise.org/est/view/character/rep.ucs@JP...hanazono=> .
 @prefix rep.ucs_ks: <http://www.chise.org/est/view/character/rep.ucs@ks=> .
 @prefix g.ucs_iso: <http://www.chise.org/est/view/character/g.ucs@iso=> .
 @prefix g.ucs_unicode: <http://www.chise.org/est/view/character/g.ucs@unicode=> .
@@ -42,6 +43,7 @@
 @prefix g2.ucs_jis...1990: <http://www.chise.org/est/view/character/g2.ucs@jis...1990=> .
 @prefix g2.ucs_jis...2000: <http://www.chise.org/est/view/character/g2.ucs@jis...2000=> .
 @prefix g2.ucs_jis...2004: <http://www.chise.org/est/view/character/g2.ucs@jis...2004=> .
+@prefix g2.ucs_JP...hanazono: <http://www.chise.org/est/view/character/g2.ucs@JP...hanazono=> .
 @prefix g2.ucs_ks: <http://www.chise.org/est/view/character/g2.ucs@ks=> .
 @prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
@@ -1980,7 +1982,7 @@ a.ucs_component:0x5E95
     :abstract-character-of [ :context domain:component ;
                              :target     ucs:0x5E95  ] ;
     ideo:radical          53 ; # ⼴ 
-    :eq a.iwds-1:0280             ; # &IWDS1-280;
+    :eq a.iwds-1:0280             ; # &A-compU+5E95;
     .
     a.iwds-1:0280
            :abstract-character-of         iwds-1:0280    .
@@ -2266,7 +2268,7 @@ a.ucs-itaiji-005:0x77F3
     ideo:total-strokes     7 ;
     isd:structure [ a idc:⿸ ;
         isd:surround a.ucs:0x5E7F ; # 广
-        isd:filling  a.ucs_component:0x5EFF   # &IWDS1-303;
+        isd:filling  a.ucs_component:0x5EFF   # &A-compU+5EFF;
     ] ;
     .
 
@@ -7349,7 +7351,7 @@ a.ucs_component:0x5EB6
     ideo:radical          53 ; # ⼴ 
     ideo:strokes           8 ;
     ideo:total-strokes    11 ;
-    :eq a.iwds-1:0365             ; # &IWDS1-365;
+    :eq a.iwds-1:0365             ; # &A-compU+5EB6;
     .
     a.iwds-1:0365
            :abstract-character-of         iwds-1:0365    .
@@ -10271,7 +10273,7 @@ a.ucs_component:0x5ECC
     ideo:radical          53 ; # ⼴ 
     ideo:strokes          10 ;
     ideo:total-strokes    13 ;
-    :eq a.iwds-1:0269             ; # &IWDS1-269;
+    :eq a.iwds-1:0269             ; # &A-compU+5ECC;
     .
     a.iwds-1:0269
            :abstract-character-of         iwds-1:0269    .
@@ -15403,10 +15405,75 @@ a.ucs:0x3898
     ideo:radical          53 ; # ⼴ 
     ideo:strokes          12 ;
     ideo:total-strokes    15 ;
-    :eq rep.cns11643-3:0x4B71     ; # &I-C3-4B71;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs:0x5E7F ; # 广
+        isd:filling  a.ucs:0x20525   # 𠔥
+    ] ;
     .
-    rep.cns11643-3:0x4B71
-               :abstract-glyph-of     cns11643-3:0x4B71  .
+
+rep.ucs_JP...hanazono:0x3898
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:JP...hanazono ;
+                         :target     ucs:0x3898  ] ;
+    :denotation-of
+        a.ucs:0x3898         ;
+    ideo:radical          53 ; # ⼴ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    15 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs:0x5E7F ; # 广
+        isd:filling  rep.ucs_iso:0x20525   # &C6-465B;
+    ] ;
+    :subsume
+        g2.ucs_JP...hanazono:0x3898 ;
+    .
+    g2.ucs_JP...hanazono:0x3898
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                  :target     ucs:0x3898  ] ;
+        .
+
+rep.cns11643-3:0x4B71
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of cns11643-3:0x4B71 ;
+    :denotation-of
+        a.ucs:0x3898         ;
+    ideo:radical          53 ; # ⼴ 
+    ideo:strokes          12 ;
+    ideo:total-strokes    15 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs:0x5E7F ; # 广
+        isd:filling  rep.mj:031012   # &MJ031012;
+    ] ;
+    :eq rep.ucs_unicode:0x3898    ; # &C3-4B71;
+    :rep.ucs_JP...hanazono     rdf:nil ;
+    :subsume
+        g2.ucs_unicode:0x3898 ;
+    .
+    rep.ucs_unicode:0x3898
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x3898  ] .
+    g2.ucs_unicode:0x3898
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x3898  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        :eq g2.cns11643-3:0x4B71      ; # &g2-UU+3898;
+        :subsume
+            repi.cns11643-3:0x4B71 ,
+            repi.ucs_unicode:0x3898 ;
+        .
+        g2.cns11643-3:0x4B71
+              :abstract-glyph-form-of     cns11643-3:0x4B71  .
+        repi.cns11643-3:0x4B71
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-3:0x4B71 ;
+            .
+        repi.ucs_unicode:0x3898
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x3898  ] ;
+            .
 
 a.ucs:0x5EE4
     a chisegg:abstract-character ;
@@ -15990,7 +16057,7 @@ a.ucs_component:0x5EE9
     ideo:radical          53 ; # ⼴ 
     ideo:strokes          13 ;
     ideo:total-strokes    16 ;
-    :eq a.iwds-1:0334             ; # &IWDS1-334;
+    :eq a.iwds-1:0334             ; # &A-compU+5EE9;
     .
     a.iwds-1:0334
            :abstract-character-of         iwds-1:0334    .
