@@ -95,6 +95,7 @@
 @prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
 @prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
 @prefix a.mj: <http://www.chise.org/est/view/character/a.mj=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix rep.hanyo-denshi...ib: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ib=> .
@@ -1353,15 +1354,76 @@ a.ucs:0x21B20
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x21B20 ;
     ideo:radical          41 ; # ⼨ 
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs_component:0x7680 ; # &A-compU+7680;
+        isd:right    a.ucs:0x5BF8   # 寸
+    ] ;
+    .
+
+rep.ucs_iso:0x21B20
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x21B20 ] ;
+    :denotation-of
+        a.ucs:0x21B20        ;
+    ideo:radical          41 ; # ⼨ 
     ideo:strokes           5 ;
     ideo:total-strokes     8 ;
-    :eq rep.cns11643-6:0x2A69     ; # &I-C6-2A69;
+    isd:structure [ a idc:⿰ ;
+        isd:left     rep.big5-cdp:0x8B7C ; # &CDP-8B7C;
+        isd:right    a.ucs:0x5BF8   # 寸
+    ] ;
+    :eq rep.cns11643-6:0x2A69     ; # &C6-2A69;
+    :eq rep.big5-cdp:0x8D42       ; # &I-CDP-8D42;
     :eq rep.daikanwa:07423        ; # &I-M-07423;
+    :from.same           [ :sources chisebib:zihui-bu ,
+                                    chisebib:daikanwa ;
+                           :target  rep.mj:016748        ] ;
+    :subsume
+        g2.ucs_iso:0x21B20   ;
     .
     rep.cns11643-6:0x2A69
                :abstract-glyph-of     cns11643-6:0x2A69  .
+    rep.big5-cdp:0x8D42
+               :abstract-glyph-of       big5-cdp:0x8D42  .
     rep.daikanwa:07423
                :abstract-glyph-of       daikanwa:07423   .
+    g2.ucs_iso:0x21B20
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x21B20 ] ;
+        :eq g2.cns11643-6:0x2A69      ; # &g2-CDP-8D42;
+        :eq g2.big5-cdp:0x8D42        ; # &g2-CDP-8D42;
+        :eq g2.daikanwa:07423         ; # &g2-CDP-8D42;
+        :subsume
+            repi.daikanwa:07423  ,
+            repi.big5-cdp:0x8D42 ,
+            repi.cns11643-6:0x2A69 ,
+            repi.ucs_iso:0x21B20 ;
+        .
+        g2.cns11643-6:0x2A69
+              :abstract-glyph-form-of     cns11643-6:0x2A69  .
+        g2.big5-cdp:0x8D42
+              :abstract-glyph-form-of       big5-cdp:0x8D42  .
+        g2.daikanwa:07423
+              :abstract-glyph-form-of       daikanwa:07423   .
+        repi.daikanwa:07423
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:07423 ;
+            .
+        repi.big5-cdp:0x8D42
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8D42 ;
+            .
+        repi.cns11643-6:0x2A69
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x2A69 ;
+            .
+        repi.ucs_iso:0x21B20
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x21B20 ] ;
+            .
 
 a.ucs:0x5C01
     a chisegg:abstract-character ;
@@ -2652,7 +2714,7 @@ a.ucs_component:0x5C08
     :denotation-of
         bucs:0x5C08          ;
     ideo:radical          41 ; # ⼨ 
-    :eq a.iwds-1:0387             ; # &IWDS1-387;
+    :eq a.iwds-1:0387             ; # &A-compU+5C08;
     .
     a.iwds-1:0387
            :abstract-character-of         iwds-1:0387    .
@@ -3913,6 +3975,19 @@ a.ucs:0x21B3B
                :abstract-glyph-of     cns11643-6:0x5179  .
     rep.daikanwa:07454
                :abstract-glyph-of       daikanwa:07454   .
+
+rep.ucs-itaiji-001:0x21B20
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-001:0x21B20 ;
+    ideo:radical          41 ; # ⼨ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x9B2F ; # 鬯
+        isd:right    a.ucs:0x5BF8   # 寸
+    ] ;
+    :form-of             a.ucs:0x21B20        ;
+    .
 
 a.ucs:0x21B3D
     a chisegg:abstract-character ;
