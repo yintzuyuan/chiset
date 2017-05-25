@@ -22,6 +22,7 @@
 @prefix rep.ucs_jis...1990: <http://www.chise.org/est/view/character/rep.ucs@jis...1990=> .
 @prefix rep.ucs_jis...2000: <http://www.chise.org/est/view/character/rep.ucs@jis...2000=> .
 @prefix rep.ucs_jis...2004: <http://www.chise.org/est/view/character/rep.ucs@jis...2004=> .
+@prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
 @prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
@@ -68,6 +69,7 @@
 @prefix rep.cns11643-4: <http://www.chise.org/est/view/character/rep.cns11643-4=> .
 @prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
+@prefix g2.cns11643-6: <http://www.chise.org/est/view/character/g2.cns11643-6=> .
 @prefix repi.cns11643-6: <http://www.chise.org/est/view/character/repi.cns11643-6=> .
 @prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
 @prefix rep.jis-x0213-1_2000: <http://www.chise.org/est/view/character/rep.jis-x0213-1@2000=> .
@@ -205,7 +207,7 @@ a.ucs_component:0x5DF1
     ideo:radical          49 ; # ⼰ 
     ideo:strokes           0 ;
     ideo:total-strokes     3 ;
-    :eq a.iwds-1:0120             ; # &IWDS1-120;
+    :eq a.iwds-1:0120             ; # &A-compU+5DF1;
     .
     a.iwds-1:0120
            :abstract-character-of         iwds-1:0120    .
@@ -219,7 +221,7 @@ a.ucs_component:0x5DF2
     ideo:radical          49 ; # ⼰ 
     ideo:strokes           0 ;
     ideo:total-strokes     3 ;
-    :eq a.iwds-1:0122             ; # &IWDS1-122;
+    :eq a.iwds-1:0122             ; # &A-compU+5DF2;
     .
     a.iwds-1:0122
            :abstract-character-of         iwds-1:0122    .
@@ -233,7 +235,7 @@ a.ucs_component:0x5DF3
     ideo:radical          49 ; # ⼰ 
     ideo:strokes           0 ;
     ideo:total-strokes     3 ;
-    :eq a.iwds-1:0121             ; # &IWDS1-121;
+    :eq a.iwds-1:0121             ; # &A-compU+5DF3;
     .
     a.iwds-1:0121
            :abstract-character-of         iwds-1:0121    .
@@ -2294,27 +2296,99 @@ rep.mj:010801
             :glyph-image-of jef-china3:0x4BF5 ;
             .
 
-rep.cns11643-6:0x4836
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of cns11643-6:0x4836 ;
-    :to.ucs		  a.ucs:0x22045 ; # 𢁅
-    ideo:radical          49 ; # ⼰ 
-    ideo:strokes           9 ;
-    ideo:total-strokes    12 ;
-    :eq rep.daikanwa:08766        ; # &I-M-08766;
-    .
-    rep.daikanwa:08766
-               :abstract-glyph-of       daikanwa:08766   .
-
 a.ucs:0x22045
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x22045 ;
-
-    :morohashi-daikanwa	  (8766 0 1) ;
     ideo:radical          49 ; # ⼰ 
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
+    :sound               [ :context domain:ja...on ;
+                           :target  ( "soN" ) ;
+                         ] ;
     .
+
+rep.mj:034970
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:034970 ;
+    :denotation-of
+        a.ucs:0x22045        ;
+    ideo:radical          49 ; # ⼰ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    12 ;
+    :eq rep.ucs_cns:0x22045       ; # &MJ034970;
+    :eq rep.cns11643-6:0x4836     ; # &I-C6-4836;
+    :eq rep.koseki:099360         ; # &MJ034970;
+    :eq rep.daikanwa:08766        ; # &I-M-08766;
+    :from.ancient        [ :sources chisebib:zihui ,
+                                    chisebib:daikanwa ;
+                           :target  rep.mj:010800        ] ;
+    :form-of             [ :sources chisebib:koseki ;
+                           :target  rep.mj:010800        ] ;
+    :from.same           [ :sources chisebib:zihui ;
+                           :target  rep.mj:010800        ] ;
+    :subsume
+        g2.mj:034970         ;
+    .
+    rep.ucs_cns:0x22045
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x22045 ] .
+    rep.cns11643-6:0x4836
+               :abstract-glyph-of     cns11643-6:0x4836  .
+    rep.koseki:099360
+               :abstract-glyph-of         koseki:099360  .
+    rep.daikanwa:08766
+               :abstract-glyph-of       daikanwa:08766   .
+    g2.mj:034970
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:034970 ;
+        :eq g2.ucs_cns:0x22045        ; # &g2-MJ034970;
+        :eq g2.cns11643-6:0x4836      ; # &g2-MJ034970;
+        :eq g2.koseki:099360          ; # &g2-MJ034970;
+        :eq g2.daikanwa:08766         ; # &g2-MJ034970;
+        :subsume
+            repi.daikanwa:08766  ,
+            repi.mj:034970       ,
+            repi.cns11643-6:0x4836 ;
+        .
+        g2.ucs_cns:0x22045
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x22045 ] .
+        g2.cns11643-6:0x4836
+              :abstract-glyph-form-of     cns11643-6:0x4836  .
+        g2.koseki:099360
+              :abstract-glyph-form-of         koseki:099360  .
+        g2.daikanwa:08766
+              :abstract-glyph-form-of       daikanwa:08766   .
+        repi.daikanwa:08766
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:08766 ;
+            .
+        repi.mj:034970
+            a chisegg:glyph-image ;
+            :glyph-image-of mj:034970 ;
+            .
+        repi.cns11643-6:0x4836
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x4836 ;
+            .
+
+rep.ucs_iso:0x22045
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x22045 ] ;
+    :denotation-of
+        a.ucs:0x22045        ;
+    ideo:radical          49 ; # ⼰ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    12 ;
+    :subsume
+        g2.ucs_iso:0x22045   ;
+    .
+    g2.ucs_iso:0x22045
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x22045 ] ;
+        .
 
 a.ucs:0x2204C
     a chisegg:abstract-character ;
