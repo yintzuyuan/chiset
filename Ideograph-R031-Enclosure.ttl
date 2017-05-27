@@ -1117,43 +1117,86 @@ a.ucs:0x56DF
         isd:surround rep.big5-cdp:0x8CC8 ; # &CDP-8CC8;
         isd:filling  a.ucs:0x3405   # 㐅
     ] ;
+    :eq rep.adobe-japan1-5:17410  ; # &I-AJ1-17410;
+    :eq rep.gb2312:0x5836         ; # &I-G0-5836;
+    :eq rep.jis-x0212:0x3675      ; # &I-JSP-3675;
+    :eq rep.cns11643-2:0x2227     ; # &I-C2-2227;
+    :eq rep.jis-x0213-2:0x2455    ; # &I-JX2-2455;
     :eq a.big5:0xC9C7             ; # &I-B-C9C7;
+    :eq rep.daikanwa:04691        ; # &I-M-04691;
     :subsume
-        rep.adobe-japan1-5:17410 ,
-        rep.cns11643-2:0x2227 ;
+        g2.ucs_unicode:0x56DF ,
+        g2.cns11643-2:0x2227 ;
     .
+    rep.adobe-japan1-5:17410
+               :abstract-glyph-of adobe-japan1-5:17410   .
+    rep.gb2312:0x5836
+               :abstract-glyph-of         gb2312:0x5836  .
+    rep.jis-x0212:0x3675
+               :abstract-glyph-of      jis-x0212:0x3675  .
+    rep.cns11643-2:0x2227
+               :abstract-glyph-of     cns11643-2:0x2227  .
+    rep.jis-x0213-2:0x2455
+               :abstract-glyph-of    jis-x0213-2:0x2455  .
     a.big5:0xC9C7
            :abstract-character-of           big5:0xC9C7  .
-    rep.adobe-japan1-5:17410
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of adobe-japan1-5:17410 ;
+    rep.daikanwa:04691
+               :abstract-glyph-of       daikanwa:04691   .
+    g2.ucs_unicode:0x56DF
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x56DF  ] ;
         :rep.decomposition   [ :context domain:cid     ;
                                :target  a.ucs:0x56DF         ,
                                         a.ucs:0xE0100        ] ;
-        :eq rep.ucs_unicode:0x56DF    ; # &AJ1-17410;
-        :eq rep.gb2312:0x5836         ; # &I-G0-5836;
-        :eq rep.jis-x0212:0x3675      ; # &I-JSP-3675;
-        :eq rep.jis-x0213-2:0x2455    ; # &I-JX2-2455;
-        :eq rep.daikanwa:04691        ; # &I-M-04691;
+        :eq g2.adobe-japan1-5:17410   ; # &g2-AJ1-17410;
+        :eq g2.gb2312:0x5836          ; # &g2-AJ1-17410;
+        :eq g2.jis-x0212:0x3675       ; # &g2-AJ1-17410;
+        :eq g2.jis-x0213-2:0x2455     ; # &g2-AJ1-17410;
+        :eq g2.daikanwa:04691         ; # &g2-AJ1-17410;
+        :subsume
+            repi.daikanwa:04691  ,
+            repi.jis-x0213-2:0x2455 ,
+            repi.adobe-japan1-6:17410 ,
+            repi.ucs_unicode:0x56DF ;
         .
-        rep.ucs_unicode:0x56DF
-                   :abstract-glyph-of [ :context domain:unicode ;
-                                        :target     ucs:0x56DF  ] .
-        rep.gb2312:0x5836
-                   :abstract-glyph-of         gb2312:0x5836  .
-        rep.jis-x0212:0x3675
-                   :abstract-glyph-of      jis-x0212:0x3675  .
-        rep.jis-x0213-2:0x2455
-                   :abstract-glyph-of    jis-x0213-2:0x2455  .
-        rep.daikanwa:04691
-                   :abstract-glyph-of       daikanwa:04691   .
-    rep.cns11643-2:0x2227
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of cns11643-2:0x2227 ;
-        :eq rep.ucs_cns:0x56DF        ; # &C2-2227;
+        g2.adobe-japan1-5:17410
+              :abstract-glyph-form-of adobe-japan1-5:17410   .
+        g2.gb2312:0x5836
+              :abstract-glyph-form-of         gb2312:0x5836  .
+        g2.jis-x0212:0x3675
+              :abstract-glyph-form-of      jis-x0212:0x3675  .
+        g2.jis-x0213-2:0x2455
+              :abstract-glyph-form-of    jis-x0213-2:0x2455  .
+        g2.daikanwa:04691
+              :abstract-glyph-form-of       daikanwa:04691   .
+        repi.daikanwa:04691
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:04691 ;
+            .
+        repi.jis-x0212:0x3675
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0212:0x3675 ;
+            :eq repi.jis-x0213-2:0x2455   ; # &R-JX2-2455;
+            .
+            repi.jis-x0213-2:0x2455
+                          :glyph-image-of    jis-x0213-2:0x2455  .
+        repi.adobe-japan1-5:17410
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-5:17410 ;
+            .
+        repi.ucs_unicode:0x56DF
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x56DF  ] ;
+            .
+    g2.cns11643-2:0x2227
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-2:0x2227 ;
+        :eq g2.ucs_cns:0x56DF         ; # &g2-CU+56DF;
         .
-        rep.ucs_cns:0x56DF
-                   :abstract-glyph-of [ :context domain:cns     ;
+        g2.ucs_cns:0x56DF
+              :abstract-glyph-form-of [ :context domain:cns     ;
                                         :target     ucs:0x56DF  ] .
 
 rep.cns11643-6:0x2430
