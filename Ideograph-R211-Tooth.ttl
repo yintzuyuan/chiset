@@ -27,6 +27,7 @@
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
 @prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
 @prefix g2.ucs_ks: <http://www.chise.org/est/view/character/g2.ucs@ks=> .
+@prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
 @prefix rep.mj: <http://www.chise.org/est/view/character/rep.mj=> .
@@ -3639,6 +3640,58 @@ a.ucs:0x9F88
     .
     rep.gb2312:0x7638
                :abstract-glyph-of         gb2312:0x7638  .
+
+a.ucs:0x2A602
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2A602 ;
+    ideo:radical         211 ; # ⿒ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    18 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x34DE ; # 㓞
+        isd:below    a.ucs:0x6B6F   # 歯
+    ] ;
+    .
+
+rep.ucs_iso:0x2A602
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x2A602 ] ;
+    :denotation-of
+        a.ucs:0x2A602        ;
+    ideo:radical         211 ; # ⿒ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    18 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.gt:02447 ; # &GT-02447;
+        isd:below    a.ucs:0x6B6F   # 歯
+    ] ;
+    :eq rep.jis-x0213-2:0x7E70    ; # &JX2-7E70;
+    :subsume
+        g2.ucs_iso:0x2A602   ;
+    .
+    rep.jis-x0213-2:0x7E70
+               :abstract-glyph-of    jis-x0213-2:0x7E70  .
+    g2.ucs_iso:0x2A602
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x2A602 ] ;
+        :eq g2.jis-x0213-2:0x7E70     ; # &g2-JX2-7E70;
+        :subsume
+            repi.jis-x0213-2:0x7E70 ,
+            repi.ucs_iso:0x2A602 ;
+        .
+        g2.jis-x0213-2:0x7E70
+              :abstract-glyph-form-of    jis-x0213-2:0x7E70  .
+        repi.jis-x0213-2:0x7E70
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0213-2:0x7E70 ;
+            .
+        repi.ucs_iso:0x2A602
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x2A602 ] ;
+            .
 
 rep.daikanwa:48667
     a chisegg:abstract-glyph ;
