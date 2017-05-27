@@ -100,6 +100,8 @@
 @prefix g.big5-cdp: <http://www.chise.org/est/view/character/g.big5-cdp=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix g2.hanyo-denshi...ja: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ja=> .
+@prefix rep.koseki: <http://www.chise.org/est/view/character/rep.koseki=> .
+@prefix g2.koseki: <http://www.chise.org/est/view/character/g2.koseki=> .
 @prefix rep.gt: <http://www.chise.org/est/view/character/rep.gt=> .
 @prefix g2.gt: <http://www.chise.org/est/view/character/g2.gt=> .
 @prefix repi.gt: <http://www.chise.org/est/view/character/repi.gt=> .
@@ -133,6 +135,7 @@
 @prefix repi.jef-china3: <http://www.chise.org/est/view/character/repi.jef-china3=> .
 @prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
 @prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
+@prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
 @prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
@@ -159,6 +162,7 @@
 @prefix big5-eten: <http://rdf.chise.org/data/ccs/big5-eten/code-point/> .
 @prefix big5-cdp: <http://rdf.chise.org/data/ccs/big5-cdp/code-point/> .
 @prefix hanyo-denshi...ja: <http://rdf.chise.org/data/ccs/hanyo-denshi...ja/code-point/> .
+@prefix koseki: <http://rdf.chise.org/data/ccs/koseki/code-point/> .
 @prefix gt: <http://rdf.chise.org/data/ccs/gt/code-point/> .
 @prefix gt-k: <http://rdf.chise.org/data/ccs/gt-k/code-point/> .
 @prefix gt-pj-1: <http://rdf.chise.org/data/ccs/gt-pj-1/code-point/> .
@@ -176,6 +180,7 @@
 @prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
 @prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
 @prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
+@prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
 
 a.ucs:0x7F51
     a chisegg:abstract-character ;
@@ -2564,6 +2569,40 @@ a.ucs:0x262A8
     .
     rep.cns11643-4:0x2A7D
                :abstract-glyph-of     cns11643-4:0x2A7D  .
+
+rep.ucs-itaiji-002:0x7F52
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-002:0x7F52 ;
+    ideo:radical         122 ; # ⽹ 
+    ideo:strokes           5 ;
+    ideo:total-strokes    10 ;
+    :from.unknown        a.ucs:0x7F52         ,
+                         rep.mj:058340        ;
+    .
+
+rep.mj:058340
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of mj:058340 ;
+    ideo:radical         122 ; # ⽹ 
+    ideo:strokes           5 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x7F52 ; # 罒
+        isd:below    a.ucs:0x7F52   # 罒
+    ] ;
+    :eq rep.koseki:315760         ; # &MJ058340;
+    :subsume
+        g2.mj:058340         ;
+    .
+    rep.koseki:315760
+               :abstract-glyph-of         koseki:315760  .
+    g2.mj:058340
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of mj:058340 ;
+        :eq g2.koseki:315760          ; # &g2-MJ058340;
+        .
+        g2.koseki:315760
+              :abstract-glyph-form-of         koseki:315760  .
 
 a.ucs:0x262AA
     a chisegg:abstract-character ;
