@@ -15,6 +15,7 @@
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
 @prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
+@prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix a.ucs_iso: <http://www.chise.org/est/view/character/a.ucs@iso=> .
 @prefix a.ucs_unicode: <http://www.chise.org/est/view/character/a.ucs@unicode=> .
 @prefix a.ucs_jis: <http://www.chise.org/est/view/character/a.ucs@jis=> .
@@ -144,6 +145,7 @@
 @prefix g2.jef-china3: <http://www.chise.org/est/view/character/g2.jef-china3=> .
 @prefix repi.jef-china3: <http://www.chise.org/est/view/character/repi.jef-china3=> .
 @prefix rep.ruimoku-v6: <http://www.chise.org/est/view/character/rep.ruimoku-v6=> .
+@prefix a.iwds-1: <http://www.chise.org/est/view/character/a.iwds-1=> .
 @prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
 @prefix rep.ucs-bmp-var-006: <http://www.chise.org/est/view/character/rep.ucs-bmp-var-006=> .
 @prefix rep.ucs-itaiji-003: <http://www.chise.org/est/view/character/rep.ucs-itaiji-003=> .
@@ -200,14 +202,28 @@
 @prefix hng-kar: <http://rdf.chise.org/data/ccs/hng-kar/code-point/> .
 @prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
 @prefix ruimoku-v6: <http://rdf.chise.org/data/ccs/ruimoku-v6/code-point/> .
+@prefix iwds-1: <http://rdf.chise.org/data/ccs/iwds-1/code-point/> .
 @prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
 @prefix ucs-bmp-var-006: <http://rdf.chise.org/data/ccs/ucs-bmp-var-006/code-point/> .
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
 @prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
 
+a.ucs_component:0x7530
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:component ;
+                             :target     ucs:0x7530  ] ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           0 ;
+    :eq a.iwds-1:0083             ; # &A-compU+7530;
+    .
+    a.iwds-1:0083
+           :abstract-character-of         iwds-1:0083    .
+
 a.ucs:0x7530
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x7530 ;
+    :from.denotational_component
+        a.ucs_component:0x7530 ;
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           0 ;
     ideo:total-strokes     5 ;
