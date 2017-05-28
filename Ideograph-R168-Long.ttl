@@ -44,6 +44,7 @@
 @prefix g2.cns11643-5: <http://www.chise.org/est/view/character/g2.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
 @prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
+@prefix g2.cns11643-7: <http://www.chise.org/est/view/character/g2.cns11643-7=> .
 @prefix rep.jis-x0213-1: <http://www.chise.org/est/view/character/rep.jis-x0213-1=> .
 @prefix g2.jis-x0213-1: <http://www.chise.org/est/view/character/g2.jis-x0213-1=> .
 @prefix repi.jis-x0213-1: <http://www.chise.org/est/view/character/repi.jis-x0213-1=> .
@@ -2066,6 +2067,10 @@ a.ucs:0x28CBB
     ideo:radical         168 ; # ⾧ 
     ideo:strokes          15 ;
     ideo:total-strokes    22 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x9578 ; # 镸
+        isd:right    a.ucs:0x22029   # 𢀩
+    ] ;
     .
 
 rep.daikanwa:41198
@@ -2087,7 +2092,14 @@ rep.ucs_iso:0x28CBB
     ideo:radical         168 ; # ⾧ 
     ideo:strokes          15 ;
     ideo:total-strokes    22 ;
+    :subsume
+        g2.ucs_iso:0x28CBB   ;
     .
+    g2.ucs_iso:0x28CBB
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x28CBB ] ;
+        .
 
 rep.cns11643-7:0x596D
     a chisegg:abstract-glyph ;
@@ -2097,7 +2109,17 @@ rep.cns11643-7:0x596D
     ideo:radical         168 ; # ⾧ 
     ideo:strokes          15 ;
     ideo:total-strokes    22 ;
+    :subsume
+        g2.cns11643-7:0x596D ;
     .
+    g2.cns11643-7:0x596D
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-7:0x596D ;
+        :eq g2.ucs_cns:0x28CBB        ; # &g2-CU+28CBB;
+        .
+        g2.ucs_cns:0x28CBB
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x28CBB ] .
 
 a.ucs:0x28CBC
     a chisegg:abstract-character ;
