@@ -14,10 +14,14 @@
 
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
+@prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
 @prefix rep.ucs_unicode: <http://www.chise.org/est/view/character/rep.ucs@unicode=> .
 @prefix rep.ucs_cns: <http://www.chise.org/est/view/character/rep.ucs@cns=> .
+@prefix g.ucs_iso: <http://www.chise.org/est/view/character/g.ucs@iso=> .
 @prefix g.ucs_unicode: <http://www.chise.org/est/view/character/g.ucs@unicode=> .
+@prefix g.ucs_cns: <http://www.chise.org/est/view/character/g.ucs@cns=> .
+@prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
 @prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
@@ -53,6 +57,7 @@
 @prefix g.cns11643-4: <http://www.chise.org/est/view/character/g.cns11643-4=> .
 @prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
+@prefix g2.cns11643-6: <http://www.chise.org/est/view/character/g2.cns11643-6=> .
 @prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
 @prefix rep.jis-x0213-1: <http://www.chise.org/est/view/character/rep.jis-x0213-1=> .
 @prefix g2.jis-x0213-1: <http://www.chise.org/est/view/character/g2.jis-x0213-1=> .
@@ -88,6 +93,7 @@
 @prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
 @prefix g2.daikanwa: <http://www.chise.org/est/view/character/g2.daikanwa=> .
 @prefix repi.daikanwa: <http://www.chise.org/est/view/character/repi.daikanwa=> .
+@prefix g.daikanwa: <http://www.chise.org/est/view/character/g.daikanwa=> .
 @prefix a.daikanwa: <http://www.chise.org/est/view/character/a.daikanwa=> .
 @prefix rep.shinjigen: <http://www.chise.org/est/view/character/rep.shinjigen=> .
 @prefix g2.shinjigen: <http://www.chise.org/est/view/character/g2.shinjigen=> .
@@ -899,22 +905,69 @@ a.ucs:0x22380
     ideo:radical          56 ; # ⼷ 
     ideo:strokes           4 ;
     ideo:total-strokes     7 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x5F0B ; # 弋
+        isd:below    a.ucs_component:0x6708   # &A-compU+6708;
+    ] ;
+    :sound               [ :context domain:ja...on...go ;
+                           :target  ( "iki" ) ;
+                         ] ;
+    :sound               [ :context domain:ja...on...kan ;
+                           :target  ( "yoku" ) ;
+                         ] ;
+    :eq rep.cns11643-6:0x2750     ; # &I-C6-2750;
+    :eq rep.daikanwa:09666        ; # &I-M-09666;
     :subsume
-        rep.ucs_iso:0x22380  ,
-        rep.cns11643-6:0x2750 ;
+        g.ucs_iso:0x22380    ,
+        g.ucs_cns:0x22380    ;
     .
-    rep.ucs_iso:0x22380
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of [ :context domain:iso     ;
-                             :target     ucs:0x22380 ] ;
-        :eq rep.daikanwa:09666        ; # &M-09666;
-        .
-        rep.daikanwa:09666
-                   :abstract-glyph-of       daikanwa:09666   .
     rep.cns11643-6:0x2750
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of cns11643-6:0x2750 ;
+               :abstract-glyph-of     cns11643-6:0x2750  .
+    rep.daikanwa:09666
+               :abstract-glyph-of       daikanwa:09666   .
+    g.ucs_iso:0x22380
+        a chisegg:detailed-glyph ;
+        :detailed-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x22380 ] ;
+        isd:structure [ a idc:⿱ ;
+            isd:above    a.ucs:0x5F0B ; # 弋
+            isd:below    rep.big5-cdp:0x8958   # &CDP-8958;
+        ] ;
+        :eq g.daikanwa:09666          ; # &G-IU+22380;
+        :subsume
+            g2.daikanwa:09666    ,
+            g2.ucs_iso:0x22380   ;
         .
+        g.daikanwa:09666
+                   :detailed-glyph-of       daikanwa:09666   .
+        g2.daikanwa:09666
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of daikanwa:09666 ;
+            .
+        g2.ucs_iso:0x22380
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of [ :context domain:iso     ;
+                                      :target     ucs:0x22380 ] ;
+            .
+    g.ucs_cns:0x22380
+        a chisegg:detailed-glyph ;
+        :detailed-glyph-of [ :context domain:cns     ;
+                             :target     ucs:0x22380 ] ;
+        isd:structure [ a idc:⿱ ;
+            isd:above    a.ucs:0x5F0B ; # 弋
+            isd:below    a.ucs:0x6708   # 月
+        ] ;
+        :subsume
+            g2.cns11643-6:0x2750 ;
+        .
+        g2.cns11643-6:0x2750
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of cns11643-6:0x2750 ;
+            :eq g2.ucs_cns:0x22380        ; # &g2-CU+22380;
+            .
+            g2.ucs_cns:0x22380
+                  :abstract-glyph-form-of [ :context domain:cns     ;
+                                            :target     ucs:0x22380 ] .
 
 a.ucs:0x22381
     a chisegg:abstract-character ;
