@@ -23,6 +23,7 @@
 @prefix rep.ucs_unicode: <http://www.chise.org/est/view/character/rep.ucs@unicode=> .
 @prefix rep.ucs_cns: <http://www.chise.org/est/view/character/rep.ucs@cns=> .
 @prefix rep.ucs_jis: <http://www.chise.org/est/view/character/rep.ucs@jis=> .
+@prefix rep.ucs_JP...hanazono: <http://www.chise.org/est/view/character/rep.ucs@JP...hanazono=> .
 @prefix rep.ucs_ks: <http://www.chise.org/est/view/character/rep.ucs@ks=> .
 @prefix rep.ucs_big5: <http://www.chise.org/est/view/character/rep.ucs@big5=> .
 @prefix g.ucs_iso: <http://www.chise.org/est/view/character/g.ucs@iso=> .
@@ -731,7 +732,7 @@ a.ucs_component:0x722D
     :denotation-of
         bucs:0x722D          ;
     ideo:radical          87 ; # ⽖ 
-    :eq a.iwds-1:0314             ; # &IWDS1-314;
+    :eq a.iwds-1:0314             ; # &A-compU+722D;
     .
     a.iwds-1:0314
            :abstract-character-of         iwds-1:0314    .
@@ -919,7 +920,7 @@ a.ucs:0x3E12
     ideo:total-strokes     8 ;
     isd:structure [ a idc:⿱ ;
         isd:above    a.ucs:0x722B ; # 爫
-        isd:below    a.ucs_component:0x58EC   # &IWDS1-001;
+        isd:below    a.ucs_component:0x58EC   # &A-compU+58EC;
     ] ;
     .
 
@@ -951,20 +952,6 @@ rep.big5-cdp:0x8AC0
     ] ;
     .
 
-rep.hanziku-5:0xF7E7
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of hanziku-5:0xF7E7 ;
-    :denotation-of
-        a.ucs:0x3E12         ;
-    ideo:radical          87 ; # ⽖ 
-    ideo:strokes           4 ;
-    ideo:total-strokes     8 ;
-    isd:structure [ a idc:⿱ ;
-        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
-        isd:below    rep.adobe-japan1-0:02583   # &AJ1-02583;
-    ] ;
-    .
-
 rep.ucs_unicode:0x3E12
     a chisegg:abstract-glyph ;
     :abstract-glyph-of [ :context domain:unicode ;
@@ -988,6 +975,45 @@ rep.ucs_unicode:0x3E12
                                   :target     ucs:0x3E12  ] ;
         :g2.ucs_JP...hanazono      rdf:nil ;
         .
+
+rep.ucs_JP...hanazono:0x3E12
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:JP...hanazono ;
+                         :target     ucs:0x3E12  ] ;
+    :denotation-of
+        a.ucs:0x3E12         ;
+    ideo:radical          87 ; # ⽖ 
+    ideo:strokes           4 ;
+    ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    rep.adobe-japan1-0:02583   # &AJ1-02583;
+    ] ;
+    :eq rep.cbeta:07395           ; # &CB07395;
+    :subsume
+        g2.ucs_JP...hanazono:0x3E12 ;
+    .
+    rep.cbeta:07395
+               :abstract-glyph-of          cbeta:07395   .
+    g2.ucs_JP...hanazono:0x3E12
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                  :target     ucs:0x3E12  ] ;
+        :eq g2.cbeta:07395            ; # &g2-CB07395;
+        :subsume
+            rep.hanziku-5:0xF7E7 ,
+            repi.cbeta:07395     ;
+        .
+        g2.cbeta:07395
+              :abstract-glyph-form-of          cbeta:07395   .
+        rep.hanziku-5:0xF7E7
+            a chisegg:abstract-glyph ;
+            :abstract-glyph-of hanziku-5:0xF7E7 ;
+            .
+        repi.cbeta:07395
+            a chisegg:glyph-image ;
+            :glyph-image-of cbeta:07395 ;
+            .
 
 rep.cns11643-4:0x272C
     a chisegg:abstract-glyph ;
@@ -1910,8 +1936,8 @@ rep.ucs-itaiji-005:0x8200
         isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
         isd:below    a.ucs:0x65E7   # 旧
     ] ;
-    :eq rep.gt-k:05976            ; # &GT-K05976;
-    :eq rep.gt-pj-k2:16190        ; # &GT-K05976;
+    :eq rep.gt-k:05976            ; # &U-i005+8200;
+    :eq rep.gt-pj-k2:16190        ; # &U-i005+8200;
     :form-of             [ :context domain:component ;
                            :target  a.ucs:0x8200         ] ;
     .
@@ -1932,8 +1958,8 @@ rep.ucs-var-001:0x8200
         isd:above    a.ucs:0x2EA4 ; # ⺤
         isd:below    a.ucs:0x65E7   # 旧
     ] ;
-    :eq rep.gt-k:06065            ; # &GT-K06065;
-    :eq rep.gt-pj-k2:15996        ; # &GT-K06065;
+    :eq rep.gt-k:06065            ; # &U-v001+8200;
+    :eq rep.gt-pj-k2:15996        ; # &U-v001+8200;
     :form-of             [ :context domain:component ;
                            :target  a.ucs:0x8200         ] ;
     .
@@ -2249,9 +2275,9 @@ a.ucs_component:0x7232
     ideo:radical           [ :context domain:traditional ;
                              :target           87 ; # ⽖
                            ] ;
-    :eq rep.ucs_big5:0x70BA       ; # &IWDS1-315;
-    :eq a.big5:0xACB0             ; # &IWDS1-315;
-    :eq a.iwds-1:0315             ; # &IWDS1-315;
+    :eq rep.ucs_big5:0x70BA       ; # &A-compU+7232;
+    :eq a.big5:0xACB0             ; # &A-compU+7232;
+    :eq a.iwds-1:0315             ; # &A-compU+7232;
     .
     rep.ucs_big5:0x70BA
                :abstract-glyph-of [ :context domain:big5    ;
