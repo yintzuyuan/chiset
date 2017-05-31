@@ -139,6 +139,7 @@
 @prefix rep.gt-pj-11: <http://www.chise.org/est/view/character/rep.gt-pj-11=> .
 @prefix rep.gt-pj-k1: <http://www.chise.org/est/view/character/rep.gt-pj-k1=> .
 @prefix rep.gt-pj-k2: <http://www.chise.org/est/view/character/rep.gt-pj-k2=> .
+@prefix g2.gt-pj-k2: <http://www.chise.org/est/view/character/g2.gt-pj-k2=> .
 @prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
 @prefix rep.daikanwa...._.p: <http://www.chise.org/est/view/character/rep.daikanwa...+p=> .
 @prefix rep.daikanwa...ho: <http://www.chise.org/est/view/character/rep.daikanwa...ho=> .
@@ -172,11 +173,9 @@
 @prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
 @prefix rep.ucs-var-002: <http://www.chise.org/est/view/character/rep.ucs-var-002=> .
 @prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
-@prefix a.ucs-itaiji-001: <http://www.chise.org/est/view/character/a.ucs-itaiji-001=> .
 @prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
 @prefix rep.ucs-itaiji-004: <http://www.chise.org/est/view/character/rep.ucs-itaiji-004=> .
 @prefix rep.ucs-itaiji-005: <http://www.chise.org/est/view/character/rep.ucs-itaiji-005=> .
-@prefix a.ucs-itaiji-005: <http://www.chise.org/est/view/character/a.ucs-itaiji-005=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
 @prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
@@ -501,7 +500,7 @@ a.ucs:0x2E9C
     :eq rep.big5-cdp:0x8A78       ; # &I-CDP-8A78;
     :eq rep.gt-k:00565            ; # &I-GT-K00565;
     :eq rep.gt-pj-k1:12841        ; # ⺜
-    :from.same           [ :context domain:component...connect-below ;
+    ideo:same-as         [ :context domain:component...connect-below ;
                            :target  a.ucs:0x5183         ] ;
     :subsume
         g2.big5-cdp:0x8A78   ,
@@ -611,8 +610,8 @@ rep.big5-cdp:0x89FA
     ideo:radical          13 ; # ⼌ 
     ideo:strokes           2 ;
     ideo:total-strokes     4 ;
-    :from.simplified     [ :context domain:component ;
-                           :target  rep.gt-k:00688       ] ;
+    ideo:simplified-form-of [ :context domain:component ;
+                              :target  rep.gt-k:00688       ] ;
     .
 
 a.ucs:0x2053D
@@ -739,9 +738,9 @@ a.ucs:0x5185
     :eq rep.daikanwa:01512        ; # &I-M-01512;
     :eq rep.daikanwa...._.p:00366 ; # 内
     :eq rep.shinjigen:0481        ; # 内
-    :from.same           [ :sources chisebib:daikanwa.:.00366...._.p ;
+    ideo:same-as         [ :sources chisebib:daikanwa.:.00366...._.p ;
                            :target  a.ucs:0x5167         ] ;
-    :from.vulgar         [ :sources chisebib:daikanwa.:.01512 ;
+    ideo:vulgar-form-of  [ :sources chisebib:daikanwa.:.01512 ;
                            :target  a.ucs:0x5167         ] ;
     .
     rep.adobe-japan1-0:03258
@@ -939,8 +938,8 @@ a.ucs:0x5186
     :eq rep.gt-pj-1:12639         ; # &I-GT-01978;
     :eq rep.daikanwa:01513        ; # &I-M-01513;
     :eq rep.shinjigen:1331        ; # 円
-    :from.simplified     [ :context domain:JP...Jouyou ;
-                           :target  a.ucs:0x5713         ] ;
+    ideo:simplified-form-of [ :context domain:JP...Jouyou ;
+                              :target  a.ucs:0x5713         ] ;
     :subsume
         g2.ucs_unicode:0x5186 ;
     .
@@ -1082,11 +1081,11 @@ a.ucs:0x5188
                            :sources chisebib:zihui...char-index ,
                                     chisebib:daikanwa ;
                            :target  a.ucs:0x7F51         ] ;
-    :from.simplified     [ :sources chisebib:zhengzitong ,
-                                    chisebib:daikanwa ;
-                           :target  a.ucs:0x7F51         ] ;
-    :from.simplified     [ :context domain:CN      ;
-                           :target  a.ucs:0x5CA1         ] ;
+    ideo:simplified-form-of [ :sources chisebib:zhengzitong ,
+                                       chisebib:daikanwa ;
+                              :target  a.ucs:0x7F51         ] ;
+    ideo:simplified-form-of [ :context domain:CN      ;
+                              :target  a.ucs:0x5CA1         ] ;
     .
     rep.gb2312:0x3854
                :abstract-glyph-of         gb2312:0x3854  .
@@ -1969,7 +1968,7 @@ a.ucs:0x20541
     :eq rep.shinjigen_1ed:0511    ; # 𠕁
     :form-of             [ :sources chisebib:shinjigen_1ed ;
                            :target  a.ucs:0x518A         ] ;
-    :from.same           [ :sources chisebib:daikanwa ;
+    ideo:same-as         [ :sources chisebib:daikanwa ;
                            :target  a.ucs:0x518A         ] ;
     .
     rep.cns11643-6:0x2239
@@ -2158,6 +2157,34 @@ a.ucs:0x2054A
     rep.hanziku-1:0xB85C
                :abstract-glyph-of      hanziku-1:0xB85C  .
 
+rep.ucs-itaiji-001:0x56DF
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-001:0x56DF ;
+    :denotation-of
+        a.ucs:0x20B26        ;
+    ideo:radical          13 ; # ⼌ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     5 ;
+    isd:structure [ a idc:⿵ ;
+        isd:surround rep.big5-cdp:0x8BD6 ; # &CDP-8BD6;
+        isd:filling  a.ucs:0x3405   # 㐅
+    ] ;
+    .
+
+rep.ucs-itaiji-005:0x56DF
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-005:0x56DF ;
+    :denotation-of
+        a.ucs:0x20B26        ;
+    ideo:radical          13 ; # ⼌ 
+    ideo:strokes           3 ;
+    ideo:total-strokes     5 ;
+    isd:structure [ a idc:⿵ ;
+        isd:surround rep.big5-cdp:0x8BD6 ; # &CDP-8BD6;
+        isd:filling  a.ucs:0x4EBA   # 人
+    ] ;
+    .
+
 rep.gt-k:01266
     a chisegg:abstract-glyph ;
     :abstract-glyph-of gt-k:01266 ;
@@ -2171,10 +2198,19 @@ rep.gt-k:01266
         isd:filling  a.ucs:0x4491   # 䒑
     ] ;
     :eq rep.gt-pj-k2:16674        ; # &GT-K01266;
-    :to.mistakable       a.ucs:0x26270        ;
+    ideo:mistakable      a.ucs:0x26270        ;
+    :subsume
+        g2.gt-k:01266        ;
     .
     rep.gt-pj-k2:16674
                :abstract-glyph-of       gt-pj-k2:16674   .
+    g2.gt-k:01266
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:01266 ;
+        :eq g2.gt-pj-k2:16674         ; # &g2-GT-K01266;
+        .
+        g2.gt-pj-k2:16674
+              :abstract-glyph-form-of       gt-pj-k2:16674   .
 
 a.mj:057001
     a chisegg:abstract-character ;
@@ -2195,45 +2231,6 @@ rep.big5-cdp-var-005:0x877E
     ideo:radical          13 ; # ⼌ 
     ideo:strokes           3 ;
     ideo:total-strokes     5 ;
-    .
-
-a.ucs-itaiji-001:0x56DF
-    a chisegg:abstract-character ;
-    :abstract-character-of ucs-itaiji-001:0x56DF ;
-    ideo:radical          13 ; # ⼌ 
-    ideo:strokes           3 ;
-    ideo:total-strokes     5 ;
-    :eq a.ucs-itaiji-005:0x56DF   ; # &A-U-i001+56DF;
-    .
-    a.ucs-itaiji-005:0x56DF
-           :abstract-character-of ucs-itaiji-005:0x56DF  .
-
-rep.ucs-itaiji-001:0x56DF
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of ucs-itaiji-001:0x56DF ;
-    :denotation-of
-        a.ucs-itaiji-001:0x56DF ;
-    ideo:radical          13 ; # ⼌ 
-    ideo:strokes           3 ;
-    ideo:total-strokes     5 ;
-    isd:structure [ a idc:⿵ ;
-        isd:surround rep.big5-cdp:0x8BD6 ; # &CDP-8BD6;
-        isd:filling  a.ucs:0x3405   # 㐅
-    ] ;
-    .
-
-rep.ucs-itaiji-005:0x56DF
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of ucs-itaiji-005:0x56DF ;
-    :denotation-of
-        a.ucs-itaiji-001:0x56DF ;
-    ideo:radical          13 ; # ⼌ 
-    ideo:strokes           3 ;
-    ideo:total-strokes     5 ;
-    isd:structure [ a idc:⿵ ;
-        isd:surround rep.big5-cdp:0x8BD6 ; # &CDP-8BD6;
-        isd:filling  a.ucs:0x4EBA   # 人
-    ] ;
     .
 
 rep.mj:057001
@@ -3048,7 +3045,7 @@ a.ucs:0x20551
                          ] ;
     :eq rep.cns11643-6:0x2621     ; # &I-C6-2621;
     :eq rep.daikanwa:01530        ; # &I-M-01530;
-    :from.ancient        [ :sources chisebib:wuyinjiyun ,
+    ideo:ancient-form-of [ :sources chisebib:wuyinjiyun ,
                                     chisebib:daikanwa ;
                            :target  rep.adobe-japan1-0:02926 ] ;
     :subsume
@@ -3155,7 +3152,7 @@ a.ucs:0x20554
     :eq rep.cns11643-6:0x287A     ; # &I-C6-287A;
     :eq rep.daikanwa:49525        ; # &I-M-49525;
     :form-of             a.ucs:0x2F980        ;
-    :from.same           [ :sources chisebib:daikanwa ;
+    ideo:same-as         [ :sources chisebib:daikanwa ;
                            :target  a.ucs:0x2F980        ] ;
     :subsume
         g2.daikanwa:49525    ,
@@ -4586,7 +4583,7 @@ rep.mj:007324
     :eq rep.daikanwa:01545        ; # &I-M-01545;
     :eq rep.shinjigen:0524        ; # &MJ007324;
     :eq rep.jef-china3:0x43EE     ; # &I-JC3-43EE;
-    :to.mistakable       [ :sources chisebib:kangxi-biansi-2char ,
+    ideo:mistakable      [ :sources chisebib:kangxi-biansi-2char ,
                                     chisebib:daikanwa ;
                            :target  rep.ucs_iso:0x20564  ] ;
     :subsume
@@ -4914,7 +4911,7 @@ a.ucs:0x20560
         :eq rep.gt:02031              ; # &I-GT-02031;
         :eq rep.gt-pj-2:15688         ; # &I-GT-02031;
         :eq rep.daikanwa:01546        ; # &I-M-01546;
-        :to.mistakable       [ :sources chisebib:kangxi ,
+        ideo:mistakable      [ :sources chisebib:kangxi ,
                                         chisebib:daikanwa ;
                                :target  rep.mj:013289        ] ;
         .
@@ -5315,7 +5312,7 @@ rep.ucs_iso:0x20564
                                     chisebib:zhengzitong ,
                                     chisebib:daikanwa ;
                            :target  a.ucs:0x2F818        ] ;
-    :to.mistakable       [ :sources chisebib:kangxi-biansi-2char ,
+    ideo:mistakable      [ :sources chisebib:kangxi-biansi-2char ,
                                     chisebib:daikanwa ;
                            :target  rep.mj:007324        ] ;
     :subsume
