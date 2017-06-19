@@ -56,6 +56,7 @@
     =ucs-itaiji-006
     =ucs-itaiji-007
     =ucs-itaiji-009
+    =ucs-itaiji-011
     =ucs-itaiji-084
     =ucs-var-001
     =ucs-var-002
@@ -134,6 +135,7 @@
     =>ucs-itaiji-001
     =>ucs-itaiji-002
     =>ucs-itaiji-005
+    =>ucs-itaiji-007
     ==>ucs@bucs
     =big5
     =>cbeta
