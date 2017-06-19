@@ -70,6 +70,8 @@
 @prefix g2.cns11643-3: <http://www.chise.org/est/view/character/g2.cns11643-3=> .
 @prefix repi.cns11643-3: <http://www.chise.org/est/view/character/repi.cns11643-3=> .
 @prefix rep.cns11643-4: <http://www.chise.org/est/view/character/rep.cns11643-4=> .
+@prefix g2.cns11643-4: <http://www.chise.org/est/view/character/g2.cns11643-4=> .
+@prefix repi.cns11643-4: <http://www.chise.org/est/view/character/repi.cns11643-4=> .
 @prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
 @prefix g2.cns11643-6: <http://www.chise.org/est/view/character/g2.cns11643-6=> .
@@ -3629,7 +3631,24 @@ rep.daikanwa:07446
     ideo:radical          41 ; # ⼨ 
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
+    :subsume
+        g2.daikanwa:07446    ;
     .
+    g2.daikanwa:07446
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:07446 ;
+        :subsume
+            repi.daikanwa:07446  ,
+            rep.hanziku-2:0xB8C4 ;
+        .
+        repi.daikanwa:07446
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:07446 ;
+            .
+        rep.hanziku-2:0xB8C4
+            a chisegg:abstract-glyph ;
+            :abstract-glyph-of hanziku-2:0xB8C4 ;
+            .
 
 rep.ucs_iso:0x21B33
     a chisegg:abstract-glyph ;
@@ -3641,9 +3660,31 @@ rep.ucs_iso:0x21B33
     ideo:strokes           9 ;
     ideo:total-strokes    12 ;
     :eq rep.cns11643-4:0x3727     ; # &C4-3727;
+    :subsume
+        g2.ucs_iso:0x21B33   ;
     .
     rep.cns11643-4:0x3727
                :abstract-glyph-of     cns11643-4:0x3727  .
+    g2.ucs_iso:0x21B33
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x21B33 ] ;
+        :eq g2.cns11643-4:0x3727      ; # &g2-IU-00021B33;
+        :subsume
+            repi.cns11643-4:0x3727 ,
+            repi.ucs_iso:0x21B33 ;
+        .
+        g2.cns11643-4:0x3727
+              :abstract-glyph-form-of     cns11643-4:0x3727  .
+        repi.cns11643-4:0x3727
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-4:0x3727 ;
+            .
+        repi.ucs_iso:0x21B33
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x21B33 ] ;
+            .
 
 a.ucs:0x5C0B
     a chisegg:abstract-character ;
