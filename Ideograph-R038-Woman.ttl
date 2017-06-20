@@ -37724,6 +37724,9 @@ a.ucs:0x2189B
         isd:above    a.ucs-itaiji-001:0x2452D ; # &A-U-i001+2452D;
         isd:below    a.ucs:0x5973   # 女
     ] ;
+    :sound               [ :context domain:ja...on ;
+                           :target  ( "reN" ) ;
+                         ] ;
     .
 
 rep.cns11643-7:0x2D2B
@@ -37740,6 +37743,9 @@ rep.cns11643-7:0x2D2B
     ] ;
     :eq rep.ucs_cns:0x2189B       ; # &C7-2D2B;
     :eq rep.daikanwa:06790        ; # &I-M-06790;
+    ideo:ancient-form-of [ :sources chisebib:zihui-bu ,
+                                    chisebib:daikanwa ;
+                           :target  rep.adobe-japan1-5:17519 ] ;
     :form-of             rep.mj:033743        ;
     :subsume
         g2.daikanwa:06790    ,
@@ -42645,7 +42651,23 @@ rep.adobe-japan1-5:17519
     :eq a.big5:0xF6DC             ; # &I-B-F6DC;
     :eq rep.daikanwa:06912        ; # &I-M-06912;
     :eq rep.jef-china3:0x48F6     ; # &I-JC3-48F6;
-    :form-of             rep.mj:033743        ;
+    :form-of             [ :target  a.ucs:0x5971         ;
+                           :sources chisebib:jiyun ] ,
+                         rep.mj:033743        ;
+    ideo:same-as         [ :sources chisebib:daikanwa ;
+                           :target  [ :target  rep.mj:033743        ;
+                                      :sources chisebib:shuowen ,
+                                               chisebib:daikanwa ] ,
+                                    [ :target  a.ucs:0x373B         ;
+                                      :sources chisebib:jiyun ,
+                                               chisebib:daikanwa ] ,
+                                    [ :target  rep.adobe-japan1-0:04929 ;
+                                      :sources chisebib:shuowen-zhu ,
+                                               chisebib:daikanwa ] ,
+                                    [ :target  a.ucs:0x5971         ;
+                                      :sources chisebib:guangya ,
+                                               chisebib:jiyun ,
+                                               chisebib:daikanwa ] ] ;
     :subsume
         g2.adobe-japan1-5:17519 ,
         g2.ucs_unicode:0x5B4C ,
@@ -43179,13 +43201,46 @@ a.ucs:0x373B
     ideo:radical          38 ; # ⼥ 
     ideo:strokes          23 ;
     ideo:total-strokes    26 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x5973 ; # 女
+        isd:right    a.ucs:0x6200   # 戀
+    ] ;
+    :sound               [ :context domain:ja...on ;
+                           :target  ( "reN" ) ;
+                         ] ;
     :eq rep.cns11643-3:0x6162     ; # &I-C3-6162;
     :eq rep.daikanwa:06925        ; # &I-M-06925;
+    ideo:same-as         [ :sources chisebib:jiyun ,
+                                    chisebib:kangxi ,
+                                    chisebib:daikanwa ;
+                           :target  rep.adobe-japan1-5:17519 ] ;
+    :subsume
+        g2.daikanwa:06925    ,
+        g2.ucs_unicode:0x373B ,
+        g2.cns11643-3:0x6162 ;
     .
     rep.cns11643-3:0x6162
                :abstract-glyph-of     cns11643-3:0x6162  .
     rep.daikanwa:06925
                :abstract-glyph-of       daikanwa:06925   .
+    g2.daikanwa:06925
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:06925 ;
+        .
+    g2.ucs_unicode:0x373B
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x373B  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        .
+    g2.cns11643-3:0x6162
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-3:0x6162 ;
+        :eq g2.ucs_cns:0x373B         ; # &g2-CU+373B;
+        .
+        g2.ucs_cns:0x373B
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x373B  ] .
 
 a.ucs:0x373C
     a chisegg:abstract-character ;
