@@ -228,6 +228,8 @@
     "ideo:simplified-form-of")
    ((eq '<-vulgar feature-name)
     "ideo:vulgar-form-of")
+   ((eq '<-wrong feature-name)
+    "ideo:wrong-form-of")
    ((eq '<-original feature-name)
     "ideo:original-form-of")
    ((eq '<-ancient feature-name)
