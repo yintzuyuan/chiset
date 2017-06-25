@@ -773,6 +773,7 @@ a.ucs:0x5E03
     :eq rep.gt-pj-1:18779         ; # &I-GT-11071;
     :eq rep.daikanwa:08778        ; # &I-M-08778;
     :eq rep.shinjigen:2083        ; # 布
+    ideo:interchangeable-form-of rep.mj:013021        ;
     :subsume
         g2.ucs_unicode:0x5E03 ;
     .
@@ -4471,6 +4472,11 @@ a.ucs:0x5E21
     :eq rep.cns11643-2:0x2A31     ; # &I-C2-2A31;
     :eq a.big5:0xCEB0             ; # &I-B-CEB0;
     :eq rep.daikanwa:08879        ; # &I-M-08879;
+    ideo:vulgar-form-of  [ :sources chisebib:zihui ,
+                                    chisebib:daikanwa ;
+                           :target  a.ucs:0x5E32         ] ;
+    :subsume
+        g2.ucs_unicode:0x5E21 ;
     .
     rep.iso-ir165:0x7A6B
                :abstract-glyph-of      iso-ir165:0x7A6B  .
@@ -4480,6 +4486,37 @@ a.ucs:0x5E21
            :abstract-character-of           big5:0xCEB0  .
     rep.daikanwa:08879
                :abstract-glyph-of       daikanwa:08879   .
+    g2.ucs_unicode:0x5E21
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x5E21  ] ;
+        :eq g2.iso-ir165:0x7A6B       ; # &g2-M-08879;
+        :eq g2.cns11643-2:0x2A31      ; # &g2-M-08879;
+        :eq g2.daikanwa:08879         ; # &g2-M-08879;
+        :subsume
+            repi.daikanwa:08879  ,
+            repi.cns11643-2:0x2A31 ,
+            repi.ucs_unicode:0x5E21 ;
+        .
+        g2.iso-ir165:0x7A6B
+              :abstract-glyph-form-of      iso-ir165:0x7A6B  .
+        g2.cns11643-2:0x2A31
+              :abstract-glyph-form-of     cns11643-2:0x2A31  .
+        g2.daikanwa:08879
+              :abstract-glyph-form-of       daikanwa:08879   .
+        repi.daikanwa:08879
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:08879 ;
+            .
+        repi.cns11643-2:0x2A31
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-2:0x2A31 ;
+            .
+        repi.ucs_unicode:0x5E21
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x5E21  ] ;
+            .
 
 a.ucs:0x5E22
     a chisegg:abstract-character ;
@@ -5144,7 +5181,7 @@ a.ucs:0x5E2E
         :eq rep.hanyo-denshi...jt:0xB0AD ; # &I-HD-JT-B0AD;
         :eq rep.shinjigen:2146        ; # &HD-JT-B0AD;
         :eq rep.jef-china3:0x4BFC     ; # &I-JC3-4BFC;
-        :from.wrong          [ :sources chisebib:shinjigen ;
+        ideo:wrong-form-of   [ :sources chisebib:shinjigen ;
                                :target  a.ucs:0x5E6B         ] ;
         :subsume
             g2.cns11643-3:0x3068 ,
@@ -6814,10 +6851,15 @@ a.ucs:0x5E32
     ideo:strokes           8 ;
     ideo:total-strokes    11 ;
     ideo:hanyu-dazidian  ( 1 745 7 ) ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x5DFE ; # 巾
+        isd:right    a.ucs:0x5E77   # 幷
+    ] ;
     :eq rep.adobe-japan1-5:19341  ; # &I-AJ1-19341;
     :eq rep.jis-x0212:0x3C2F      ; # &I-JSP-3C2F;
     :eq rep.cns11643-3:0x355B     ; # &I-C3-355B;
     :eq rep.daikanwa:08938        ; # &I-M-08938;
+    :form-of             a.ucs:0x5E4E         ;
     :subsume
         g2.adobe-japan1-5:19341 ,
         g2.ucs_unicode:0x5E32 ;
@@ -10725,6 +10767,11 @@ a.ucs:0x5E4E
     :eq rep.daikanwa:09024        ; # &I-M-09024;
     :eq rep.shinjigen:2128        ; # 幎
     :form-of             rep.mj:010874        ;
+    ideo:same-as         [ :sources chisebib:shuowen-tongxun-dingsheng ,
+                                    chisebib:daikanwa ;
+                           :target  a.ucs:0x27700        ,
+                                    a.ucs:0x5853         ,
+                                    a.ucs:0x5E32         ] ;
     :subsume
         g2.ucs_unicode:0x5E4E ;
     .
@@ -16548,7 +16595,7 @@ a.ucs:0x2F889
         :abstract-glyph-of daikanwa:09160 ;
         ideo:strokes          20 ;
         ideo:total-strokes    23 ;
-        :from.wrong          [ :sources chisebib:kangxi ,
+        ideo:wrong-form-of   [ :sources chisebib:kangxi ,
                                         chisebib:daikanwa ;
                                :target  rep.daikanwa:09151   ] ;
         .
