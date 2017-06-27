@@ -19,6 +19,7 @@
 @prefix a.ucs_iso: <http://www.chise.org/est/view/character/a.ucs@iso=> .
 @prefix a.ucs_unicode: <http://www.chise.org/est/view/character/a.ucs@unicode=> .
 @prefix a.ucs_jis: <http://www.chise.org/est/view/character/a.ucs@jis=> .
+@prefix o.ucs_unicode: <http://www.chise.org/est/view/character/o.ucs@unicode=> .
 @prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
 @prefix rep.ucs_unicode: <http://www.chise.org/est/view/character/rep.ucs@unicode=> .
 @prefix rep.ucs_cns: <http://www.chise.org/est/view/character/rep.ucs@cns=> .
@@ -129,6 +130,7 @@
 @prefix repi.daikanwa: <http://www.chise.org/est/view/character/repi.daikanwa=> .
 @prefix repi.daikanwa...._.p: <http://www.chise.org/est/view/character/repi.daikanwa...+p=> .
 @prefix repi.daikanwa...ho: <http://www.chise.org/est/view/character/repi.daikanwa...ho=> .
+@prefix g.daikanwa: <http://www.chise.org/est/view/character/g.daikanwa=> .
 @prefix a.daikanwa: <http://www.chise.org/est/view/character/a.daikanwa=> .
 @prefix rep.shinjigen: <http://www.chise.org/est/view/character/rep.shinjigen=> .
 @prefix rep.shinjigen_1ed: <http://www.chise.org/est/view/character/rep.shinjigen@1ed=> .
@@ -1964,7 +1966,7 @@ rep.adobe-japan1-5:18126
     :eq rep.daikanwa:21742        ; # &I-M-21742;
     :eq rep.jef-china3:0x5AC9     ; # &I-JC3-5AC9;
     :form-of             a.ucs:0x20679        ;
-    :from.wrong          [ :sources chisebib:jiyun ,
+    ideo:wrong-form-of   [ :sources chisebib:jiyun ,
                                     chisebib:daikanwa ;
                            :target  a.ucs:0x2F936        ] ;
     ideo:mistakable      [ :sources chisebib:daikanwa ;
@@ -2442,6 +2444,10 @@ a.ucs:0x24C23
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           3 ;
     ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x7531 ; # 由
+        isd:below    a.ucs:0x2CF16   # 𬼖
+    ] ;
     .
 
 rep.ucs_iso:0x24C23
@@ -2454,37 +2460,58 @@ rep.ucs_iso:0x24C23
     ideo:strokes           3 ;
     ideo:total-strokes     8 ;
     ideo:hanyu-dazidian  ( 4 2530 4 ) ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x7531 ; # 由
+        isd:below    rep.mj:056865   # &MJ056865;
+    ] ;
     :eq rep.daikanwa:21754        ; # &M-21754;
+    ideo:ancient-form-of [ :sources chisebib:jiyun ,
+                                    chisebib:daikanwa ;
+                           :target  a.ucs:0x754F         ] ;
     :subsume
-        g2.ucs_iso:0x24C23   ,
-        rep.hanziku-7:0xB4E7 ;
+        g.ucs_iso:0x24C23    ;
     .
     rep.daikanwa:21754
                :abstract-glyph-of       daikanwa:21754   .
-    g2.ucs_iso:0x24C23
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of [ :context domain:iso     ;
-                                  :target     ucs:0x24C23 ] ;
-        :eq g2.daikanwa:21754         ; # &g2-M-21754;
+    g.ucs_iso:0x24C23
+        a chisegg:detailed-glyph ;
+        :detailed-glyph-of [ :context domain:iso     ;
+                             :target     ucs:0x24C23 ] ;
+        isd:structure [ a idc:⿱ ;
+            isd:above    a.ucs:0x7531 ; # 由
+            isd:below    rep.ucs-itaiji-003:0x722A   # &U-i003+722A;
+        ] ;
+        :eq g.daikanwa:21754          ; # &G-IU+24C23;
         :subsume
-            repi.daikanwa:21754  ,
-            repi.ucs_iso:0x24C23 ;
+            g2.ucs_iso:0x24C23   ,
+            rep.hanziku-7:0xB4E7 ;
         .
-        g2.daikanwa:21754
-              :abstract-glyph-form-of       daikanwa:21754   .
-        repi.daikanwa:21754
-            a chisegg:glyph-image ;
-            :glyph-image-of daikanwa:21754 ;
+        g.daikanwa:21754
+                   :detailed-glyph-of       daikanwa:21754   .
+        g2.ucs_iso:0x24C23
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of [ :context domain:iso     ;
+                                      :target     ucs:0x24C23 ] ;
+            :eq g2.daikanwa:21754         ; # &g2-M-21754;
+            :subsume
+                repi.daikanwa:21754  ,
+                repi.ucs_iso:0x24C23 ;
             .
-        repi.ucs_iso:0x24C23
-            a chisegg:glyph-image ;
-            :glyph-image-of [ :context domain:iso     ;
-                              :target     ucs:0x24C23 ] ;
+            g2.daikanwa:21754
+                  :abstract-glyph-form-of       daikanwa:21754   .
+            repi.daikanwa:21754
+                a chisegg:glyph-image ;
+                :glyph-image-of daikanwa:21754 ;
+                .
+            repi.ucs_iso:0x24C23
+                a chisegg:glyph-image ;
+                :glyph-image-of [ :context domain:iso     ;
+                                  :target     ucs:0x24C23 ] ;
+                .
+        rep.hanziku-7:0xB4E7
+            a chisegg:abstract-glyph ;
+            :abstract-glyph-of hanziku-7:0xB4E7 ;
             .
-    rep.hanziku-7:0xB4E7
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of hanziku-7:0xB4E7 ;
-        .
 
 rep.cns11643-6:0x2D33
     a chisegg:abstract-glyph ;
@@ -2494,9 +2521,17 @@ rep.cns11643-6:0x2D33
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           3 ;
     ideo:total-strokes     8 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x7531 ; # 由
+        isd:below    rep.ucs-itaiji-005:0x722A   # &U-i005+722A;
+    ] ;
+    :eq rep.ucs_cns:0x24C23       ; # &C6-2D33;
     :subsume
         g2.cns11643-6:0x2D33 ;
     .
+    rep.ucs_cns:0x24C23
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x24C23 ] .
     g2.cns11643-6:0x2D33
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of cns11643-6:0x2D33 ;
@@ -7212,6 +7247,126 @@ rep.adobe-japan1-0:05719
                               :target     ucs:0x7567  ] ;
             .
 
+a.ucs:0x24C6A
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24C6A ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x807F ; # 聿
+        isd:below    a.ucs:0x7530   # 田
+    ] ;
+    .
+
+rep.ucs_iso:0x24C6A
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24C6A ] ;
+    :denotation-of
+        a.ucs:0x24C6A        ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    11 ;
+    ideo:hanyu-dazidian  ( 4 2542 5 ) ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.adobe-japan1-0:06227 ; # &AJ1-06227;
+        isd:below    a.ucs:0x7530   # 田
+    ] ;
+    :eq rep.cns11643-6:0x422C     ; # &C6-422C;
+    :eq rep.daikanwa:21841        ; # &I-M-21841;
+    ideo:ancient-form-of [ :sources chisebib:jiyun ,
+                                    chisebib:daikanwa ;
+                           :target  rep.adobe-japan1-0:05720 ] ;
+    :subsume
+        g2.daikanwa:21841    ,
+        g2.ucs_iso:0x24C6A   ;
+    .
+    rep.cns11643-6:0x422C
+               :abstract-glyph-of     cns11643-6:0x422C  .
+    rep.daikanwa:21841
+               :abstract-glyph-of       daikanwa:21841   .
+    g2.daikanwa:21841
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:21841 ;
+        .
+    g2.ucs_iso:0x24C6A
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24C6A ] ;
+        :eq g2.cns11643-6:0x422C      ; # &g2-IU-00024C6A;
+        :subsume
+            repi.cns11643-6:0x422C ,
+            repi.ucs_iso:0x24C6A ;
+        .
+        g2.cns11643-6:0x422C
+              :abstract-glyph-form-of     cns11643-6:0x422C  .
+        repi.cns11643-6:0x422C
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x422C ;
+            .
+        repi.ucs_iso:0x24C6A
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x24C6A ] ;
+            .
+
+rep.gt:28023
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt:28023 ;
+    :denotation-of
+        a.ucs:0x24C6A        ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.big5-cdp:0x8BC6 ; # &CDP-8BC6;
+        isd:below    a.ucs:0x7530   # 田
+    ] ;
+    :eq rep.ucs_JP...hanazono:0x24C6A ; # &GT-28023;
+    :eq rep.gt-k:08743            ; # &I-GT-K08743;
+    :eq rep.gt-pj-5:13171         ; # &GT-28023;
+    :eq rep.cbeta:08889           ; # &I-CB08889;
+    :subsume
+        g2.gt:28023          ;
+    .
+    rep.ucs_JP...hanazono:0x24C6A
+               :abstract-glyph-of [ :context domain:JP...hanazono ;
+                                    :target     ucs:0x24C6A ] .
+    rep.gt-k:08743
+               :abstract-glyph-of           gt-k:08743   .
+    rep.gt-pj-5:13171
+               :abstract-glyph-of        gt-pj-5:13171   .
+    rep.cbeta:08889
+               :abstract-glyph-of          cbeta:08889   .
+    g2.gt:28023
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt:28023 ;
+        :eq g2.ucs_JP...hanazono:0x24C6A ; # &g2-GT-28023;
+        :eq g2.cbeta:08889            ; # &g2-GT-28023;
+        :subsume
+            rep.hanziku-7:0xB76F ,
+            repi.cbeta:08889     ,
+            repi.gt:28023        ;
+        .
+        g2.ucs_JP...hanazono:0x24C6A
+              :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                        :target     ucs:0x24C6A ] .
+        g2.cbeta:08889
+              :abstract-glyph-form-of          cbeta:08889   .
+        rep.hanziku-7:0xB76F
+            a chisegg:abstract-glyph ;
+            :abstract-glyph-of hanziku-7:0xB76F ;
+            .
+        repi.cbeta:08889
+            a chisegg:glyph-image ;
+            :glyph-image-of cbeta:08889 ;
+            .
+        repi.gt:28023
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:28023 ;
+            .
+
 a.ucs:0x7566
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x7566 ;
@@ -7342,11 +7497,18 @@ a.ucs:0x24C6B
     ideo:strokes           6 ;
     ideo:total-strokes    11 ;
     ideo:hanyu-dazidian  ( 1 186 1 ) ;
+    :sound               [ :context domain:ja...on ;
+                           :target  ( "wi" ) ;
+                         ] ;
     :eq rep.cns11643-6:0x422F     ; # &I-C6-422F;
     :eq rep.daikanwa:21843        ; # &I-M-21843;
+    ideo:ancient-form-of [ :sources chisebib:jiyun ,
+                                    chisebib:daikanwa ;
+                           :target  rep.adobe-japan1-0:01174 ] ;
     :subsume
         g2.daikanwa:21843    ,
-        g2.ucs_iso:0x24C6B   ;
+        g2.ucs_iso:0x24C6B   ,
+        rep.hanziku-1:0xCCB2 ;
     .
     rep.cns11643-6:0x422F
                :abstract-glyph-of     cns11643-6:0x422F  .
@@ -7360,16 +7522,13 @@ a.ucs:0x24C6B
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of [ :context domain:iso     ;
                                   :target     ucs:0x24C6B ] ;
-        :eq g2.cns11643-6:0x422F      ; # &HZK01-CCB2;
-        :eq rep.hanziku-1:0xCCB2      ; # &HZK01-CCB2;
+        :eq g2.cns11643-6:0x422F      ; # &g2-IU-00024C6B;
         :subsume
             repi.cns11643-6:0x422F ,
             repi.ucs_iso:0x24C6B ;
         .
         g2.cns11643-6:0x422F
               :abstract-glyph-form-of     cns11643-6:0x422F  .
-        rep.hanziku-1:0xCCB2
-                   :abstract-glyph-of      hanziku-1:0xCCB2  .
         repi.cns11643-6:0x422F
             a chisegg:glyph-image ;
             :glyph-image-of cns11643-6:0x422F ;
@@ -7378,6 +7537,67 @@ a.ucs:0x24C6B
             a chisegg:glyph-image ;
             :glyph-image-of [ :context domain:iso     ;
                               :target     ucs:0x24C6B ] ;
+            .
+    rep.hanziku-1:0xCCB2
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of hanziku-1:0xCCB2 ;
+        .
+
+a.ucs:0x24C6C
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x24C6C ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    11 ;
+    ideo:hanyu-dazidian  ( 4 2541 10 ) ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x7530 ; # 田
+        isd:right    a.ucs:0x65EC   # 旬
+    ] ;
+    :eq rep.cns11643-6:0x422A     ; # &I-C6-422A;
+    :eq rep.daikanwa:21844        ; # &I-M-21844;
+    ideo:same-as         [ :sources chisebib:yupian ,
+                                    chisebib:daikanwa ;
+                           :target  rep.jis-x0212:0x4D32 ] ;
+    :subsume
+        g2.ucs_iso:0x24C6C   ;
+    .
+    rep.cns11643-6:0x422A
+               :abstract-glyph-of     cns11643-6:0x422A  .
+    rep.daikanwa:21844
+               :abstract-glyph-of       daikanwa:21844   .
+    g2.ucs_iso:0x24C6C
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x24C6C ] ;
+        :eq g2.cns11643-6:0x422A      ; # &g2-M-21844;
+        :eq g2.daikanwa:21844         ; # &g2-M-21844;
+        :subsume
+            repi.daikanwa:21844  ,
+            repi.cns11643-6:0x422A ,
+            repi.ucs_iso:0x24C6C ,
+            rep.hanziku-7:0xB754 ;
+        .
+        g2.cns11643-6:0x422A
+              :abstract-glyph-form-of     cns11643-6:0x422A  .
+        g2.daikanwa:21844
+              :abstract-glyph-form-of       daikanwa:21844   .
+        repi.daikanwa:21844
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:21844 ;
+            .
+        repi.cns11643-6:0x422A
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x422A ;
+            .
+        repi.ucs_iso:0x24C6C
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x24C6C ] ;
+            .
+        rep.hanziku-7:0xB754
+            a chisegg:abstract-glyph ;
+            :abstract-glyph-of hanziku-7:0xB754 ;
             .
 
 a.ucs:0x7570
@@ -7436,7 +7656,7 @@ rep.mj:017706
     :eq rep.shinjigen:5054        ; # &MJ017706;
     ideo:simplified-form-of [ :context domain:JP...misc ;
                               :target  a.ucs:0x2F938        ] ;
-    :from.wrong          [ :sources chisebib:pianhai ,
+    ideo:wrong-form-of   [ :sources chisebib:pianhai ,
                                     chisebib:daikanwa ;
                            :target  a.ucs:0x2F938        ] ;
     :subsume
@@ -7786,118 +8006,6 @@ a.ucs:0x24C69
                :abstract-glyph-of     cns11643-4:0x333D  .
     rep.hanziku-7:0xB752
                :abstract-glyph-of      hanziku-7:0xB752  .
-
-a.ucs:0x24C6A
-    a chisegg:abstract-character ;
-    :abstract-character-of ucs:0x24C6A ;
-    ideo:radical         102 ; # ⽥ 
-    ideo:strokes           6 ;
-    ideo:total-strokes    11 ;
-    .
-
-rep.ucs_iso:0x24C6A
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of [ :context domain:iso     ;
-                         :target     ucs:0x24C6A ] ;
-    :denotation-of
-        a.ucs:0x24C6A        ;
-    ideo:radical         102 ; # ⽥ 
-    ideo:strokes           6 ;
-    ideo:total-strokes    11 ;
-    ideo:hanyu-dazidian  ( 4 2542 5 ) ;
-    :eq rep.cns11643-6:0x422C     ; # &C6-422C;
-    :subsume
-        g2.ucs_iso:0x24C6A   ;
-    .
-    rep.cns11643-6:0x422C
-               :abstract-glyph-of     cns11643-6:0x422C  .
-    g2.ucs_iso:0x24C6A
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of [ :context domain:iso     ;
-                                  :target     ucs:0x24C6A ] ;
-        :eq g2.cns11643-6:0x422C      ; # &g2-IU-00024C6A;
-        :subsume
-            repi.cns11643-6:0x422C ,
-            repi.ucs_iso:0x24C6A ;
-        .
-        g2.cns11643-6:0x422C
-              :abstract-glyph-form-of     cns11643-6:0x422C  .
-        repi.cns11643-6:0x422C
-            a chisegg:glyph-image ;
-            :glyph-image-of cns11643-6:0x422C ;
-            .
-        repi.ucs_iso:0x24C6A
-            a chisegg:glyph-image ;
-            :glyph-image-of [ :context domain:iso     ;
-                              :target     ucs:0x24C6A ] ;
-            .
-
-rep.gt:28023
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of gt:28023 ;
-    :denotation-of
-        a.ucs:0x24C6A        ;
-    ideo:radical         102 ; # ⽥ 
-    ideo:strokes           6 ;
-    ideo:total-strokes    11 ;
-    :eq rep.ucs_JP...hanazono:0x24C6A ; # &GT-28023;
-    :eq rep.gt-k:08743            ; # &I-GT-K08743;
-    :eq rep.gt-pj-5:13171         ; # &GT-28023;
-    :eq rep.cbeta:08889           ; # &I-CB08889;
-    :subsume
-        g2.gt:28023          ;
-    .
-    rep.ucs_JP...hanazono:0x24C6A
-               :abstract-glyph-of [ :context domain:JP...hanazono ;
-                                    :target     ucs:0x24C6A ] .
-    rep.gt-k:08743
-               :abstract-glyph-of           gt-k:08743   .
-    rep.gt-pj-5:13171
-               :abstract-glyph-of        gt-pj-5:13171   .
-    rep.cbeta:08889
-               :abstract-glyph-of          cbeta:08889   .
-    g2.gt:28023
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of gt:28023 ;
-        :eq g2.ucs_JP...hanazono:0x24C6A ; # &g2-GT-28023;
-        :eq g2.cbeta:08889            ; # &g2-GT-28023;
-        :subsume
-            rep.hanziku-7:0xB76F ,
-            repi.cbeta:08889     ,
-            repi.gt:28023        ;
-        .
-        g2.ucs_JP...hanazono:0x24C6A
-              :abstract-glyph-form-of [ :context domain:JP...hanazono ;
-                                        :target     ucs:0x24C6A ] .
-        g2.cbeta:08889
-              :abstract-glyph-form-of          cbeta:08889   .
-        rep.hanziku-7:0xB76F
-            a chisegg:abstract-glyph ;
-            :abstract-glyph-of hanziku-7:0xB76F ;
-            .
-        repi.cbeta:08889
-            a chisegg:glyph-image ;
-            :glyph-image-of cbeta:08889 ;
-            .
-        repi.gt:28023
-            a chisegg:glyph-image ;
-            :glyph-image-of gt:28023 ;
-            .
-
-a.ucs:0x24C6C
-    a chisegg:abstract-character ;
-    :abstract-character-of ucs:0x24C6C ;
-    ideo:radical         102 ; # ⽥ 
-    ideo:strokes           6 ;
-    ideo:total-strokes    11 ;
-    ideo:hanyu-dazidian  ( 4 2541 10 ) ;
-    :eq rep.cns11643-6:0x422A     ; # &I-C6-422A;
-    :eq rep.hanziku-7:0xB754      ; # &I-HZK07-B754;
-    .
-    rep.cns11643-6:0x422A
-               :abstract-glyph-of     cns11643-6:0x422A  .
-    rep.hanziku-7:0xB754
-               :abstract-glyph-of      hanziku-7:0xB754  .
 
 a.ucs:0x24C6D
     a chisegg:abstract-character ;
@@ -10260,16 +10368,43 @@ a.ucs:0x24CA8
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           8 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x7530 ; # 田
+        isd:right    bucs:0x5377   # &BUCS+5377;
+    ] ;
     .
 
-a.mj:041434
-    a chisegg:abstract-character ;
-    :abstract-character-of mj:041434 ;
+rep.ucs_iso:0x24CA8
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x24CA8 ] ;
     :denotation-of
         a.ucs:0x24CA8        ;
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           8 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x7530 ; # 田
+        isd:right    a.ucs:0x5377   # 卷
+    ] ;
+    :eq a.ucs_iso:0x24CA8         ; # &A-IU+24CA8;
+    .
+    a.ucs_iso:0x24CA8
+           :abstract-character-of [ :context domain:iso     ;
+                                    :target     ucs:0x24CA8 ] .
+
+a.mj:041434
+    a chisegg:abstract-character ;
+    :abstract-character-of mj:041434 ;
+    :denotation-of
+        rep.ucs_iso:0x24CA8  ;
+    ideo:radical         102 ; # ⽥ 
+    ideo:strokes           8 ;
+    ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x7530 ; # 田
+        isd:right    o.ucs_unicode:0x5377   # &o-HD-FT-3521;
+    ] ;
     :subsume
         rep.mj:041434        ,
         rep.hanziku-7:0xB8B6 ;
@@ -10277,6 +10412,10 @@ a.mj:041434
     rep.mj:041434
         a chisegg:abstract-glyph ;
         :abstract-glyph-of mj:041434 ;
+        isd:structure [ a idc:⿰ ;
+            isd:left     a.ucs:0x7530 ; # 田
+            isd:right    rep.mj:007897   # &MJ007897;
+        ] ;
         :eq rep.koseki:245690         ; # &MJ041434;
         :eq rep.daikanwa:21904        ; # &I-M-21904;
         :subsume
@@ -10318,10 +10457,14 @@ rep.ucs_iso:0x24CA8
     :abstract-glyph-of [ :context domain:iso     ;
                          :target     ucs:0x24CA8 ] ;
     :denotation-of
-        a.ucs:0x24CA8        ;
+        rep.ucs_iso:0x24CA8  ;
     ideo:radical         102 ; # ⽥ 
     ideo:strokes           8 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x7530 ; # 田
+        isd:right    rep.cns11643-1:0x4C3A   # &C1-4C3A;
+    ] ;
     :subsume
         g2.ucs_iso:0x24CA8   ;
     .
@@ -11626,7 +11769,7 @@ a.ucs:0x24CCA
                                :sources chisebib:jiyun ,
                                         chisebib:daikanwa ;
                                :target  a.ucs:0x24CEB        ] ;
-        :from.wrong          [ :context domain:s.:.rice-bag ;
+        ideo:wrong-form-of   [ :context domain:s.:.rice-bag ;
                                :sources chisebib:zhengzitong ,
                                         chisebib:daikanwa ;
                                :target  a.ucs:0x2219F        ] ;
