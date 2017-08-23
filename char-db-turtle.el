@@ -122,6 +122,7 @@
     ==gt-k
     ==ucs@gb
     ==ucs-itaiji-003
+    ==ucs-var-002
     ==ucs@JP/hanazono
     ==daikanwa/+2p
     =>>jis-x0208 =>>jis-x0213-1 =>>jis-x0213-2
