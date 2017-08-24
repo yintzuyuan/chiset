@@ -28,7 +28,9 @@
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
 @prefix g2.ucs_jis: <http://www.chise.org/est/view/character/g2.ucs@jis=> .
+@prefix g2.ucs_JP...hanazono: <http://www.chise.org/est/view/character/g2.ucs@JP...hanazono=> .
 @prefix g2.ucs_ks: <http://www.chise.org/est/view/character/g2.ucs@ks=> .
+@prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
 @prefix rep.mj: <http://www.chise.org/est/view/character/rep.mj=> .
@@ -72,6 +74,8 @@
 @prefix g2.cns11643-4: <http://www.chise.org/est/view/character/g2.cns11643-4=> .
 @prefix repi.cns11643-4: <http://www.chise.org/est/view/character/repi.cns11643-4=> .
 @prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
+@prefix g2.cns11643-5: <http://www.chise.org/est/view/character/g2.cns11643-5=> .
+@prefix repi.cns11643-5: <http://www.chise.org/est/view/character/repi.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
 @prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
 @prefix g2.cns11643-7: <http://www.chise.org/est/view/character/g2.cns11643-7=> .
@@ -91,6 +95,8 @@
 @prefix repi.adobe-japan1-6: <http://www.chise.org/est/view/character/repi.adobe-japan1-6=> .
 @prefix o.adobe-japan1-0: <http://www.chise.org/est/view/character/o.adobe-japan1-0=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
+@prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix rep.hanyo-denshi...ia: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ia=> .
 @prefix g2.hanyo-denshi...ja: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ja=> .
@@ -457,6 +463,8 @@ a.ucs:0x5140
     ideo:strokes           [ :context domain:unknown ;
                              :target  0 ] ;
     ideo:total-strokes     3 ;
+    :from.mistakable     [ :context domain:component ;
+                           :target  rep.gt-k:00264       ] ;
     .
 
 rep.daikanwa:07542
@@ -666,22 +674,67 @@ a.ucs:0x21BC4
     ideo:radical          43 ; # ⼪ 
     ideo:strokes           2 ;
     ideo:total-strokes     5 ;
+    isd:structure [ a idc:⿺ ;
+        isd:surround a.ucs:0x5C22 ; # 尢
+        isd:filling  a.ucs:0x529B   # 力
+    ] ;
+    :sound               [ :context domain:ja...on...go ;
+                           :target  ( "riki" ) ;
+                         ] ;
+    :sound               [ :context domain:ja...on...kan ;
+                           :target  ( "ryoku" ) ;
+                         ] ;
+    :eq rep.cns11643-5:0x2165     ; # &I-C5-2165;
+    :eq rep.big5-cdp:0x8DC2       ; # &I-CDP-8DC2;
+    :eq rep.daikanwa:07544        ; # &I-M-07544;
     :subsume
-        rep.daikanwa:07544   ,
-        rep.ucs_iso:0x21BC4  ;
+        g2.daikanwa:07544    ,
+        g2.ucs_iso:0x21BC4   ;
     .
+    rep.cns11643-5:0x2165
+               :abstract-glyph-of     cns11643-5:0x2165  .
+    rep.big5-cdp:0x8DC2
+               :abstract-glyph-of       big5-cdp:0x8DC2  .
     rep.daikanwa:07544
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of daikanwa:07544 ;
+               :abstract-glyph-of       daikanwa:07544   .
+    g2.daikanwa:07544
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:07544 ;
+        :eq g2.big5-cdp:0x8DC2        ; # &g2-CDP-8DC2;
+        :subsume
+            repi.daikanwa:07544  ,
+            repi.big5-cdp:0x8DC2 ;
         .
-    rep.ucs_iso:0x21BC4
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of [ :context domain:iso     ;
-                             :target     ucs:0x21BC4 ] ;
-        :eq rep.cns11643-5:0x2165     ; # &C5-2165;
+        g2.big5-cdp:0x8DC2
+              :abstract-glyph-form-of       big5-cdp:0x8DC2  .
+        repi.daikanwa:07544
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:07544 ;
+            .
+        repi.big5-cdp:0x8DC2
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8DC2 ;
+            .
+    g2.ucs_iso:0x21BC4
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x21BC4 ] ;
+        :eq g2.cns11643-5:0x2165      ; # &g2-IU-00021BC4;
+        :subsume
+            repi.cns11643-5:0x2165 ,
+            repi.ucs_iso:0x21BC4 ;
         .
-        rep.cns11643-5:0x2165
-                   :abstract-glyph-of     cns11643-5:0x2165  .
+        g2.cns11643-5:0x2165
+              :abstract-glyph-form-of     cns11643-5:0x2165  .
+        repi.cns11643-5:0x2165
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-5:0x2165 ;
+            .
+        repi.ucs_iso:0x21BC4
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x21BC4 ] ;
+            .
 
 a.ucs:0x21BCA
     a chisegg:abstract-character ;
@@ -3182,9 +3235,9 @@ a.ucs:0x21C09
     rep.cns11643-4:0x427A
                :abstract-glyph-of     cns11643-4:0x427A  .
 
-rep.mj:057365
-    a chisegg:abstract-glyph ;
-    :abstract-glyph-of mj:057365 ;
+a.ucs:0x2D552
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2D552 ;
     ideo:radical          43 ; # ⼪ 
     ideo:strokes          10 ;
     ideo:total-strokes    13 ;
@@ -3192,7 +3245,8 @@ rep.mj:057365
         isd:left     a.ucs:0x4EB0 ; # 亰
         isd:right    a.ucs:0x5C24   # 尤
     ] ;
-    :eq rep.koseki:086490         ; # &MJ057365;
+    :eq rep.mj:057365             ; # &I-MJ057365;
+    :eq rep.koseki:086490         ; # 𭕒
     :form-of             [ :sources chisebib:hng ;
                            :target  a.ucs:0x5C31         ] ;
     :subsume
@@ -3200,13 +3254,19 @@ rep.mj:057365
         repi.hng-khi:03470   ,
         repi.hng-khm:00310   ;
     .
+    rep.mj:057365
+               :abstract-glyph-of             mj:057365  .
     rep.koseki:086490
                :abstract-glyph-of         koseki:086490  .
     g2.mj:057365
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of mj:057365 ;
+        :eq g2.ucs_JP...hanazono:0x2D552 ; # &g2-MJ057365;
         :eq g2.koseki:086490          ; # &g2-MJ057365;
         .
+        g2.ucs_JP...hanazono:0x2D552
+              :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                        :target     ucs:0x2D552 ] .
         g2.koseki:086490
               :abstract-glyph-form-of         koseki:086490  .
     repi.hng-khi:03470
