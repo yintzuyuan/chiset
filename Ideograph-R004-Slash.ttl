@@ -150,6 +150,9 @@
 @prefix repi.jef-china3: <http://www.chise.org/est/view/character/repi.jef-china3=> .
 @prefix a.iwds-1: <http://www.chise.org/est/view/character/a.iwds-1=> .
 @prefix rep.ucs-var-001: <http://www.chise.org/est/view/character/rep.ucs-var-001=> .
+@prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
+@prefix rep.ucs-itaiji-003: <http://www.chise.org/est/view/character/rep.ucs-itaiji-003=> .
+@prefix g2.ucs-itaiji-003: <http://www.chise.org/est/view/character/g2.ucs-itaiji-003=> .
 @prefix rep.ucs-itaiji-004: <http://www.chise.org/est/view/character/rep.ucs-itaiji-004=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
@@ -212,6 +215,8 @@
 @prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
 @prefix iwds-1: <http://rdf.chise.org/data/ccs/iwds-1/code-point/> .
 @prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
+@prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
+@prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
 @prefix ucs-itaiji-004: <http://rdf.chise.org/data/ccs/ucs-itaiji-004/code-point/> .
 
 a.ucs:0x4E3F
@@ -3894,7 +3899,6 @@ a.ucs:0x4E51
     ideo:radical           4 ; # ⼃ 
     ideo:strokes           5 ;
     ideo:total-strokes     6 ;
-    ideo:hanyu-dazidian  ( 1 38 5 ) ;
     :sound               [ :context domain:ja...on...go...p.:.yin2 ;
                            :target  ( "goN" ) ;
                          ] ;
@@ -3910,7 +3914,18 @@ a.ucs:0x4E51
     :sound               [ :context domain:ja...on...p.:.pan1 ;
                            :target  ( "haN" ) ;
                          ] ;
-    :eq rep.adobe-japan1-5:17241  ; # &I-AJ1-17241;
+    .
+
+rep.adobe-japan1-5:17241
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of adobe-japan1-5:17241 ;
+    :denotation-of
+        a.ucs:0x4E51         ;
+    ideo:radical           4 ; # ⼃ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     6 ;
+    ideo:hanyu-dazidian  ( 1 38 5 ) ;
+    :eq rep.ucs_unicode:0x4E51    ; # &AJ1-17241;
     :eq rep.jis-x0212:0x3033      ; # &I-JSP-3033;
     :eq rep.cns11643-4:0x2227     ; # &I-C4-2227;
     :eq rep.jis-x0213-2:0x212C    ; # &I-JX2-212C;
@@ -3937,8 +3952,9 @@ a.ucs:0x4E51
         g2.adobe-japan1-5:17241 ,
         g2.ucs_unicode:0x4E51 ;
     .
-    rep.adobe-japan1-5:17241
-               :abstract-glyph-of adobe-japan1-5:17241   .
+    rep.ucs_unicode:0x4E51
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x4E51  ] .
     rep.jis-x0212:0x3033
                :abstract-glyph-of      jis-x0212:0x3033  .
     rep.cns11643-4:0x2227
@@ -4045,6 +4061,26 @@ a.ucs:0x4E51
         :abstract-glyph-form-of [ :context domain:unicode ;
                                   :target     ucs:0x4E51  ] ;
         :g2.ucs_JP...hanazono      rdf:nil ;
+        .
+
+rep.ucs-itaiji-003:0x4E51
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-003:0x4E51 ;
+    :denotation-of
+        a.ucs:0x4E51         ;
+    ideo:radical           4 ; # ⼃ 
+    ideo:strokes           5 ;
+    ideo:total-strokes     6 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     rep.gt-k:00146 ; # &GT-K00146;
+        isd:right    rep.big5-cdp:0x8C66   # &CDP-8C66;
+    ] ;
+    :subsume
+        g2.ucs-itaiji-003:0x4E51 ;
+    .
+    g2.ucs-itaiji-003:0x4E51
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of ucs-itaiji-003:0x4E51 ;
         .
 
 a.daikanwa:00140
@@ -5570,6 +5606,18 @@ repi.hng-kar:05040
     ideo:strokes           9 ;
     ideo:total-strokes    10 ;
     :form-of             a.ucs:0x4E58         ;
+    .
+
+rep.ucs-itaiji-001:0x4E57
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-001:0x4E57 ;
+    :denotation-of
+        bucs:0x4E58          ;
+    ideo:radical           4 ; # ⼃ 
+    ideo:strokes           7 ;
+    ideo:total-strokes     8 ;
+    :form-of             [ :context domain:component ;
+                           :target  a.ucs:0x4E57         ] ;
     .
 
 a.ucs:0x200B8
