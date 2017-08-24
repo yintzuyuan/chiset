@@ -33,6 +33,7 @@
 @prefix rep.adobe-japan1-0: <http://www.chise.org/est/view/character/rep.adobe-japan1-0=> .
 @prefix rep.adobe-japan1-4: <http://www.chise.org/est/view/character/rep.adobe-japan1-4=> .
 @prefix rep.adobe-japan1-5: <http://www.chise.org/est/view/character/rep.adobe-japan1-5=> .
+@prefix rep.adobe-japan1-6: <http://www.chise.org/est/view/character/rep.adobe-japan1-6=> .
 @prefix g2.adobe-japan1-0: <http://www.chise.org/est/view/character/g2.adobe-japan1-0=> .
 @prefix g2.adobe-japan1-4: <http://www.chise.org/est/view/character/g2.adobe-japan1-4=> .
 @prefix g2.adobe-japan1-5: <http://www.chise.org/est/view/character/g2.adobe-japan1-5=> .
@@ -73,6 +74,7 @@
 @prefix repi.adobe-japan1-4: <http://www.chise.org/est/view/character/repi.adobe-japan1-4=> .
 @prefix repi.adobe-japan1-5: <http://www.chise.org/est/view/character/repi.adobe-japan1-5=> .
 @prefix repi.adobe-japan1-6: <http://www.chise.org/est/view/character/repi.adobe-japan1-6=> .
+@prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
 @prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
 @prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
@@ -117,6 +119,7 @@
 @prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
 @prefix adobe-japan1-4: <http://rdf.chise.org/data/ccs/adobe-japan1-4/code-point/> .
 @prefix adobe-japan1-5: <http://rdf.chise.org/data/ccs/adobe-japan1-5/code-point/> .
+@prefix adobe-japan1-6: <http://rdf.chise.org/data/ccs/adobe-japan1-6/code-point/> .
 @prefix jis-x0208: <http://rdf.chise.org/data/ccs/jis-x0208/code-point/> .
 @prefix gb2312: <http://rdf.chise.org/data/ccs/gb2312/code-point/> .
 @prefix ks-x1001: <http://rdf.chise.org/data/ccs/ks-x1001/code-point/> .
@@ -131,7 +134,6 @@
 @prefix jis-x0213-2: <http://rdf.chise.org/data/ccs/jis-x0213-2/code-point/> .
 @prefix gb12345: <http://rdf.chise.org/data/ccs/gb12345/code-point/> .
 @prefix big5: <http://rdf.chise.org/data/ccs/big5/code-point/> .
-@prefix adobe-japan1-6: <http://rdf.chise.org/data/ccs/adobe-japan1-6/code-point/> .
 @prefix big5-cdp: <http://rdf.chise.org/data/ccs/big5-cdp/code-point/> .
 @prefix hanyo-denshi...ja: <http://rdf.chise.org/data/ccs/hanyo-denshi...ja/code-point/> .
 @prefix hanyo-denshi...ib: <http://rdf.chise.org/data/ccs/hanyo-denshi...ib/code-point/> .
@@ -1803,21 +1805,42 @@ a.ucs:0x5E79
     ideo:radical          51 ; # ⼲ 
     ideo:strokes          10 ;
     ideo:total-strokes    13 ;
-    :eq rep.adobe-japan1-0:01520  ; # &I-AJ1-01520;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs:0x501D ; # 倝
+        isd:filling  a.ucs:0x5E72   # 干
+    ] ;
+    .
+
+rep.adobe-japan1-0:01520
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of adobe-japan1-0:01520 ;
+    :denotation-of
+        a.ucs:0x5E79         ;
+    ideo:radical          51 ; # ⼲ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround rep.adobe-japan1-6:21127 ; # &AJ1-21127;
+        isd:filling  a.ucs:0x5E72   # 干
+    ] ;
+    :eq rep.ucs_unicode:0x5E79    ; # &AJ1-01520;
     :eq rep.jis-x0208:0x3434      ; # &I-J90-3434;
     :eq rep.ks-x1001:0x4A4F       ; # &I-K0-4A4F;
     :eq rep.cns11643-1:0x636C     ; # &I-C1-636C;
     :eq rep.jis-x0213-1:0x3434    ; # &I-JX1-3434;
-    :eq rep.gb12345:0x3849        ; # 幹
+    :eq rep.gb12345:0x3849        ; # &AJ1-01520;
     :eq a.big5:0xB746             ; # &I-B-B746;
     :eq rep.gt:11571              ; # &I-GT-11571;
     :eq rep.gt-k:10186            ; # &I-GT-K10186;
     :eq rep.gt-pj-1:13364         ; # &I-GT-11571;
     :eq rep.daikanwa:09183        ; # &I-M-09183;
-    :eq rep.shinjigen:2158        ; # 幹
+    :eq rep.shinjigen:2158        ; # &AJ1-01520;
+    :subsume
+        g2.ucs_unicode:0x5E79 ;
     .
-    rep.adobe-japan1-0:01520
-               :abstract-glyph-of adobe-japan1-0:01520   .
+    rep.ucs_unicode:0x5E79
+               :abstract-glyph-of [ :context domain:unicode ;
+                                    :target     ucs:0x5E79  ] .
     rep.jis-x0208:0x3434
                :abstract-glyph-of      jis-x0208:0x3434  .
     rep.ks-x1001:0x4A4F
@@ -1840,6 +1863,88 @@ a.ucs:0x5E79
                :abstract-glyph-of       daikanwa:09183   .
     rep.shinjigen:2158
                :abstract-glyph-of      shinjigen:2158    .
+    g2.ucs_unicode:0x5E79
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x5E79  ] ;
+        :eq g2.adobe-japan1-0:01520   ; # &g2-AJ1-01520;
+        :eq g2.ks-x1001:0x4A4F        ; # &g2-AJ1-01520;
+        :eq g2.jis-x0208:0x3434       ; # &g2-AJ1-01520;
+        :eq g2.cns11643-1:0x636C      ; # &g2-AJ1-01520;
+        :eq g2.jis-x0213-1:0x3434     ; # &g2-AJ1-01520;
+        :eq g2.gb12345:0x3849         ; # &g2-AJ1-01520;
+        :eq g2.gt:11571               ; # &g2-AJ1-01520;
+        :eq g2.gt-k:10186             ; # &g2-AJ1-01520;
+        :eq g2.daikanwa:09183         ; # &g2-AJ1-01520;
+        :eq g2.shinjigen:2158         ; # &g2-AJ1-01520;
+        :subsume
+            repi.daikanwa:09183  ,
+            repi.jis-x0208:0x3434 ,
+            repi.adobe-japan1-6:01520 ,
+            repi.cns11643-1:0x636C ,
+            repi.gt:11571        ,
+            repi.ks-x1001:0x4A4F ,
+            repi.ucs_unicode:0x5E79 ;
+        .
+        g2.adobe-japan1-0:01520
+              :abstract-glyph-form-of adobe-japan1-0:01520   .
+        g2.ks-x1001:0x4A4F
+              :abstract-glyph-form-of       ks-x1001:0x4A4F  .
+        g2.jis-x0208:0x3434
+              :abstract-glyph-form-of      jis-x0208:0x3434  .
+        g2.cns11643-1:0x636C
+              :abstract-glyph-form-of     cns11643-1:0x636C  .
+        g2.jis-x0213-1:0x3434
+              :abstract-glyph-form-of    jis-x0213-1:0x3434  .
+        g2.gb12345:0x3849
+              :abstract-glyph-form-of        gb12345:0x3849  .
+        g2.gt:11571
+              :abstract-glyph-form-of             gt:11571   .
+        g2.gt-k:10186
+              :abstract-glyph-form-of           gt-k:10186   .
+        g2.daikanwa:09183
+              :abstract-glyph-form-of       daikanwa:09183   .
+        g2.shinjigen:2158
+              :abstract-glyph-form-of      shinjigen:2158    .
+        repi.daikanwa:09183
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:09183 ;
+            .
+        repi.jis-x0208:0x3434
+            a chisegg:glyph-image ;
+            :glyph-image-of jis-x0208:0x3434 ;
+            :eq repi.jis-x0213-1:0x3434   ; # &R-J0-3434;
+            .
+            repi.jis-x0213-1:0x3434
+                          :glyph-image-of    jis-x0213-1:0x3434  .
+        repi.adobe-japan1-0:01520
+            a chisegg:glyph-image ;
+            :glyph-image-of adobe-japan1-0:01520 ;
+            .
+        repi.cns11643-1:0x636C
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-1:0x636C ;
+            .
+        repi.gt:11571
+            a chisegg:glyph-image ;
+            :glyph-image-of gt:11571 ;
+            :eq repi.gt-k:10186           ; # &R-GT-11571;
+            .
+            repi.gt-k:10186
+                          :glyph-image-of           gt-k:10186   .
+        repi.ks-x1001:0x4A4F
+            a chisegg:glyph-image ;
+            :glyph-image-of ks-x1001:0x4A4F ;
+            :eq repi.ucs_ks:0x5E79        ; # &R-K0-4A4F;
+            .
+            repi.ucs_ks:0x5E79
+                          :glyph-image-of [ :context domain:ks      ;
+                                            :target     ucs:0x5E79  ] .
+        repi.ucs_unicode:0x5E79
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x5E79  ] ;
+            .
 
 a.ucs:0x2219A
     a chisegg:abstract-character ;
