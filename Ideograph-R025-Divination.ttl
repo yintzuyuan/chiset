@@ -88,6 +88,7 @@
 @prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
 @prefix rep.gt-pj-2: <http://www.chise.org/est/view/character/rep.gt-pj-2=> .
 @prefix rep.gt-pj-k1: <http://www.chise.org/est/view/character/rep.gt-pj-k1=> .
+@prefix g2.gt-pj-k1: <http://www.chise.org/est/view/character/g2.gt-pj-k1=> .
 @prefix rep.gt-pj-k2: <http://www.chise.org/est/view/character/rep.gt-pj-k2=> .
 @prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
 @prefix g2.daikanwa: <http://www.chise.org/est/view/character/g2.daikanwa=> .
@@ -100,6 +101,8 @@
 @prefix repi.hng-khi: <http://www.chise.org/est/view/character/repi.hng-khi=> .
 @prefix repi.hng-kar: <http://www.chise.org/est/view/character/repi.hng-kar=> .
 @prefix rep.cbeta: <http://www.chise.org/est/view/character/rep.cbeta=> .
+@prefix g2.cbeta: <http://www.chise.org/est/view/character/g2.cbeta=> .
+@prefix repi.cbeta: <http://www.chise.org/est/view/character/repi.cbeta=> .
 @prefix rep.jef-china3: <http://www.chise.org/est/view/character/rep.jef-china3=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
@@ -420,6 +423,9 @@ a.ucs:0x535D
     :eq rep.big5-cdp:0x8BF9       ; # &I-CDP-8BF9;
     :eq rep.daikanwa:02777        ; # &I-M-02777;
     :eq rep.cbeta:01453           ; # &I-CB01453;
+    ideo:mistakable      a.ucs:0x2EC0         ;
+    :subsume
+        g2.ucs_unicode:0x535D ;
     .
     rep.cns11643-3:0x215A
                :abstract-glyph-of     cns11643-3:0x215A  .
@@ -429,6 +435,50 @@ a.ucs:0x535D
                :abstract-glyph-of       daikanwa:02777   .
     rep.cbeta:01453
                :abstract-glyph-of          cbeta:01453   .
+    g2.ucs_unicode:0x535D
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x535D  ] ;
+        :eq g2.cns11643-3:0x215A      ; # &g2-CDP-8BF9;
+        :eq g2.big5-cdp:0x8BF9        ; # &g2-CDP-8BF9;
+        :eq g2.daikanwa:02777         ; # &g2-CDP-8BF9;
+        :eq g2.cbeta:01453            ; # &g2-CDP-8BF9;
+        :subsume
+            repi.daikanwa:02777  ,
+            repi.big5-cdp:0x8BF9 ,
+            repi.cns11643-3:0x215A ,
+            repi.ucs_unicode:0x535D ,
+            repi.cbeta:01453     ;
+        .
+        g2.cns11643-3:0x215A
+              :abstract-glyph-form-of     cns11643-3:0x215A  .
+        g2.big5-cdp:0x8BF9
+              :abstract-glyph-form-of       big5-cdp:0x8BF9  .
+        g2.daikanwa:02777
+              :abstract-glyph-form-of       daikanwa:02777   .
+        g2.cbeta:01453
+              :abstract-glyph-form-of          cbeta:01453   .
+        repi.daikanwa:02777
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:02777 ;
+            .
+        repi.big5-cdp:0x8BF9
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8BF9 ;
+            .
+        repi.cns11643-3:0x215A
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-3:0x215A ;
+            .
+        repi.ucs_unicode:0x535D
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:unicode ;
+                              :target     ucs:0x535D  ] ;
+            .
+        repi.cbeta:01453
+            a chisegg:glyph-image ;
+            :glyph-image-of cbeta:01453 ;
+            .
 
 a.ucs:0x535E
     a chisegg:abstract-character ;
@@ -631,6 +681,79 @@ a.ucs:0x535E
             a chisegg:glyph-image ;
             :glyph-image-of hng-kar:00570 ;
             .
+
+rep.gt-k:00876
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt-k:00876 ;
+    :from.denotational_component
+        a.ucs_component:0x239B5 ;
+    ideo:radical          25 ; # ⼘ 
+    ideo:strokes           2 ;
+    ideo:total-strokes     4 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2E8A ; # ⺊
+        isd:below    a.ucs:0x5182   # 冂
+    ] ;
+    :eq rep.gt-pj-k1:14422        ; # &GT-K00876;
+    :subsume
+        g2.gt-k:00876        ,
+        rep.gt-k:00877       ;
+    .
+    rep.gt-pj-k1:14422
+               :abstract-glyph-of       gt-pj-k1:14422   .
+    g2.gt-k:00876
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:00876 ;
+        :eq g2.gt-pj-k1:14422         ; # &g2-GT-K00876;
+        .
+        g2.gt-pj-k1:14422
+              :abstract-glyph-form-of       gt-pj-k1:14422   .
+    rep.gt-k:00877
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of gt-k:00877 ;
+        isd:structure [ a idc:⿱ ;
+            isd:above    a.ucs:0x2E8A ; # ⺊
+            isd:below    a.ucs:0x5196   # 冖
+        ] ;
+        :eq rep.gt-pj-k1:15735        ; # &GT-K00877;
+        :form-of             [ :context domain:component...connect-below ;
+                               :target  rep.gt-k:00876       ] ;
+        :subsume
+            g2.gt-k:00877        ;
+        .
+        rep.gt-pj-k1:15735
+                   :abstract-glyph-of       gt-pj-k1:15735   .
+        g2.gt-k:00877
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of gt-k:00877 ;
+            :eq g2.gt-pj-k1:15735         ; # &g2-GT-K00877;
+            .
+            g2.gt-pj-k1:15735
+                  :abstract-glyph-form-of       gt-pj-k1:15735   .
+
+rep.gt-k:00880
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt-k:00880 ;
+    ideo:radical          25 ; # ⼘ 
+    ideo:strokes           2 ;
+    ideo:total-strokes     4 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2E8A ; # ⺊
+        isd:below    rep.big5-cdp:0x88E2   # &CDP-88E2;
+    ] ;
+    :eq rep.gt-pj-k1:12890        ; # &GT-K00880;
+    :subsume
+        g2.gt-k:00880        ;
+    .
+    rep.gt-pj-k1:12890
+               :abstract-glyph-of       gt-pj-k1:12890   .
+    g2.gt-k:00880
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:00880 ;
+        :eq g2.gt-pj-k1:12890         ; # &g2-GT-K00880;
+        .
+        g2.gt-pj-k1:12890
+              :abstract-glyph-form-of       gt-pj-k1:12890   .
 
 a.ucs:0x535F
     a chisegg:abstract-character ;
