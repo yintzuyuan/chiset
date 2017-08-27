@@ -98,6 +98,8 @@
 @prefix repi.jef-china3: <http://www.chise.org/est/view/character/repi.jef-china3=> .
 @prefix rep.ucs-var-002: <http://www.chise.org/est/view/character/rep.ucs-var-002=> .
 @prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
+@prefix rep.ucs-itaiji-002: <http://www.chise.org/est/view/character/rep.ucs-itaiji-002=> .
+@prefix g2.ucs-itaiji-002: <http://www.chise.org/est/view/character/g2.ucs-itaiji-002=> .
 @prefix rep.ucs-itaiji-005: <http://www.chise.org/est/view/character/rep.ucs-itaiji-005=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
@@ -134,6 +136,7 @@
 @prefix jef-china3: <http://rdf.chise.org/data/ccs/jef-china3/code-point/> .
 @prefix ucs-var-002: <http://rdf.chise.org/data/ccs/ucs-var-002/code-point/> .
 @prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
+@prefix ucs-itaiji-002: <http://rdf.chise.org/data/ccs/ucs-itaiji-002/code-point/> .
 @prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
 
 a.ucs:0x5902
@@ -262,10 +265,17 @@ a.ucs:0x21552
     ideo:strokes           0 ;
     ideo:total-strokes     3 ;
     ideo:hanyu-dazidian  ( 1 9 5 ) ;
+    :sound               [ :context domain:ja...on...go ;
+                           :target  ( "ke" ) ;
+                         ] ;
+    :sound               [ :context domain:ja...on...kan ;
+                           :target  ( "kWa" ) ;
+                         ] ;
     :subsume
         rep.daikanwa:05692   ,
         rep.cns11643-5:0x212F ,
-        rep.ucs_iso:0x21552  ;
+        rep.ucs_iso:0x21552  ,
+        rep.ucs-itaiji-002:0x21552 ;
     .
     rep.daikanwa:05692
         a chisegg:abstract-glyph ;
@@ -274,15 +284,62 @@ a.ucs:0x21552
     rep.cns11643-5:0x212F
         a chisegg:abstract-glyph ;
         :abstract-glyph-of cns11643-5:0x212F ;
+        :eq rep.ucs_cns:0x21552       ; # &C5-212F;
+        :subsume
+            g2.cns11643-5:0x212F ;
         .
+        rep.ucs_cns:0x21552
+                   :abstract-glyph-of [ :context domain:cns     ;
+                                        :target     ucs:0x21552 ] .
+        g2.cns11643-5:0x212F
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of cns11643-5:0x212F ;
+            :eq g2.ucs_cns:0x21552        ; # &g2-CU+21552;
+            .
+            g2.ucs_cns:0x21552
+                  :abstract-glyph-form-of [ :context domain:cns     ;
+                                            :target     ucs:0x21552 ] .
     rep.ucs_iso:0x21552
         a chisegg:abstract-glyph ;
         :abstract-glyph-of [ :context domain:iso     ;
                              :target     ucs:0x21552 ] ;
         :eq rep.big5-cdp:0x8874       ; # &CDP-8874;
+        :subsume
+            g2.ucs_iso:0x21552   ;
         .
         rep.big5-cdp:0x8874
                    :abstract-glyph-of       big5-cdp:0x8874  .
+        g2.ucs_iso:0x21552
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of [ :context domain:iso     ;
+                                      :target     ucs:0x21552 ] ;
+            :eq g2.big5-cdp:0x8874        ; # &g2-CDP-8874;
+            :subsume
+                repi.big5-cdp:0x8874 ,
+                repi.ucs_iso:0x21552 ;
+            .
+            g2.big5-cdp:0x8874
+                  :abstract-glyph-form-of       big5-cdp:0x8874  .
+            repi.big5-cdp:0x8874
+                a chisegg:glyph-image ;
+                :glyph-image-of big5-cdp:0x8874 ;
+                .
+            repi.ucs_iso:0x21552
+                a chisegg:glyph-image ;
+                :glyph-image-of [ :context domain:iso     ;
+                                  :target     ucs:0x21552 ] ;
+                .
+    rep.ucs-itaiji-002:0x21552
+        a chisegg:abstract-glyph ;
+        :abstract-glyph-of ucs-itaiji-002:0x21552 ;
+        ideo:mistakable      a.ucs:0x353F         ;
+        :subsume
+            g2.ucs-itaiji-002:0x21552 ;
+        .
+        g2.ucs-itaiji-002:0x21552
+            a chisegg:abstract-glyph-form ;
+            :abstract-glyph-form-of ucs-itaiji-002:0x21552 ;
+            .
 
 a.ucs:0x5903
     a chisegg:abstract-character ;
