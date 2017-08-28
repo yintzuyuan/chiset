@@ -164,12 +164,31 @@
 @prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
 @prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
 
-a.ucs:0x864D
+a.ucs_component:0x864D
     a chisegg:abstract-character ;
-    :abstract-character-of ucs:0x864D ;
+    :abstract-character-of [ :context domain:component ;
+                             :target     ucs:0x864D  ] ;
     ideo:radical         141 ; # ⾌ 
     ideo:strokes           0 ;
     ideo:total-strokes     6 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround rep.gt-k:00880 ; # &GT-K00880;
+        isd:filling  a.ucs_component:0x4E03   # &A-compU+4E03;
+    ] ;
+    .
+
+a.ucs:0x864D
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x864D ;
+    :denotation-of
+        a.ucs_component:0x864D ;
+    ideo:radical         141 ; # ⾌ 
+    ideo:strokes           0 ;
+    ideo:total-strokes     6 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround rep.gt-k:00880 ; # &GT-K00880;
+        isd:filling  a.ucs:0x4E03   # 七
+    ] ;
     :eq rep.adobe-japan1-0:06479  ; # &I-AJ1-06479;
     :eq rep.jis-x0208:0x6948      ; # &I-J90-6948;
     :eq rep.gb2312:0x722E         ; # &I-G0-722E;
@@ -4615,6 +4634,21 @@ a.ucs:0x271D4
     rep.daikanwa:32751
                :abstract-glyph-of       daikanwa:32751   .
 
+a.ucs:0x271D6
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x271D6 ;
+    ideo:radical         141 ; # ⾌ 
+    ideo:strokes           9 ;
+    ideo:total-strokes    15 ;
+    :subsume
+        g2.ucs_iso:0x271D6   ;
+    .
+    g2.ucs_iso:0x271D6
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x271D6 ] ;
+        .
+
 a.ucs:0x8664
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x8664 ;
@@ -5045,6 +5079,62 @@ a.ucs:0x271E8
     .
     rep.cns11643-7:0x325E
                :abstract-glyph-of     cns11643-7:0x325E  .
+
+a.ucs:0x271E9
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x271E9 ;
+    ideo:radical         141 ; # ⾌ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    16 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs_component:0x864D ; # &A-compU+864D;
+        isd:filling  [
+            isd:structure [ a idc:⿳ ;
+                isd:above    a.ucs:0x4E00 ; # 一
+                isd:middle   rep.gt-k:00859 ; # &GT-K00859;
+                isd:below    a.ucs:0x76EE   # 目
+            ]
+        ]
+    ] ;
+    .
+
+rep.ucs-var-001:0x271E9
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-var-001:0x271E9 ;
+    :denotation-of
+        a.ucs:0x271E9        ;
+    ideo:radical         141 ; # ⾌ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    16 ;
+    isd:structure [ a idc:⿸ ;
+        isd:surround a.ucs:0x864D ; # 虍
+        isd:filling  [
+            isd:structure [ a idc:⿳ ;
+                isd:above    a.ucs:0x4E00 ; # 一
+                isd:middle   rep.gt-k:00859 ; # &GT-K00859;
+                isd:below    a.ucs:0x76EE   # 目
+            ]
+        ]
+    ] ;
+    .
+
+rep.ucs_iso:0x271E9
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:iso     ;
+                         :target     ucs:0x271E9 ] ;
+    :denotation-of
+        a.ucs:0x271E9        ;
+    ideo:radical         141 ; # ⾌ 
+    ideo:strokes          10 ;
+    ideo:total-strokes    16 ;
+    :subsume
+        g2.ucs_iso:0x271E9   ;
+    .
+    g2.ucs_iso:0x271E9
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x271E9 ] ;
+        .
 
 a.ucs:0x271EC
     a chisegg:abstract-character ;
