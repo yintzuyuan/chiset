@@ -94,7 +94,9 @@
 @prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
 @prefix rep.gt-pj-9: <http://www.chise.org/est/view/character/rep.gt-pj-9=> .
 @prefix rep.gt-pj-k1: <http://www.chise.org/est/view/character/rep.gt-pj-k1=> .
+@prefix g2.gt-pj-k1: <http://www.chise.org/est/view/character/g2.gt-pj-k1=> .
 @prefix rep.gt-pj-k2: <http://www.chise.org/est/view/character/rep.gt-pj-k2=> .
+@prefix g2.gt-pj-k2: <http://www.chise.org/est/view/character/g2.gt-pj-k2=> .
 @prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
 @prefix g2.daikanwa: <http://www.chise.org/est/view/character/g2.daikanwa=> .
 @prefix repi.daikanwa: <http://www.chise.org/est/view/character/repi.daikanwa=> .
@@ -715,6 +717,10 @@ a.ucs:0x4343
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs_component:0x722B ; # &A-compU+722B;
+        isd:below    a.ucs_component:0x7F36   # &A-compU+7F36;
+    ] ;
     .
 
 rep.jis-x0213-2:0x7461
@@ -725,6 +731,10 @@ rep.jis-x0213-2:0x7461
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.big5-cdp:0x88F0 ; # &CDP-88F0;
+        isd:below    a.ucs:0x7F36   # 缶
+    ] ;
     :eq rep.ucs_cns:0x4343        ; # &JX2-7461;
     :eq rep.ucs_jis:0x4343        ; # &JX2-7461;
     :eq rep.cns11643-4:0x2F29     ; # &JX2-7461;
@@ -826,6 +836,10 @@ rep.gt:36228
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes     9 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x2067B   # 𠙻
+    ] ;
     :eq rep.gt-k:06075            ; # &I-GT-K06075;
     :eq rep.gt-pj-9:29232         ; # &GT-36228;
     :form-of             [ :context domain:component ;
@@ -845,6 +859,10 @@ o.ucs_unicode:0x4343
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x722B ; # 爫
+        isd:below    a.ucs:0x7F36   # 缶
+    ] ;
     .
 
 rep.gt-k:07305
@@ -855,10 +873,23 @@ rep.gt-k:07305
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.jis-x0213-2:0x702A ; # &GT-25225;
+        isd:below    a.ucs:0x7F36   # 缶
+    ] ;
     :eq rep.gt-pj-k1:15171        ; # &GT-K07305;
+    :subsume
+        g2.gt-k:07305        ;
     .
     rep.gt-pj-k1:15171
                :abstract-glyph-of       gt-pj-k1:15171   .
+    g2.gt-k:07305
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:07305 ;
+        :eq g2.gt-pj-k1:15171         ; # &g2-GT-K07305;
+        .
+        g2.gt-pj-k1:15171
+              :abstract-glyph-form-of       gt-pj-k1:15171   .
 
 rep.gt-k:07393
     a chisegg:abstract-glyph ;
@@ -868,15 +899,35 @@ rep.gt-k:07393
     ideo:radical         121 ; # ⽸ 
     ideo:strokes           4 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x2EA4 ; # ⺤
+        isd:below    a.ucs:0x7F36   # 缶
+    ] ;
     :eq rep.ucs_unicode:0x4343    ; # &GT-K07393;
     :rep.ucs_JP...hanazono     rdf:nil ;
     :eq rep.gt-pj-k2:15945        ; # &GT-K07393;
+    :subsume
+        g2.ucs_unicode:0x4343 ,
+        g2.gt-k:07393        ;
     .
     rep.ucs_unicode:0x4343
                :abstract-glyph-of [ :context domain:unicode ;
                                     :target     ucs:0x4343  ] .
     rep.gt-pj-k2:15945
                :abstract-glyph-of       gt-pj-k2:15945   .
+    g2.ucs_unicode:0x4343
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:unicode ;
+                                  :target     ucs:0x4343  ] ;
+        :g2.ucs_JP...hanazono      rdf:nil ;
+        .
+    g2.gt-k:07393
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:07393 ;
+        :eq g2.gt-pj-k2:15945         ; # &g2-GT-K07393;
+        .
+        g2.gt-pj-k2:15945
+              :abstract-glyph-form-of       gt-pj-k2:15945   .
 
 a.ucs:0x7F3C
     a chisegg:abstract-character ;
