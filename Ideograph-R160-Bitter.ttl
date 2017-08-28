@@ -70,6 +70,8 @@
 @prefix repi.adobe-japan1-6: <http://www.chise.org/est/view/character/repi.adobe-japan1-6=> .
 @prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
+@prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix rep.hanyo-denshi...ft: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ft=> .
 @prefix g2.hanyo-denshi...ja: <http://www.chise.org/est/view/character/g2.hanyo-denshi...ja=> .
@@ -1264,8 +1266,13 @@ a.ucs:0x8FA0
     ideo:radical         160 ; # ⾟ 
     ideo:strokes           6 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x81EA ; # 自
+        isd:below    a.ucs:0x8F9B   # 辛
+    ] ;
     :eq rep.jis-x0212:0x612E      ; # &I-JSP-612E;
     :eq rep.cns11643-3:0x4478     ; # &I-C3-4478;
+    :eq rep.big5-cdp:0x8ADD       ; # &I-CDP-8ADD;
     :eq rep.daikanwa:38643        ; # &I-M-38643;
     :subsume
         g2.ucs_unicode:0x8FA0 ;
@@ -1274,6 +1281,8 @@ a.ucs:0x8FA0
                :abstract-glyph-of      jis-x0212:0x612E  .
     rep.cns11643-3:0x4478
                :abstract-glyph-of     cns11643-3:0x4478  .
+    rep.big5-cdp:0x8ADD
+               :abstract-glyph-of       big5-cdp:0x8ADD  .
     rep.daikanwa:38643
                :abstract-glyph-of       daikanwa:38643   .
     g2.ucs_unicode:0x8FA0
@@ -1282,17 +1291,21 @@ a.ucs:0x8FA0
                                   :target     ucs:0x8FA0  ] ;
         :eq g2.jis-x0212:0x612E       ; # &g2-JSP-612E;
         :eq g2.cns11643-3:0x4478      ; # &g2-JSP-612E;
+        :eq g2.big5-cdp:0x8ADD        ; # &g2-JSP-612E;
         :eq g2.daikanwa:38643         ; # &g2-JSP-612E;
         :subsume
             repi.daikanwa:38643  ,
             repi.jis-x0212:0x612E ,
             repi.cns11643-3:0x4478 ,
-            repi.ucs_unicode:0x8FA0 ;
+            repi.ucs_unicode:0x8FA0 ,
+            repi.big5-cdp:0x8ADD ;
         .
         g2.jis-x0212:0x612E
               :abstract-glyph-form-of      jis-x0212:0x612E  .
         g2.cns11643-3:0x4478
               :abstract-glyph-form-of     cns11643-3:0x4478  .
+        g2.big5-cdp:0x8ADD
+              :abstract-glyph-form-of       big5-cdp:0x8ADD  .
         g2.daikanwa:38643
               :abstract-glyph-form-of       daikanwa:38643   .
         repi.daikanwa:38643
@@ -1311,6 +1324,10 @@ a.ucs:0x8FA0
             a chisegg:glyph-image ;
             :glyph-image-of [ :context domain:unicode ;
                               :target     ucs:0x8FA0  ] ;
+            .
+        repi.big5-cdp:0x8ADD
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8ADD ;
             .
 
 rep.ucs-itaiji-003:0x8FA5
