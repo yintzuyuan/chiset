@@ -108,6 +108,8 @@
 @prefix o.adobe-japan1-0: <http://www.chise.org/est/view/character/o.adobe-japan1-0=> .
 @prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
+@prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
 @prefix rep.hanyo-denshi...ja: <http://www.chise.org/est/view/character/rep.hanyo-denshi...ja=> .
 @prefix rep.hanyo-denshi...jb: <http://www.chise.org/est/view/character/rep.hanyo-denshi...jb=> .
 @prefix rep.hanyo-denshi...jd: <http://www.chise.org/est/view/character/rep.hanyo-denshi...jd=> .
@@ -819,6 +821,39 @@ a.ucs:0x8F68
     .
     rep.gb2312:0x396C
                :abstract-glyph-of         gb2312:0x396C  .
+
+a.ucs:0x282A5
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x282A5 ;
+    ideo:radical         159 ; # ⾞ 
+    ideo:strokes           2 ;
+    ideo:total-strokes     6 ;
+    :eq rep.big5-cdp:0x8CF7       ; # &I-CDP-8CF7;
+    :subsume
+        g2.ucs_iso:0x282A5   ;
+    .
+    rep.big5-cdp:0x8CF7
+               :abstract-glyph-of       big5-cdp:0x8CF7  .
+    g2.ucs_iso:0x282A5
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x282A5 ] ;
+        :eq g2.big5-cdp:0x8CF7        ; # &g2-CDP-8CF7;
+        :subsume
+            repi.big5-cdp:0x8CF7 ,
+            repi.ucs_iso:0x282A5 ;
+        .
+        g2.big5-cdp:0x8CF7
+              :abstract-glyph-form-of       big5-cdp:0x8CF7  .
+        repi.big5-cdp:0x8CF7
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8CF7 ;
+            .
+        repi.ucs_iso:0x282A5
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x282A5 ] ;
+            .
 
 a.ucs:0x8ECE
     a chisegg:abstract-character ;
@@ -11117,22 +11152,48 @@ a.ucs:0x28372
     ideo:radical         159 ; # ⾞ 
     ideo:strokes          10 ;
     ideo:total-strokes    17 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x8ECA ; # 車
+        isd:right    a.ucs:0x5702   # 圂
+    ] ;
+    :eq rep.cns11643-4:0x5934     ; # &I-C4-5934;
+    :eq rep.daikanwa:38469        ; # &I-M-38469;
     :subsume
-        rep.ucs_iso:0x28372  ,
-        rep.cns11643-4:0x5934 ;
+        g2.ucs_iso:0x28372   ,
+        g2.cns11643-4:0x5934 ;
     .
-    rep.ucs_iso:0x28372
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of [ :context domain:iso     ;
-                             :target     ucs:0x28372 ] ;
-        :eq rep.daikanwa:38469        ; # &M-38469;
-        .
-        rep.daikanwa:38469
-                   :abstract-glyph-of       daikanwa:38469   .
     rep.cns11643-4:0x5934
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of cns11643-4:0x5934 ;
+               :abstract-glyph-of     cns11643-4:0x5934  .
+    rep.daikanwa:38469
+               :abstract-glyph-of       daikanwa:38469   .
+    g2.ucs_iso:0x28372
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x28372 ] ;
+        :eq g2.daikanwa:38469         ; # &g2-M-38469;
+        :subsume
+            repi.daikanwa:38469  ,
+            repi.ucs_iso:0x28372 ;
         .
+        g2.daikanwa:38469
+              :abstract-glyph-form-of       daikanwa:38469   .
+        repi.daikanwa:38469
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:38469 ;
+            .
+        repi.ucs_iso:0x28372
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x28372 ] ;
+            .
+    g2.cns11643-4:0x5934
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-4:0x5934 ;
+        :eq g2.ucs_cns:0x28372        ; # &g2-CU+28372;
+        .
+        g2.ucs_cns:0x28372
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x28372 ] .
 
 a.ucs:0x28373
     a chisegg:abstract-character ;
@@ -15132,6 +15193,10 @@ a.ucs:0x8F61
     ideo:radical         159 ; # ⾞ 
     ideo:strokes          15 ;
     ideo:total-strokes    22 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x26195 ; # 𦆕
+        isd:below    a.ucs:0x53E3   # 口
+    ] ;
     :eq rep.adobe-japan1-0:01787  ; # &I-AJ1-01787;
     :eq rep.jis-x0208:0x3725      ; # &I-J90-3725;
     :eq rep.cns11643-1:0x7B79     ; # &I-C1-7B79;
