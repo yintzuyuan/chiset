@@ -55,13 +55,19 @@
     =ucs-itaiji-005
     =ucs-itaiji-006
     =ucs-itaiji-007
+    =ucs-itaiji-008
     =ucs-itaiji-009
+    =ucs-itaiji-010
     =ucs-itaiji-011
     =ucs-itaiji-084
     =ucs-var-001
     =ucs-var-002
     =ucs-var-003
     =ucs-var-004
+    =ucs-var-005
+    =ucs-var-006
+    =ucs-var-008
+    =ucs-var-010
     =cns11643-1 =cns11643-2 =cns11643-3
     =cns11643-4 =cns11643-5 =cns11643-6 =cns11643-7
     =gb2312
@@ -121,7 +127,9 @@
     ==daikanwa
     ==gt-k
     ==ucs@gb
+    ==ucs-itaiji-002
     ==ucs-itaiji-003
+    ==ucs-itaiji-005
     ==ucs-var-002
     ==ucs@JP/hanazono
     ==daikanwa/+2p
@@ -135,7 +143,10 @@
     =jis-x0208@1983 =jis-x0208@1978
     =>ucs-itaiji-001
     =>ucs-itaiji-002
+    =>ucs-itaiji-003
+    =>ucs-itaiji-004
     =>ucs-itaiji-005
+    =>ucs-itaiji-006
     =>ucs-itaiji-007
     ==>ucs@bucs
     =big5
