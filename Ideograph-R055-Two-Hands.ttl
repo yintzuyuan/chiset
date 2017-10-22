@@ -105,6 +105,8 @@
 @prefix rep.gt-pj-1: <http://www.chise.org/est/view/character/rep.gt-pj-1=> .
 @prefix rep.gt-pj-2: <http://www.chise.org/est/view/character/rep.gt-pj-2=> .
 @prefix rep.gt-pj-3: <http://www.chise.org/est/view/character/rep.gt-pj-3=> .
+@prefix rep.gt-pj-k2: <http://www.chise.org/est/view/character/rep.gt-pj-k2=> .
+@prefix g2.gt-pj-k2: <http://www.chise.org/est/view/character/g2.gt-pj-k2=> .
 @prefix rep.daikanwa: <http://www.chise.org/est/view/character/rep.daikanwa=> .
 @prefix g2.daikanwa: <http://www.chise.org/est/view/character/g2.daikanwa=> .
 @prefix repi.daikanwa: <http://www.chise.org/est/view/character/repi.daikanwa=> .
@@ -157,6 +159,7 @@
 @prefix gt-pj-1: <http://rdf.chise.org/data/ccs/gt-pj-1/code-point/> .
 @prefix gt-pj-2: <http://rdf.chise.org/data/ccs/gt-pj-2/code-point/> .
 @prefix gt-pj-3: <http://rdf.chise.org/data/ccs/gt-pj-3/code-point/> .
+@prefix gt-pj-k2: <http://rdf.chise.org/data/ccs/gt-pj-k2/code-point/> .
 @prefix daikanwa: <http://rdf.chise.org/data/ccs/daikanwa/code-point/> .
 @prefix shinjigen: <http://rdf.chise.org/data/ccs/shinjigen/code-point/> .
 @prefix hanziku-1: <http://rdf.chise.org/data/ccs/hanziku-1/code-point/> .
@@ -1441,6 +1444,8 @@ a.ucs:0x5F05
 a.ucs:0x26B20
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x26B20 ;
+    :from.denotational_component
+        a.ucs_iwds-1:0x26B07 ;
     ideo:radical           [ :context domain:ucs     ;
                              :target          140 ; # ⾋
                            ] ;
@@ -2121,6 +2126,32 @@ rep.ucs_iso:0x22343
             :glyph-image-of [ :context domain:iso     ;
                               :target     ucs:0x22343 ] ;
             .
+
+rep.gt-k:07139
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of gt-k:07139 ;
+    :denotation-of
+        a.ucs:0x22343        ;
+    ideo:radical          55 ; # ⼶ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x592D ; # 夭
+        isd:below    a.ucs:0x2F82C   # 卉
+    ] ;
+    :eq rep.gt-pj-k2:14676        ; # &GT-K07139;
+    :subsume
+        g2.gt-k:07139        ;
+    .
+    rep.gt-pj-k2:14676
+               :abstract-glyph-of       gt-pj-k2:14676   .
+    g2.gt-k:07139
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:07139 ;
+        :eq g2.gt-pj-k2:14676         ; # &g2-GT-K07139;
+        .
+        g2.gt-pj-k2:14676
+              :abstract-glyph-form-of       gt-pj-k2:14676   .
 
 a.ucs_component:0x22344
     a chisegg:abstract-character ;
