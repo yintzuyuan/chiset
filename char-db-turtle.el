@@ -93,6 +93,7 @@
     =>jis-x0208 =>jis-x0213-1
     =>jis-x0208@1997
     =>ucs@iwds-1
+    =>ucs@cognate
     =>ucs@component
     =>iwds-1
     =>ucs@iso
