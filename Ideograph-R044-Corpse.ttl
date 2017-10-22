@@ -15,6 +15,7 @@
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
 @prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
+@prefix a.ucs_cognate: <http://www.chise.org/est/view/character/a.ucs@cognate=> .
 @prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix a.ucs_unicode: <http://www.chise.org/est/view/character/a.ucs@unicode=> .
 @prefix a.ucs_jis: <http://www.chise.org/est/view/character/a.ucs@jis=> .
@@ -2582,8 +2583,7 @@ a.ucs:0x3791
                                      chisebib:daikanwa ;
                             :target  a.ucs:0x5C3E         ] ;
     :subsume
-        g2.ucs_unicode:0x3791 ,
-        g2.cns11643-3:0x2853 ;
+        g2.ucs_unicode:0x3791 ;
     .
     rep.cns11643-3:0x2853
                :abstract-glyph-of     cns11643-3:0x2853  .
@@ -2593,30 +2593,30 @@ a.ucs:0x3791
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of [ :context domain:unicode ;
                                   :target     ucs:0x3791  ] ;
+        :eq g2.cns11643-3:0x2853      ; # &g2-M-07673;
         :eq g2.daikanwa:07673         ; # &g2-M-07673;
         :subsume
             repi.daikanwa:07673  ,
+            repi.cns11643-3:0x2853 ,
             repi.ucs_unicode:0x3791 ;
         .
+        g2.cns11643-3:0x2853
+              :abstract-glyph-form-of     cns11643-3:0x2853  .
         g2.daikanwa:07673
               :abstract-glyph-form-of       daikanwa:07673   .
         repi.daikanwa:07673
             a chisegg:glyph-image ;
             :glyph-image-of daikanwa:07673 ;
             .
+        repi.cns11643-3:0x2853
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-3:0x2853 ;
+            .
         repi.ucs_unicode:0x3791
             a chisegg:glyph-image ;
             :glyph-image-of [ :context domain:unicode ;
                               :target     ucs:0x3791  ] ;
             .
-    g2.cns11643-3:0x2853
-        a chisegg:abstract-glyph-form ;
-        :abstract-glyph-form-of cns11643-3:0x2853 ;
-        :eq g2.ucs_cns:0x3791         ; # &g2-CU+3791;
-        .
-        g2.ucs_cns:0x3791
-              :abstract-glyph-form-of [ :context domain:cns     ;
-                                        :target     ucs:0x3791  ] .
 
 rep.gt-k:04055
     a chisegg:abstract-glyph ;
@@ -5317,6 +5317,9 @@ a.ucs:0x21C98
     ] ;
     :eq rep.cns11643-6:0x477E     ; # &I-C6-477E;
     :eq rep.daikanwa:07756        ; # &I-M-07756;
+    ideo:same-as         [ :sources chisebib:zhengzitong ,
+                                    chisebib:daikanwa ;
+                           :target  a.ucs:0x5C3F         ] ;
     :subsume
         g2.ucs_iso:0x21C98   ;
     .
@@ -7851,7 +7854,7 @@ a.ucs_component:0x5C3F
     ideo:radical          44 ; # ⼫ 
     isd:structure [ a idc:⿸ ;
         isd:surround a.ucs:0x5C38 ; # 尸
-        isd:filling  a.ucs_component:0x6C34   # &A-compU+6C34;
+        isd:filling  a.ucs_cognate:0x6C34   # &A-cgnU+6C34;
     ] ;
     .
 
