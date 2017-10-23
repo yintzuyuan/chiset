@@ -15,6 +15,7 @@
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
 @prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
+@prefix a.ucs_cognate: <http://www.chise.org/est/view/character/a.ucs@cognate=> .
 @prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix a.ucs_iso: <http://www.chise.org/est/view/character/a.ucs@iso=> .
 @prefix a.ucs_jis: <http://www.chise.org/est/view/character/a.ucs@jis=> .
@@ -3346,9 +3347,31 @@ a.ucs:0x23AA1
         :abstract-glyph-of cns11643-6:0x5422 ;
         .
 
+a.ucs_cognate:0x6BC0
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:cognate ;
+                             :target     ucs:0x6BC0  ] ;
+    ideo:radical          79 ; # ⽎ 
+    .
+
+a.ucs_iwds-1:0x6BC0
+    a chisegg:abstract-character ;
+    :abstract-character-of [ :context domain:iwds-1  ;
+                             :target     ucs:0x6BC0  ] ;
+    :denotation-of
+        a.ucs_cognate:0x6BC0 ;
+    ideo:radical          79 ; # ⽎ 
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs_iwds-1:0x2C6F8 ; # &A-IWDSU+2C6F8;
+        isd:right    a.ucs:0x6BB3   # 殳
+    ] ;
+    .
+
 a.ucs:0x6BC0
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x6BC0 ;
+    :denotation-of
+        a.ucs_iwds-1:0x6BC0  ;
     ideo:radical          79 ; # ⽎ 
     .
 
@@ -3360,7 +3383,6 @@ rep.adobe-japan1-0:04509
     ideo:radical          79 ; # ⽎ 
     ideo:strokes           9 ;
     ideo:total-strokes    13 ;
-    :eq a.ucs_iwds-1:0x6BC0       ; # &AJ1-04509;
     :eq rep.ucs_unicode:0x6BC0    ; # &AJ1-04509;
     :eq rep.jis-x0208:0x544C      ; # &I-J90-544C;
     :eq rep.cns11643-1:0x645A     ; # &I-C1-645A;
@@ -3370,14 +3392,12 @@ rep.adobe-japan1-0:04509
     :eq rep.gt-k:10300            ; # &I-GT-K10300;
     :eq rep.gt-pj-1:21580         ; # &I-GT-21351;
     :eq rep.daikanwa:16654        ; # &I-M-16654;
+    ideo:interchangeable-form-of rep.daikanwa:35732   ;
     :subsume
         g2.adobe-japan1-0:04509 ,
         g2.ucs_unicode:0x6BC0 ,
         repi.hng-kar:10080   ;
     .
-    a.ucs_iwds-1:0x6BC0
-           :abstract-character-of [ :context domain:iwds-1  ;
-                                    :target     ucs:0x6BC0  ] .
     rep.ucs_unicode:0x6BC0
                :abstract-glyph-of [ :context domain:unicode ;
                                     :target     ucs:0x6BC0  ] .
@@ -3477,7 +3497,7 @@ repi.hng-khm:00730
     a chisegg:glyph-image ;
     :glyph-image-of hng-khm:00730 ;
     :denotation-of
-        a.ucs:0x6BC0         ;
+        a.ucs_cognate:0x6BC0 ;
     ideo:radical          79 ; # ⽎ 
     ideo:strokes           9 ;
     ideo:total-strokes    16 ;
@@ -3637,6 +3657,8 @@ a.ucs:0x23AA9
 a.ucs:0x6BC1
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x6BC1 ;
+    :denotation-of
+        a.ucs_iwds-1:0x6BC0  ;
     ideo:radical          79 ; # ⽎ 
     .
 
