@@ -15,6 +15,7 @@
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
 @prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
+@prefix a.ucs_cognate: <http://www.chise.org/est/view/character/a.ucs@cognate=> .
 @prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix a.ucs_unicode: <http://www.chise.org/est/view/character/a.ucs@unicode=> .
 @prefix o.ucs_unicode: <http://www.chise.org/est/view/character/o.ucs@unicode=> .
@@ -589,6 +590,8 @@ a.ucs:0x66F2
 a.ucs:0x3B30
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x3B30 ;
+    :denotation-of
+        a.ucs_iwds-1:0x81FE  ;
     ideo:radical          73 ; # ⽈ 
     ideo:strokes           2 ;
     ideo:total-strokes     6 ;
@@ -794,18 +797,30 @@ a.ucs:0x66F3
                               :target     ucs:0x66F3  ] ;
             .
 
-rep.cbeta:04456
+rep.big5-cdp:0x89E7
     a chisegg:abstract-glyph ;
-    :abstract-glyph-of cbeta:04456 ;
+    :abstract-glyph-of big5-cdp:0x89E7 ;
+    :denotation-of
+        a.ucs_cognate:0x81FE ;
     ideo:radical          73 ; # ⽈ 
     ideo:strokes           2 ;
     ideo:total-strokes     6 ;
+    :eq rep.cbeta:04456           ; # &I-CB04456;
+    :form-of             a.ucs:0x3B30         ,
+                         a.ucs:0x81FE         ;
     :subsume
-        g2.cbeta:04456       ;
+        g2.cbeta:04456       ,
+        g2.big5-cdp:0x89E7   ;
     .
+    rep.cbeta:04456
+               :abstract-glyph-of          cbeta:04456   .
     g2.cbeta:04456
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of cbeta:04456 ;
+        .
+    g2.big5-cdp:0x89E7
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of big5-cdp:0x89E7 ;
         .
 
 a.ucs:0x66F4
