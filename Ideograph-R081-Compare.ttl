@@ -21,6 +21,7 @@
 @prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
 @prefix g2.ucs_cns: <http://www.chise.org/est/view/character/g2.ucs@cns=> .
+@prefix g2.ucs_JP...hanazono: <http://www.chise.org/est/view/character/g2.ucs@JP...hanazono=> .
 @prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
@@ -1048,6 +1049,25 @@ a.ucs:0x6BD9
     rep.gb2312:0x3150
                :abstract-glyph-of         gb2312:0x3150  .
 
+a.ucs:0x2DBCD
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2DBCD ;
+    ideo:radical          81 ; # ⽐ 
+    ideo:strokes           6 ;
+    ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.gt-k:02380 ; # &GT-K02380;
+        isd:below    a.ucs:0x6BD4   # 比
+    ] ;
+    :subsume
+        g2.ucs_JP...hanazono:0x2DBCD ;
+    .
+    g2.ucs_JP...hanazono:0x2DBCD
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                  :target     ucs:0x2DBCD ] ;
+        .
+
 a.ucs:0x23B0B
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x23B0B ;
@@ -1185,7 +1205,8 @@ rep.ucs-itaiji-001:0x23B0B
         isd:above    rep.big5-cdp:0x8CAF ; # &CDP-8CAF;
         isd:below    a.ucs:0x6BD4   # 比
     ] ;
-    :from.unknown        a.ucs:0x23B0B        ;
+    :from.unknown        a.ucs:0x2DBCD        ,
+                         a.ucs:0x23B0B        ;
     .
 
 a.ucs:0x23B0E
