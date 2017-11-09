@@ -14,7 +14,7 @@
 
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix bucs: <http://www.chise.org/est/view/character/a2.ucs@bucs=> .
-@prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
+@prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
 @prefix o.ucs_unicode: <http://www.chise.org/est/view/character/o.ucs@unicode=> .
 @prefix o.ucs_jis: <http://www.chise.org/est/view/character/o.ucs@jis=> .
 @prefix o.ucs_ks: <http://www.chise.org/est/view/character/o.ucs@ks=> .
@@ -182,14 +182,14 @@
 @prefix ucs-var-001: <http://rdf.chise.org/data/ccs/ucs-var-001/code-point/> .
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
 
-a.ucs_component:0x9751
+a.ucs_iwds-1:0x9751
     a chisegg:abstract-character ;
-    :abstract-character-of [ :context domain:component ;
+    :abstract-character-of [ :context domain:iwds-1  ;
                              :target     ucs:0x9751  ] ;
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           0 ;
     ideo:total-strokes     8 ;
-    :eq a.iwds-1:0319             ; # &A-compU+9751;
+    :eq a.iwds-1:0319             ; # &A-IWDSU+9751;
     .
     a.iwds-1:0319
            :abstract-character-of         iwds-1:0319    .
@@ -198,7 +198,7 @@ a.ucs:0x9751
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x9751 ;
     :denotation-of
-        a.ucs_component:0x9751 ;
+        a.ucs_iwds-1:0x9751  ;
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           0 ;
     ideo:total-strokes     8 ;
@@ -282,7 +282,7 @@ a.ucs:0x9752
     a chisegg:abstract-character ;
     :abstract-character-of ucs:0x9752 ;
     :denotation-of
-        a.ucs_component:0x9751 ;
+        a.ucs_iwds-1:0x9751  ;
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           0 ;
     ideo:total-strokes     8 ;
@@ -421,11 +421,15 @@ rep.cns11643-6:0x3479
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           1 ;
     ideo:total-strokes     9 ;
-    :eq rep.daikanwa:49872        ; # &C6-3479;
+    :eq rep.ucs_cns:0x24BDE       ; # &C6-3479;
+    :eq rep.daikanwa:49872        ; # &I-M-49872;
     :subsume
         g2.daikanwa:49872    ,
         g2.cns11643-6:0x3479 ;
     .
+    rep.ucs_cns:0x24BDE
+               :abstract-glyph-of [ :context domain:cns     ;
+                                    :target     ucs:0x24BDE ] .
     rep.daikanwa:49872
                :abstract-glyph-of       daikanwa:49872   .
     g2.daikanwa:49872
@@ -465,6 +469,10 @@ a.ucs:0x291D5
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           3 ;
     ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs_iwds-1:0x9751 ; # &A-IWDSU+9751;
+        isd:right    a.ucs:0x5F61   # 彡
+    ] ;
     .
 
 rep.daikanwa:42565
@@ -475,6 +483,10 @@ rep.daikanwa:42565
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           3 ;
     ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x9751 ; # 靑
+        isd:right    a.ucs:0x5F61   # 彡
+    ] ;
     .
 
 rep.ucs_iso:0x291D5
@@ -486,6 +498,10 @@ rep.ucs_iso:0x291D5
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           3 ;
     ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x9752 ; # 青
+        isd:right    a.ucs:0x5F61   # 彡
+    ] ;
     :eq rep.cns11643-4:0x3626     ; # &C4-3626;
     :subsume
         g2.ucs_iso:0x291D5   ,
@@ -1090,6 +1106,10 @@ a.ucs:0x291DB
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           5 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x751F ; # 生
+        isd:right    a.ucs_iwds-1:0x9751   # &A-IWDSU+9751;
+    ] ;
     .
 
 rep.daikanwa:42571
@@ -1111,6 +1131,10 @@ rep.ucs_iso:0x291DB
     ideo:radical         174 ; # ⾭ 
     ideo:strokes           5 ;
     ideo:total-strokes    13 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x751F ; # 生
+        isd:right    a.ucs:0x9752   # 青
+    ] ;
     :eq rep.cns11643-6:0x597D     ; # &C6-597D;
     :subsume
         g2.ucs_iso:0x291DB   ,
@@ -2502,7 +2526,7 @@ a.ucs:0x291E5
     :abstract-character-of ucs:0x291E5 ;
     ideo:radical         174 ; # ⾭ 
     isd:structure [ a idc:⿰ ;
-        isd:left     a.ucs_component:0x9751 ; # &A-compU+9751;
+        isd:left     a.ucs_iwds-1:0x9751 ; # &A-IWDSU+9751;
         isd:right    a.ucs:0x2B26C   # 𫉬
     ] ;
     .
