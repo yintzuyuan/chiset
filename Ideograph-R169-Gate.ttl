@@ -1181,24 +1181,56 @@ a.ucs:0x28CD0
     ideo:radical         169 ; # ⾨ 
     ideo:strokes           3 ;
     ideo:total-strokes    11 ;
+    isd:structure [ a idc:⿵ ;
+        isd:surround a.ucs:0x9580 ; # 門
+        isd:filling  a.ucs:0x5973   # 女
+    ] ;
+    :eq rep.cns11643-5:0x3642     ; # &I-C5-3642;
+    :eq rep.big5-cdp:0x8AD3       ; # &I-CDP-8AD3;
+    :eq rep.daikanwa:41223        ; # &I-M-41223;
     :subsume
-        rep.daikanwa:41223   ,
-        rep.ucs_iso:0x28CD0  ,
-        rep.cns11643-5:0x3642 ;
+        g2.daikanwa:41223    ,
+        g2.ucs_iso:0x28CD0   ,
+        g2.cns11643-5:0x3642 ;
     .
-    rep.daikanwa:41223
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of daikanwa:41223 ;
-        .
-    rep.ucs_iso:0x28CD0
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of [ :context domain:iso     ;
-                             :target     ucs:0x28CD0 ] ;
-        .
     rep.cns11643-5:0x3642
-        a chisegg:abstract-glyph ;
-        :abstract-glyph-of cns11643-5:0x3642 ;
+               :abstract-glyph-of     cns11643-5:0x3642  .
+    rep.big5-cdp:0x8AD3
+               :abstract-glyph-of       big5-cdp:0x8AD3  .
+    rep.daikanwa:41223
+               :abstract-glyph-of       daikanwa:41223   .
+    g2.daikanwa:41223
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of daikanwa:41223 ;
         .
+    g2.ucs_iso:0x28CD0
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x28CD0 ] ;
+        :eq g2.big5-cdp:0x8AD3        ; # &g2-CDP-8AD3;
+        :subsume
+            repi.big5-cdp:0x8AD3 ,
+            repi.ucs_iso:0x28CD0 ;
+        .
+        g2.big5-cdp:0x8AD3
+              :abstract-glyph-form-of       big5-cdp:0x8AD3  .
+        repi.big5-cdp:0x8AD3
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8AD3 ;
+            .
+        repi.ucs_iso:0x28CD0
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x28CD0 ] ;
+            .
+    g2.cns11643-5:0x3642
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of cns11643-5:0x3642 ;
+        :eq g2.ucs_cns:0x28CD0        ; # &g2-CU+28CD0;
+        .
+        g2.ucs_cns:0x28CD0
+              :abstract-glyph-form-of [ :context domain:cns     ;
+                                        :target     ucs:0x28CD0 ] .
 
 a.ucs:0x498D
     a chisegg:abstract-character ;
