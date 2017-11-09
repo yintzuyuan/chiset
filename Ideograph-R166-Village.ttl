@@ -14,9 +14,12 @@
 
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
 @prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
+@prefix rep.ucs_JP...hanazono: <http://www.chise.org/est/view/character/rep.ucs@JP...hanazono=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
+@prefix g2.ucs_JP...hanazono: <http://www.chise.org/est/view/character/g2.ucs@JP...hanazono=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
+@prefix rep.mj: <http://www.chise.org/est/view/character/rep.mj=> .
 @prefix rep.adobe-japan1-0: <http://www.chise.org/est/view/character/rep.adobe-japan1-0=> .
 @prefix g2.adobe-japan1-0: <http://www.chise.org/est/view/character/g2.adobe-japan1-0=> .
 @prefix rep.jis-x0208: <http://www.chise.org/est/view/character/rep.jis-x0208=> .
@@ -65,6 +68,7 @@
 @prefix rep.cbeta: <http://www.chise.org/est/view/character/rep.cbeta=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
+@prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
 @prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
 @prefix jis-x0208: <http://rdf.chise.org/data/ccs/jis-x0208/code-point/> .
 @prefix gb2312: <http://rdf.chise.org/data/ccs/gb2312/code-point/> .
@@ -843,6 +847,40 @@ a.ucs:0x2137A
     rep.cns11643-6:0x4F6D
         a chisegg:abstract-glyph ;
         :abstract-glyph-of cns11643-6:0x4F6D ;
+        .
+
+a.ucs:0x2E853
+    a chisegg:abstract-character ;
+    :abstract-character-of ucs:0x2E853 ;
+    ideo:radical         166 ; # ⾥ 
+    ideo:strokes           5 ;
+    ideo:total-strokes    12 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x91CC ; # 里
+        isd:right    a.ucs:0x53F7   # 号
+    ] ;
+    .
+
+rep.ucs_JP...hanazono:0x2E853
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of [ :context domain:JP...hanazono ;
+                         :target     ucs:0x2E853 ] ;
+    :denotation-of
+        a.ucs:0x2E853        ;
+    ideo:radical         166 ; # ⾥ 
+    ideo:strokes           5 ;
+    ideo:total-strokes    12 ;
+    isd:structure [ a idc:⿰ ;
+        isd:left     a.ucs:0x91CC ; # 里
+        isd:right    rep.mj:057144   # &MJ057144;
+    ] ;
+    :subsume
+        g2.ucs_JP...hanazono:0x2E853 ;
+    .
+    g2.ucs_JP...hanazono:0x2E853
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:JP...hanazono ;
+                                  :target     ucs:0x2E853 ] ;
         .
 
 a.ucs:0x2892B
