@@ -13,6 +13,7 @@
 @prefix zob1959: <http://chise.zinbun.kyoto-u.ac.jp/koukotsu/rubbings/> .
 
 @prefix a.ucs: <http://www.chise.org/est/view/character/rep.ucs=> .
+@prefix a.ucs_iwds-1: <http://www.chise.org/est/view/character/a.ucs@iwds-1=> .
 @prefix a.ucs_component: <http://www.chise.org/est/view/character/a.ucs@component=> .
 @prefix a.ucs_iso: <http://www.chise.org/est/view/character/a.ucs@iso=> .
 @prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
@@ -73,6 +74,7 @@
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
 @prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
 @prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
+@prefix a.big5-cdp: <http://www.chise.org/est/view/character/a.big5-cdp=> .
 @prefix rep.gt: <http://www.chise.org/est/view/character/rep.gt=> .
 @prefix g2.gt: <http://www.chise.org/est/view/character/g2.gt=> .
 @prefix repi.gt: <http://www.chise.org/est/view/character/repi.gt=> .
@@ -141,8 +143,16 @@ a.jis-x0208:0x3962
     :abstract-character-of jis-x0208:0x3962 ;
     ideo:radical         189 ; # ⾼ 
     ideo:strokes           0 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.big5-cdp:0x8BAA ; # &A-CDP-8BAA;
+        isd:below    a.ucs:0x518B   # 冋
+    ] ;
+    :eq a.ucs_iwds-1:0x9AD8       ; # &J97-3962;
     :eq a.jis-x0213-1:0x3962      ; # &J97-3962;
     .
+    a.ucs_iwds-1:0x9AD8
+           :abstract-character-of [ :context domain:iwds-1  ;
+                                    :target     ucs:0x9AD8  ] .
     a.jis-x0213-1:0x3962
            :abstract-character-of    jis-x0213-1:0x3962  .
 
@@ -154,6 +164,10 @@ a.ucs:0x9AD8
     ideo:radical         189 ; # ⾼ 
     ideo:strokes           0 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.big5-cdp:0x8BAA ; # &CDP-8BAA;
+        isd:below    a.ucs:0x518B   # 冋
+    ] ;
     :eq rep.adobe-japan1-0:02036  ; # &I-AJ1-02036;
     :eq rep.jis-x0208:0x3962      ; # &I-J90-3962;
     :eq rep.gb2312:0x385F         ; # &I-G0-385F;
@@ -282,6 +296,10 @@ a.ucs:0x9AD9
     ideo:strokes           0 ;
     ideo:total-strokes    11 ;
     ideo:hanyu-dazidian  ( 7 4594 1 ) ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    rep.gt-k:02128 ; # &GT-K02128;
+        isd:below    a.ucs:0x518B   # 冋
+    ] ;
     :eq rep.adobe-japan1-2:08705  ; # &I-AJ1-08705;
     :eq rep.cns11643-4:0x362D     ; # &I-C4-362D;
     :eq rep.gt:60969              ; # &I-GT-60969;
