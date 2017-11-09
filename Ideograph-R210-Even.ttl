@@ -68,6 +68,7 @@
 @prefix g2.gb12345: <http://www.chise.org/est/view/character/g2.gb12345=> .
 @prefix rep.big5-cdp: <http://www.chise.org/est/view/character/rep.big5-cdp=> .
 @prefix g2.big5-cdp: <http://www.chise.org/est/view/character/g2.big5-cdp=> .
+@prefix repi.big5-cdp: <http://www.chise.org/est/view/character/repi.big5-cdp=> .
 @prefix rep.gt: <http://www.chise.org/est/view/character/rep.gt=> .
 @prefix g2.gt: <http://www.chise.org/est/view/character/g2.gt=> .
 @prefix repi.gt: <http://www.chise.org/est/view/character/repi.gt=> .
@@ -90,7 +91,6 @@
 @prefix rep.ucs-itaiji-004: <http://www.chise.org/est/view/character/rep.ucs-itaiji-004=> .
 @prefix rep.ucs-itaiji-005: <http://www.chise.org/est/view/character/rep.ucs-itaiji-005=> .
 @prefix g2.ucs-itaiji-005: <http://www.chise.org/est/view/character/g2.ucs-itaiji-005=> .
-@prefix g2.ucs-bmp-itaiji-005: <http://www.chise.org/est/view/character/g2.ucs-bmp-itaiji-005=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
 @prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
@@ -119,7 +119,6 @@
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
 @prefix ucs-itaiji-004: <http://rdf.chise.org/data/ccs/ucs-itaiji-004/code-point/> .
 @prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
-@prefix ucs-bmp-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-bmp-itaiji-005/code-point/> .
 
 a.ucs:0x9F4A
     a chisegg:abstract-character ;
@@ -321,6 +320,7 @@ a.ucs:0x9F50
     ideo:total-strokes     6 ;
     :eq rep.gb2312:0x466B         ; # &I-G0-466B;
     :eq rep.cns11643-3:0x2370     ; # &I-C3-2370;
+    :eq rep.big5-cdp:0x8A54       ; # &I-CDP-8A54;
     :eq rep.daikanwa:13451        ; # &I-M-13451;
     ideo:simplified-form-of [ :context domain:CN      ;
                               :target  rep.adobe-japan1-0:07457 ] ;
@@ -335,6 +335,8 @@ a.ucs:0x9F50
                :abstract-glyph-of         gb2312:0x466B  .
     rep.cns11643-3:0x2370
                :abstract-glyph-of     cns11643-3:0x2370  .
+    rep.big5-cdp:0x8A54
+               :abstract-glyph-of       big5-cdp:0x8A54  .
     rep.daikanwa:13451
                :abstract-glyph-of       daikanwa:13451   .
     g2.daikanwa:13451
@@ -342,7 +344,21 @@ a.ucs:0x9F50
         :abstract-glyph-form-of daikanwa:13451 ;
         ideo:radical          67 ; # ⽂ 
         ideo:strokes           2 ;
+        :eq g2.big5-cdp:0x8A54        ; # &g2-CDP-8A54;
+        :subsume
+            repi.daikanwa:13451  ,
+            repi.big5-cdp:0x8A54 ;
         .
+        g2.big5-cdp:0x8A54
+              :abstract-glyph-form-of       big5-cdp:0x8A54  .
+        repi.daikanwa:13451
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:13451 ;
+            .
+        repi.big5-cdp:0x8A54
+            a chisegg:glyph-image ;
+            :glyph-image-of big5-cdp:0x8A54 ;
+            .
     g2.ucs_unicode:0x9F50
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of [ :context domain:unicode ;
@@ -386,7 +402,7 @@ rep.ucs-itaiji-005:0x9F4A
     ideo:simplified-form-of [ :context domain:component ;
                               :target  rep.adobe-japan1-0:07457 ] ;
     :subsume
-        g2.ucs-bmp-itaiji-005:0x9F4A ;
+        g2.ucs-itaiji-005:0x9F4A ;
     .
     g2.ucs-itaiji-005:0x9F4A
         a chisegg:abstract-glyph-form ;
