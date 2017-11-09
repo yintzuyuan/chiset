@@ -37,6 +37,7 @@
 @prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
+@prefix rep.mj: <http://www.chise.org/est/view/character/rep.mj=> .
 @prefix rep.adobe-japan1-0: <http://www.chise.org/est/view/character/rep.adobe-japan1-0=> .
 @prefix g2.adobe-japan1-0: <http://www.chise.org/est/view/character/g2.adobe-japan1-0=> .
 @prefix rep.jis-x0208: <http://www.chise.org/est/view/character/rep.jis-x0208=> .
@@ -120,9 +121,11 @@
 @prefix rep.ucs-var-002: <http://www.chise.org/est/view/character/rep.ucs-var-002=> .
 @prefix rep.ucs-itaiji-001: <http://www.chise.org/est/view/character/rep.ucs-itaiji-001=> .
 @prefix rep.ucs-itaiji-003: <http://www.chise.org/est/view/character/rep.ucs-itaiji-003=> .
+@prefix rep.ucs-itaiji-005: <http://www.chise.org/est/view/character/rep.ucs-itaiji-005=> .
 @prefix rep.ucs-itaiji-084: <http://www.chise.org/est/view/character/rep.ucs-itaiji-084=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
+@prefix mj: <http://rdf.chise.org/data/ccs/mj/code-point/> .
 @prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
 @prefix jis-x0208: <http://rdf.chise.org/data/ccs/jis-x0208/code-point/> .
 @prefix gb2312: <http://rdf.chise.org/data/ccs/gb2312/code-point/> .
@@ -155,6 +158,7 @@
 @prefix ucs-var-002: <http://rdf.chise.org/data/ccs/ucs-var-002/code-point/> .
 @prefix ucs-itaiji-001: <http://rdf.chise.org/data/ccs/ucs-itaiji-001/code-point/> .
 @prefix ucs-itaiji-003: <http://rdf.chise.org/data/ccs/ucs-itaiji-003/code-point/> .
+@prefix ucs-itaiji-005: <http://rdf.chise.org/data/ccs/ucs-itaiji-005/code-point/> .
 @prefix ucs-itaiji-084: <http://rdf.chise.org/data/ccs/ucs-itaiji-084/code-point/> .
 
 a.ucs:0x4E80
@@ -802,6 +806,29 @@ a.ucs:0x9F9F
     rep.gb2312:0x396A
                :abstract-glyph-of         gb2312:0x396A  .
 
+rep.ucs-itaiji-005:0x9F9C
+    a chisegg:abstract-glyph ;
+    :abstract-glyph-of ucs-itaiji-005:0x9F9C ;
+    ideo:radical         213 ; # ⿔ 
+    ideo:strokes           0 ;
+    ideo:total-strokes    19 ;
+    isd:structure [ a idc:⿴ ;
+        isd:surround [
+            isd:structure [ a idc:⿷ ;
+                isd:surround [
+                    isd:structure [ a idc:⿹ ;
+                        isd:surround rep.big5-cdp-itaiji-001:0x88CB ; # &CDP-i001-88CB;
+                        isd:filling  rep.mj:056865   # &MJ056865;
+                    ]
+                ] ;
+                isd:filling  rep.big5-cdp:0x8C78   # &CDP-8C78;
+            ]
+        ] ;
+        isd:filling  a.ucs:0x200AD   # 𠂭
+    ] ;
+    :from.unknown        a.ucs:0x9F9C         ;
+    .
+
 rep.big5-cdp-itaiji-003:0x88CB
     a chisegg:abstract-glyph ;
     :abstract-glyph-of big5-cdp-itaiji-003:0x88CB ;
@@ -936,9 +963,23 @@ rep.big5-cdp:0x88CB
         isd:surround rep.gt-k:02381 ; # &GT-K02381;
         isd:filling  rep.ucs-itaiji-001:0x22451   # &U-i001+22451;
     ] ;
+    :eq rep.gt-k:10042            ; # &I-GT-K10042;
+    :eq rep.gt-pj-k1:14961        ; # &CDP-88CB;
     :subsume
+        g2.gt-k:10042        ,
         g2.big5-cdp:0x88CB   ;
     .
+    rep.gt-k:10042
+               :abstract-glyph-of           gt-k:10042   .
+    rep.gt-pj-k1:14961
+               :abstract-glyph-of       gt-pj-k1:14961   .
+    g2.gt-k:10042
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of gt-k:10042 ;
+        :eq g2.gt-pj-k1:14961         ; # &g2-GT-K10042;
+        .
+        g2.gt-pj-k1:14961
+              :abstract-glyph-form-of       gt-pj-k1:14961   .
     g2.big5-cdp:0x88CB
         a chisegg:abstract-glyph-form ;
         :abstract-glyph-form-of big5-cdp:0x88CB ;
@@ -1627,7 +1668,7 @@ rep.ucs_unicode:0x9F9D
         :abstract-glyph-form-of [ :context domain:unicode ;
                                   :target     ucs:0x9F9D  ] ;
         isd:structure [ a idc:⿰ ;
-            isd:left     rep.gt-k:00899 ; # &GT-K00899;
+            isd:left     rep.gt-k:00899 ; # &M-24908;
             isd:right    g2.ucs_unicode:0x9F9C   # &g2-UU+9F9C;
         ] ;
         :g2.ucs_JP...hanazono      rdf:nil ;
