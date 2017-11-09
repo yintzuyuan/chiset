@@ -16,7 +16,9 @@
 @prefix rep.ucs_iso: <http://www.chise.org/est/view/character/rep.ucs@iso=> .
 @prefix rep.ucs_unicode: <http://www.chise.org/est/view/character/rep.ucs@unicode=> .
 @prefix g.ucs_iso: <http://www.chise.org/est/view/character/g.ucs@iso=> .
+@prefix g2.ucs_iso: <http://www.chise.org/est/view/character/g2.ucs@iso=> .
 @prefix g2.ucs_unicode: <http://www.chise.org/est/view/character/g2.ucs@unicode=> .
+@prefix repi.ucs_iso: <http://www.chise.org/est/view/character/repi.ucs@iso=> .
 @prefix repi.ucs_unicode: <http://www.chise.org/est/view/character/repi.ucs@unicode=> .
 @prefix repi.ucs_ks: <http://www.chise.org/est/view/character/repi.ucs@ks=> .
 @prefix rep.adobe-japan1-0: <http://www.chise.org/est/view/character/rep.adobe-japan1-0=> .
@@ -39,6 +41,8 @@
 @prefix rep.cns11643-4: <http://www.chise.org/est/view/character/rep.cns11643-4=> .
 @prefix rep.cns11643-5: <http://www.chise.org/est/view/character/rep.cns11643-5=> .
 @prefix rep.cns11643-6: <http://www.chise.org/est/view/character/rep.cns11643-6=> .
+@prefix g2.cns11643-6: <http://www.chise.org/est/view/character/g2.cns11643-6=> .
+@prefix repi.cns11643-6: <http://www.chise.org/est/view/character/repi.cns11643-6=> .
 @prefix rep.cns11643-7: <http://www.chise.org/est/view/character/rep.cns11643-7=> .
 @prefix rep.jis-x0213-1: <http://www.chise.org/est/view/character/rep.jis-x0213-1=> .
 @prefix g2.jis-x0213-1: <http://www.chise.org/est/view/character/g2.jis-x0213-1=> .
@@ -62,6 +66,9 @@
 @prefix rep.hanziku-12: <http://www.chise.org/est/view/character/rep.hanziku-12=> .
 @prefix repi.hng-khm: <http://www.chise.org/est/view/character/repi.hng-khm=> .
 @prefix repi.hng-kar: <http://www.chise.org/est/view/character/repi.hng-kar=> .
+@prefix rep.cbeta: <http://www.chise.org/est/view/character/rep.cbeta=> .
+@prefix g2.cbeta: <http://www.chise.org/est/view/character/g2.cbeta=> .
+@prefix repi.cbeta: <http://www.chise.org/est/view/character/repi.cbeta=> .
 
 @prefix ucs: <http://rdf.chise.org/data/ccs/ucs/code-point/> .
 @prefix adobe-japan1-0: <http://rdf.chise.org/data/ccs/adobe-japan1-0/code-point/> .
@@ -86,6 +93,7 @@
 @prefix hanziku-12: <http://rdf.chise.org/data/ccs/hanziku-12/code-point/> .
 @prefix hng-khm: <http://rdf.chise.org/data/ccs/hng-khm/code-point/> .
 @prefix hng-kar: <http://rdf.chise.org/data/ccs/hng-kar/code-point/> .
+@prefix cbeta: <http://rdf.chise.org/data/ccs/cbeta/code-point/> .
 
 a.ucs:0x9996
     a chisegg:abstract-character ;
@@ -228,16 +236,61 @@ a.ucs:0x29810
     ideo:radical         185 ; # ⾸ 
     ideo:strokes           0 ;
     ideo:total-strokes    10 ;
+    isd:structure [ a idc:⿱ ;
+        isd:above    a.ucs:0x5DDB ; # 巛
+        isd:below    a.ucs:0x268FB   # 𦣻
+    ] ;
     :eq rep.cns11643-6:0x3C79     ; # &I-C6-3C79;
     :eq rep.daikanwa:44490        ; # &I-M-44490;
-    :eq rep.hanziku-12:0xA6CA     ; # &I-HZK12-A6CA;
+    :eq rep.cbeta:09462           ; # &I-CB09462;
+    :subsume
+        g2.ucs_iso:0x29810   ;
     .
     rep.cns11643-6:0x3C79
                :abstract-glyph-of     cns11643-6:0x3C79  .
     rep.daikanwa:44490
                :abstract-glyph-of       daikanwa:44490   .
-    rep.hanziku-12:0xA6CA
-               :abstract-glyph-of     hanziku-12:0xA6CA  .
+    rep.cbeta:09462
+               :abstract-glyph-of          cbeta:09462   .
+    g2.ucs_iso:0x29810
+        a chisegg:abstract-glyph-form ;
+        :abstract-glyph-form-of [ :context domain:iso     ;
+                                  :target     ucs:0x29810 ] ;
+        :eq g2.cns11643-6:0x3C79      ; # &g2-M-44490;
+        :eq g2.daikanwa:44490         ; # &g2-M-44490;
+        :eq rep.hanziku-12:0xA6CA     ; # &g2-M-44490;
+        :eq g2.cbeta:09462            ; # &g2-M-44490;
+        :subsume
+            repi.daikanwa:44490  ,
+            repi.cbeta:09462     ,
+            repi.cns11643-6:0x3C79 ,
+            repi.ucs_iso:0x29810 ;
+        .
+        g2.cns11643-6:0x3C79
+              :abstract-glyph-form-of     cns11643-6:0x3C79  .
+        g2.daikanwa:44490
+              :abstract-glyph-form-of       daikanwa:44490   .
+        rep.hanziku-12:0xA6CA
+                   :abstract-glyph-of     hanziku-12:0xA6CA  .
+        g2.cbeta:09462
+              :abstract-glyph-form-of          cbeta:09462   .
+        repi.daikanwa:44490
+            a chisegg:glyph-image ;
+            :glyph-image-of daikanwa:44490 ;
+            .
+        repi.cbeta:09462
+            a chisegg:glyph-image ;
+            :glyph-image-of cbeta:09462 ;
+            .
+        repi.cns11643-6:0x3C79
+            a chisegg:glyph-image ;
+            :glyph-image-of cns11643-6:0x3C79 ;
+            .
+        repi.ucs_iso:0x29810
+            a chisegg:glyph-image ;
+            :glyph-image-of [ :context domain:iso     ;
+                              :target     ucs:0x29810 ] ;
+            .
 
 a.ucs:0x2EE1
     a chisegg:abstract-character ;
