@@ -128,6 +128,7 @@
     ==daikanwa
     ==gt-k
     ==ucs@gb
+    ==ucs-itaiji-001
     ==ucs-itaiji-002
     ==ucs-itaiji-003
     ==ucs-itaiji-005
