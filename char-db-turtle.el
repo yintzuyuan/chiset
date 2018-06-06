@@ -1,6 +1,6 @@
 ;;; char-db-turtle.el --- Character Database utility -*- coding: utf-8-er; -*-
 
-;; Copyright (C) 2017 MORIOKA Tomohiko.
+;; Copyright (C) 2017, 2018 MORIOKA Tomohiko.
 
 ;; Author: MORIOKA Tomohiko <tomo@kanji.zinbun.kyoto-u.ac.jp>
 ;; Keywords: CHISE, Character Database, RDF, Turtle, ISO/IEC 10646, UCS, Unicode, MULE.
@@ -132,6 +132,7 @@
     ==ucs-itaiji-002
     ==ucs-itaiji-003
     ==ucs-itaiji-005
+    ==ucs-itaiji-006
     ==ucs-var-002
     ==ucs@JP/hanazono
     ==daikanwa/+2p
@@ -150,6 +151,7 @@
     =>ucs-itaiji-005
     =>ucs-itaiji-006
     =>ucs-itaiji-007
+    =>ucs-itaiji-001@iwds-1
     ==>ucs@bucs
     =big5
     =>cbeta
